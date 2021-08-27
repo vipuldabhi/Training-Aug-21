@@ -6,7 +6,7 @@ SELECT EmployeeID,FirstName,Salary,ROW_NUMBER() OVER (ORDER BY Salary ASC) FROM 
 SELECT EmployeeID,FirstName,Salary,DENSE_RANK() OVER (ORDER BY Salary ASC) FROM Employees 
 SELECT EmployeeID,FirstName,Salary,RANK() OVER (ORDER BY Salary ASC) FROM Employees 
 
-
+ 
 --Aggregate Function
 
 SELECT SUM(Salary) FROM Employees;
@@ -22,7 +22,7 @@ SELECT DepartmentID,Salary,SUM(Salary) FROM Employees GROUP BY ROLLUP (Departmen
 SELECT DepartmentID,EmployeeID,COUNT(EmployeeID) FROM Employees GROUP BY CUBE (DepartmentID,EmployeeID) ORDER BY EmployeeID;
 SELECT FirstName,Salary,COUNT(FirstName) FROM Employees GROUP BY GROUPING SETS ((FirstName),(Salary),(FirstName,Salary)) ORDER BY Firstname;                                        
 SELECT EmployeeID,NTILE(5) OVER	(ORDER BY EmployeeID) FROM Employees
-SELECT CountryID,NTILE(4) OVER( ORDER BY CountryID) FROM Countries
+SELECT CountryID,NTILE(4)OVER( ORDER BY CountryID) FROM Countries
 
 --Having Clause
 
