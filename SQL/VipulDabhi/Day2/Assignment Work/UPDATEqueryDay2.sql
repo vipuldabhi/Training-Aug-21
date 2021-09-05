@@ -1,3 +1,6 @@
+
+--Update Queries
+
 SELECT * FROM Employees;
 SELECT * FROM Departments
 
