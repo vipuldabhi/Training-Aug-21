@@ -1,3 +1,6 @@
+
+--STRING FUNCTIONS
+
 SELECT ASCII('c');
 SELECT CHAR(68)
 SELECT CHARINDEX('Available',Email) FROM employees
