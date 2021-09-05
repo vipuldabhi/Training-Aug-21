@@ -1,3 +1,20 @@
+CREATE TABLE Students
+(
+	StudentID INT,
+	FirstName VARCHAR(100),
+	LastName VARCHAR(100),
+	Gender VARCHAR(100),
+	Stream VARCHAR(100),
+	CONSTRAINT Stu_Primarykey PRIMARY KEY (StudentID)
+	
+)
+ALTER TABLE Students
+	 ADD Address VARCHAR(100) 
+
+
+DROP TABLE Students
+
+--Day1 Practice Tutorialsite
 
 --Write a SQL statement to create a table named countries including columns CountryId, CountryName and RegionId and make sure that no countries except Italy, India and China will be entered in the table.
 --and combination of columns CountryId and RegionId will be unique.
