@@ -17,6 +17,32 @@ CASE
 END AS QuantityText
 FROM Employees;
 
+--Using a SELECT statement with a simple CASE expression
+
+USE AdventureWorks2012;  
+GO  
+SELECT   ProductNumber, Category =  
+      CASE ProductLine  
+         WHEN 'R' THEN 'Road'  
+         WHEN 'M' THEN 'Mountain'  
+         WHEN 'T' THEN 'Touring'  
+         WHEN 'S' THEN 'Other sale items'  
+         ELSE 'Not for sale'  
+      END,  
+   Name  
+FROM Production.Product  
+ORDER BY ProductNumber;  
+GO  
+
+--Using CASE in an ORDER BY clause
+
+SELECT BusinessEntityID, SalariedFlag  
+FROM HumanResources.Employee  
+ORDER BY CASE SalariedFlag WHEN 1 THEN BusinessEntityID END DESC  
+        ,CASE WHEN SalariedFlag = 0 THEN BusinessEntityID END;  
+GO 
+
+
 --Syntax for while loop
 
 --WHILE Boolean_expression   
@@ -37,6 +63,26 @@ BEGIN
       CONTINUE  
 END  
 PRINT 'Too much for the market to bear';  
+
+--Using WHILE In A Cursor
+
+DECLARE @EmployeeID as NVARCHAR(256)
+DECLARE @Title as NVARCHAR(50)
+
+DECLARE Employee_Cursor CURSOR FOR  
+SELECT LoginID, JobTitle   
+FROM AdventureWorks2012.HumanResources.Employee  
+WHERE JobTitle = 'Marketing Specialist';  
+OPEN Employee_Cursor;  
+FETCH NEXT FROM Employee_Cursor INTO @EmployeeID, @Title;  
+WHILE @@FETCH_STATUS = 0  
+   BEGIN  
+      Print '   ' + @EmployeeID + '      '+  @Title 
+      FETCH NEXT FROM Employee_Cursor INTO @EmployeeID, @Title;  
+   END;  
+CLOSE Employee_Cursor;  
+DEALLOCATE Employee_Cursor;  
+GO 
 
 --Simple While Loop
 --Uses AdventureWorks  
