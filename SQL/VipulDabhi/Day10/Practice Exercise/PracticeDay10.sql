@@ -60,7 +60,7 @@ If @EmployeeId%2=0
 BEGIN  
 UPDATE Employees SET @Salary=15000 WHERE CURRENT OF EMP_CURSOR  
 END  
-FETCH  FROM EMP_CURSOR INTO  @EmployeeId ,@FirstName,@Salary,@DepartmentId  
+FETCH NEXT FROM EMP_CURSOR INTO  @EmployeeId ,@FirstName,@Salary,@DepartmentId  
 END  
 CLOSE EMP_CURSOR  
 DEALLOCATE EMP_CURSOR  
