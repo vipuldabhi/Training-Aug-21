@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSSFlexItems</title>
+    <style>
+        .flex-items {
+            display: flex;
+            /*height: 200px; */
+            /*only for align-self*/
+            align-items: stretch;
+            background-color: #eebaba;
+        }
+
+        .flex-items>div {
+            background-color: DodgerBlue;
+            color: white;
+            width: 100px;
+            margin: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CSS Flex Items -->
+
+    <div class="flex-items">
+        <div style="order: 3">1</div>
+        <div style="order: 2">2</div>
+        <div style="order: 4">3</div>
+        <div style="order: 1">4</div>
+    </div>
+    <br />
+    <div class="flex-items">
+        <div style="flex-grow: 1">1</div>
+        <div style="flex-grow: 1">2</div>
+        <div style="flex-grow: 8">3</div>
+    </div>
+    <br />
+    <div class="flex-items">
+        <div>1</div>
+        <div>2</div>
+        <div style="flex-shrink: 0">3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+    </div>
+    <br />
+    <div class="flex-items">
+        <div>1</div>
+        <div>2</div>
+        <div style="flex-basis: 200px">3</div>
+        <div>4</div>
+    </div>
+    <br />
+    <!-- The flex property is a shorthand property for the flex-grow, flex-shrink, and flex-basis properties. -->
+    <div class="flex-items">
+        <div>1</div>
+        <div>2</div>
+        <div style="flex: 0 0 200px">3</div>
+        <div>4</div>
+    </div>
+    <br />
+    <div class="flex-items">
+        <div>1</div>
+        <div>2</div>
+        <div style="align-self: center">3</div>
+        <div>4</div>
+    </div>
+    <br />
+    <div class="flex-items">
+        <div>1</div>
+        <div style="align-self: flex-start">2</div>
+        <div style="align-self: flex-end">3</div>
+        <div>4</div>
+    </div>
+
+</body>
+
+</html>

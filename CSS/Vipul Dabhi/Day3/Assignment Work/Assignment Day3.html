@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css" type="text/css">
+    <title>AssignmentDay3</title>
+    <style>
+        #container1 {
+            display: flex;
+        }
+
+        #container1 div {
+            background-color: rgb(241, 231, 189);
+            flex-wrap: wrap;
+            margin: 10px;
+            padding: 10px;
+            font-size: 30px;
+            justify-content: left;
+        }
+
+        @media (max-width: 600px) {
+            div {
+                flex-direction: column;
+                flex: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container1">
+        <div><a href="Home.html">Home</a></div>
+        <div><a href="AboutUs.html">AboutUs</a></div>
+        <div><a href="ContactUs.html">ContactUs</a></div>
+        <div><a href="News.html">News</a></div>
+    </div>
+
+</body>
+
+</html>
