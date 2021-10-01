@@ -1,0 +1,64 @@
+body{
+    background-image: url("Radix logo.jpg");
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    /*When using the shorthand property the order of the property values is:
+        background-color
+        background-image
+        background-repeat
+        background-attachment
+        background-position*/
+}
+h1{
+    text-align: center;
+    color: #000;
+    font-family: serif;
+    border-style: dashed;
+    border-width: 10px;
+    border-color: yellow;
+    text-decoration: underline;
+    text-transform: capitalize;
+    white-space:nowrap;
+}
+h2,h3{
+    color: darkorange;
+    text-align: center;
+    border-color: teal;
+    border-left-style: solid;
+    border-top-style:double;
+    border-right-style:solid;
+    border-bottom-style:double;
+}   
+h4{
+    text-indent: 50px;
+    letter-spacing: -3px;
+    word-spacing: 10px;
+    line-height: 40px;
+    white-space: nowrap;
+}
+.center{
+    text-align: center;
+    color: darkblue;
+    direction: ltr;
+    unicode-bidi: bidi-override;
+}
+
+.para1 {
+    color:black;
+    text-align: justify;
+    font-family: Helvetica;
+    font-size: large;
+   border: 8px solid green;
+   border-radius: 8px;
+  
+}
+#para2{
+        color: brown;
+        text-align: justify;
+        
+}
+.center{
+        text-align: center;
+        color: darkblue;
+}
