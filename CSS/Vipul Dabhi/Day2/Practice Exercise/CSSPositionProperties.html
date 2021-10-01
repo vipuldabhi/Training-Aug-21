@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSSPositionProperties</title>
+    <style>
+        #container2 {
+            border: 2px solid red;
+            margin: 5px;
+            height: 4000px;
+        }
+
+        .box {
+            display: inline-block;
+            border: 2px solid gray;
+            height: 150px;
+            width: 150px;
+            background-color: honeydew;
+            margin: 2px;
+        }
+
+        #box3 {
+            /* static = default */
+            /* position:static; */
+
+            /* relative : relative to its normal position,will live gap  to its normal position. */
+            /* position:relative; */
+
+            /* absolute : change position relative to its parent  */
+            /* position:absolute; */
+            /* top: 20px; 
+            left:25px; */
+
+            /* fixed : positions the element to the browser window*/
+            /* position: fixed;
+            right: 4px;
+            bottom: 4px; */
+
+            /* sticky : stick at its own position */
+            position: sticky;
+            top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CSS position property  -->
+
+    <div id="container2">
+        <div class="box" id="box1">Box1</div>
+        <div class="box" id="box2">Box2</div>
+        <div class="box" id="box3">Box3</div>
+        <div class="box" id="box4">Box4</div>
+    </div>
+
+</body>
+
+</html>
