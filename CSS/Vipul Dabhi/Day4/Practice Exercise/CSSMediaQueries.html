@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSSMediaQueries</title>
+    <style>
+        main h1 {
+            color: cadetblue;
+            text-align: center;
+        }
+
+        #container1 {
+            display: flex;
+            justify-content: space-around;
+            line-height: 1.4;
+        }
+
+        .text {
+            width: 50%;
+            height: auto;
+            text-align: justify;
+        }
+
+        /* Desktop And laptop */
+
+        @media (min-width:1024px) {
+            h1 {
+                color: darkblue;
+            }
+
+            .text {
+                color: red;
+                word-spacing: 10px;
+            }
+        }
+
+        /* tablets and ipads */
+
+        @media (min-width:769px) and (max-width:1023) {
+            h1 {
+                text-transform: uppercase;
+            }
+
+            .text {
+                color: blue;
+            }
+
+        }
+
+        /* Mobile phones */
+
+        @media (max-width:768px) {
+
+            h1 {
+                color: cyan;
+            }
+
+            #container {
+                display: block;
+            }
+
+            .text {
+                width: 100%;
+            }
+
+            #container img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        @media (max-width:468px) {
+
+            h1 {
+                color: rgb(247, 167, 20);
+            }
+
+            #container img {
+                padding: 10%;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header1">
+        <h1>This is a Media Queries practice</h1>
+    </div>
+    <div id="container1">
+        <div class="text">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim, exercitationem pariatur est expedita velit
+            soluta quo harum dignissimos. Neque assumenda dignissimos numquam minus commodi, corporis earum laudantium
+            quaerat expedita accusamus!
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error culpa beatae obcaecati ad adipisci at odit
+            facilis quibusdam tenetur. Optio provident natus numquam aperiam aliquid omnis pariatur rem blanditiis
+            commodi!
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic voluptate reiciendis temporibus tempore quos
+            vero quis asperiores deserunt voluptas, itaque atque, obcaecati nostrum nesciunt similique enim perspiciatis
+            eos ea debitis!
+        </div>
+        <div>
+            <img src="/CSS/Vipul Dabhi/Assets/img1.jpg" alt="image related data">
+        </div>
+    </div>
+
+</body>
+
+</html>

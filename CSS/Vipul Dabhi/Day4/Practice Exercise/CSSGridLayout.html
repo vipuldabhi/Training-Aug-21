@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSSGridLayout</title>
+    <style>
+        #container1 {
+            display: grid;
+            height: 100vh;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 0.4fr 1.5fr 1.8fr 0.8fr;
+            grid-template-areas:
+                "nav1 nav1 nav1 nav1"
+                "sidebar1 main1 main1 main1"
+                "sidebar1 contant1 contant2 contant3"
+                "sidebar1 footer1 footer1 footer1";
+            grid-gap: 0.2rem;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: center;
+        }
+
+        #container1 #nav {
+            background-color: cyan;
+            grid-area: nav1;
+        }
+
+        #container1 #main {
+            background-color: rgb(155, 238, 238);
+            grid-area: main1;
+        }
+
+        #container1 #sidebar {
+            background-color: rgb(179, 219, 219);
+            grid-area: sidebar1;
+        }
+
+        #contant1 {
+            background-color: rgb(88, 235, 235);
+            grid-area: contant1;
+        }
+
+        #contant2 {
+            background-color: rgb(40, 177, 177);
+            grid-area: contant2;
+        }
+
+        #contant3 {
+            background-color: rgb(25, 148, 148);
+            grid-area: contant3;
+        }
+
+        #footer {
+            background-color: rgb(72, 105, 105);
+            grid-area: footer1;
+        }
+
+        @media (max-width:500px) {
+            #container1 {
+                grid-template-columns: 1fr;
+                grid-template-rows: 0.4fr 0.6fr 2.2fr 1.2fr 1.2fr 1.2fr 0.8fr;
+                grid-template-areas:
+                    "nav1"
+                    "sidebar1"
+                    "main1"
+                    "contant1"
+                    "contant2"
+                    "contant3"
+                    "footer1";
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Grid Layout -->
+
+    <div id="container1">
+        <nav id="nav">nav</nav>
+        <main id="main">main</main>
+        <div id="sidebar">sidebar</div>
+        <div id="contant1">contant1</div>
+        <div id="contant2">contant2</div>
+        <div id="contant3">contant3</div>
+        <footer id="footer">footer</footer>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            display: grid;
+            height: 100vh;
+            grid-template-columns: 0.2fr 0.8fr;
+            grid-template-rows: 0.2fr 0.6fr 0.2fr;
+            grid-template-areas:
+                "nav nav"
+                "sidebar main"
+                "sidebar footer";
+            grid-gap: 0.2rem;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: center;
+        }
+
+        #container #nav {
+            background-color: cyan;
+            grid-area: nav;
+        }
+
+        #container #main {
+            background-color: rgb(155, 238, 238);
+            grid-area: main;
+        }
+
+        #container #sidebar {
+            background-color: rgb(179, 219, 219);
+            grid-area: sidebar;
+        }
+
+        #footer {
+            background-color: rgb(72, 105, 105);
+            grid-area: footer;
+        }
+        li{
+            display: inline-block;
+            padding-left: 20px ;
+            font-size: 20px;
+        }
+
+        @media (max-width:500px) {
+            #container {
+                grid-template-columns: 1fr;
+                grid-template-rows: 0.2fr 0.2fr 0.4fr 0.2fr;
+                grid-template-areas:
+                    "nav"
+                    "sidebar"
+                    "main"
+                    "footer";
+            }
+    </style>
+</head>
+
+<body>
+
+    <!-- Create Responsive Layout with Navigation. Image will be shared through redmine. -->
+
+    <div id="container">
+        <nav id="nav">
+            <ul type="none">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">AboutUS</a></li>
+                <li><a href="#">ContactUs</a></li>
+            </ul>
+        </nav>
+        <main id="main">main</main>
+        <div id="sidebar">sidebar</div>
+        <footer id="footer">footer</footer>
+    </div>
+
+</body>
+
+</html>
