@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <title>AlertsAndProgressBars</title>
+    <style>
+        @media only screen and (max-width:768px) {
+            nav li {
+                display: block !important;
+                width: 100% !important;
+            }
+        }
+
+        @media only screen and (min-width:768px) {
+            nav li {
+                justify-content: space-around;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="my-3">
+        <ul class="nav nav-fill nav-pills">
+            <li class="nav-item bg-primary rounded-3 mx-2">
+                <a href="#" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">Utilities</a>
+                <div class="dropdown-menu">
+                    <a href="/Bootstrap/Day1/Practice Exercise/BasicTypography.html" class="dropdown-item">Basic
+                        Typography</a>
+                    <a href="/Bootstrap/Day1/Practice Exercise/TextAlignmentAndDisplay.html" class="dropdown-item">Text
+                        Alignment & Display</a>
+                    <a href="/Bootstrap/Day1/Practice Exercise/FloatAndFixedPosition.html" class="dropdown-item">Floats
+                        & Position</a>
+                    <a href="/Bootstrap/Day1/Practice Exercise/ColorsAndBackground.html" class="dropdown-item">Colors &
+                        Background</a>
+                    <a href="/Bootstrap/Day1/Practice Exercise/MarginAndSpacing.html" class="dropdown-item">Margin &
+                        Spacing</a>
+                    <a href="/Bootstrap/Day1/Practice Exercise/SizingAndBorder.html" class="dropdown-item">Sizing &
+                        Border</a>
+                    <a href="/Bootstrap/Day1/Practice Exercise/CSSBreakpoints.html"
+                        class="dropdown-item">Breakpoints</a>
+                </div>
+            </li>
+            <li class="nav-item bg-success rounded-3 mx-2">
+                <a href="#" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">CSS Components</a>
+                <div class="dropdown-menu">
+                    <a href="/Bootstrap/Day1/Practice Exercise/NavbarAndNavs.html" class="dropdown-item">Navbar &
+                        Navs</a>
+                    <a href="/Bootstrap/Day1/Practice Exercise/listGroupsAndBadges.html" class="dropdown-item">ListGroups
+                        & Badges</a>
+                    <a href="/Bootstrap/Day1/Practice Exercise/Forms.html" class="dropdown-item">Forms</a>
+                    <a href="/Bootstrap/Day1/Practice Exercise/InputGroupsAndAddons.html"
+                        class="dropdown-item">InputGroups & Addons</a>
+                    <a href="/Bootstrap/Day1/Practice Exercise/AlertsAndProgressBars.html" class="dropdown-item">Alerts &
+                        ProgressBars</a>
+                    <a href="/Bootstrap/Day1/Practice Exercise/TablesAndPagination.html" class="dropdown-item">Tables &
+                        Pagination</a>
+                    <a href="/Bootstrap/Day1/Practice Exercise/Cards.html" class="dropdown-item">Cards</a>
+                    <a href="/Bootstrap/Day1/Practice Exercise/MediaObjects.html" class="dropdown-item">Media
+                        Objects</a>
+                </div>
+            </li>
+            <li class="nav-item bg-warning rounded-3 mx-2">
+                <a href="#" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">Grid & Flexbox</a>
+                <div class="dropdown-menu ">
+                    <a href="/Bootstrap/Day2/Practice Exercise/GridSystem.html" class="dropdown-item">Grid System</a>
+                    <a href="/Bootstrap/Day2/Practice Exercise/GridAlignment.html" class="dropdown-item">Grid
+                        Alignment</a>
+                    <a href="/Bootstrap/Day2/Practice Exercise/FlexBox.html" class="dropdown-item">Flexbox</a>
+                    <a href="/Bootstrap/Day2/Practice Exercise/AutoMarginsAndWrapping.html"
+                        class="dropdown-item">AutoMargin & Wraping</a>
+                </div>
+            </li>
+            <li class="nav-item bg-danger rounded-3 mx-2">
+                <a href="#" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">JavaScripts
+                    Widgets</a>
+                <div class="dropdown-menu">
+                    <a href="/Bootstrap/Day2/Practice Exercise/CarouselSlider.html" class="dropdown-item">Carousel
+                        Slider</a>
+                    <a href="/Bootstrap/Day2/Practice Exercise/CollapseAndAccordion.html" class="dropdown-item">Callopse
+                        & Accordion</a>
+                    <a href="/Bootstrap/Day2/Practice Exercise/Tooltips.html" class="dropdown-item">Tooltips</a>
+                    <a href="/Bootstrap/Day2/Practice Exercise/Popovers.html" class="dropdown-item">Popover</a>
+                    <a href="/Bootstrap/Day2/Practice Exercise/Modals.html" class="dropdown-item">Modals</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+
+    <!-- ###################################### START HERE #################################################### -->
+
+    
+    <div class="alert alert-primary" role="alert">
+        A simple primary alert—check it out!
+    </div>
+    <div class="alert alert-secondary" role="alert">
+        A simple secondary alert—check it out!
+    </div>
+    <div class="alert alert-success" role="alert">
+        A simple success alert—check it out!
+    </div>
+    <div class="alert alert-danger" role="alert">
+        A simple danger alert—check it out!
+    </div>
+    <div class="alert alert-warning" role="alert">
+        A simple warning alert—check it out!
+    </div>
+    <div class="alert alert-info" role="alert">
+        A simple info alert—check it out!
+    </div>
+    <div class="alert alert-light" role="alert">
+        A simple light alert—check it out!
+    </div>
+    <div class="alert alert-dark" role="alert">
+        A simple dark alert—check it out!
+    </div>
+
+    <div class="alert alert-primary" role="alert">
+        A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+    </div>
+    <div class="alert alert-secondary" role="alert">
+        A simple secondary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+    </div>
+    <div class="alert alert-success" role="alert">
+        A simple success alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+    </div>
+    <div class="alert alert-danger" role="alert">
+        A simple danger alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+    </div>
+    <div class="alert alert-warning" role="alert">
+        A simple warning alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+    </div>
+    <div class="alert alert-info" role="alert">
+        A simple info alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+    </div>
+    <div class="alert alert-light" role="alert">
+        A simple light alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+    </div>
+    <div class="alert alert-dark" role="alert">
+        A simple dark alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+    </div>
+
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Well done!</h4>
+        <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer
+            so that you can see how spacing within an alert works with this kind of content.</p>
+        <hr>
+        <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+    </div>
+
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <div class="alert alert-primary d-flex align-items-center" role="alert">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+            class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img"
+            aria-label="Warning:">
+            <path
+                d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+        </svg>
+        <div>
+            An example alert with an icon
+        </div>
+    </div>
+
+    <!-- PROGRESS BAR -->
+
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
+            aria-valuemax="100"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+            aria-valuemax="100"></div>
+    </div>
+
+    <br /><br />
+
+    <div class="progress">
+        <div class="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+        </div>
+    </div>
+
+    <br /><br />
+
+    <!-- LABELS -->
+
+    <div class="progress">
+        <div class="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+        </div>
+    </div>
+    <br /><br />
+
+    <!-- HEIGHT -->
+
+    <div class="progress" style="height: 3px;">
+        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+            aria-valuemax="100"></div>
+    </div><br /><br />
+    <div class="progress" style="height: 20px;">
+        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+            aria-valuemax="100"></div>
+    </div>
+    <br /><br />
+
+    <!-- BACKGROUNDS -->
+
+    <div class="progress">
+        <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
+            aria-valuemax="100"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+            aria-valuemax="100"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
+            aria-valuemax="100"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
+            aria-valuemax="100"></div>
+    </div>
+    <br /><br />
+
+    <!-- MULTIPLE BAR -->
+
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0"
+            aria-valuemax="100"></div>
+        <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0"
+            aria-valuemax="100"></div>
+        <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0"
+            aria-valuemax="100"></div>
+    </div>
+    <br /><br />
+
+    <!-- STRIPED -->
+
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10"
+            aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%"
+            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50"
+            aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%"
+            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%"
+            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <br /><br />
+
+    <!-- ANIMATED STRIPES -->
+
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75"
+            aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+    </div>
+
+
+
+    <!-- ################################### END HERE ################################################### -->
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+    <script>
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+        })
+    </script>
+
+    <script>
+        var myModal = document.getElementById('myModal')
+        var myInput = document.getElementById('myInput')
+
+        myModal.addEventListener('shown.bs.modal', function () {
+            myInput.focus()
+        })
+    </script>
+
+</body>
+
+</html>
