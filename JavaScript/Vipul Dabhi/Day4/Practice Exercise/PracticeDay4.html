@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <title>PracticeDay4</title>
+</head>
+
+<body>
+
+
+    <p id="demo"></p>
+
+    <script>
+
+        //  !**! CALLBACK !**!
+
+        //* Function Sequence
+
+        // function myDisplayer(some) {
+        //     document.getElementById("demo").innerHTML = some;
+        // }
+        // function myFirst() {
+        //     myDisplayer("Hello");
+        // }
+        // function mySecond() {
+        //     myDisplayer("Goodbye");
+        // }
+        // myFirst();
+        // mySecond();
+
+        // function myDisplayer(some) {
+        //     document.getElementById("demo").innerHTML = some;
+        // }
+        // function myFirst() {
+        //     myDisplayer("Hello");
+        // }
+        // function mySecond() {
+        //     myDisplayer("Goodbye");
+        // }
+        // mySecond();
+        // myFirst();
+
+        // function myDisplayer(some) {
+        //     document.getElementById("demo").innerHTML = some;
+        // }
+        // function myCalculator(num1, num2) {
+        //     let sum = num1 + num2;
+        //     myDisplayer(sum);
+        // }
+        // myCalculator(5, 5);
+
+
+
+        //* JavaScript Callbacks
+
+
+
+        // function myDisplayer(some) {
+        //     document.getElementById("demo").innerHTML = some;
+        // }
+        // function myCalculator(num1, num2, myCallback) {
+        //     let sum = num1 + num2;
+        //     myCallback(sum);
+        // }
+        // myCalculator(5, 5, myDisplayer);
+
+
+
+        //* Asynchronous JavaScript
+
+
+
+        // setTimeout(myFunction, 3000);
+        // function myFunction() {
+        //     document.getElementById("demo").innerHTML = "I love You !!";
+        // }
+
+        //* Waiting for a Timeout
+
+        // setTimeout(function () { myFunction("I love You !!!"); }, 3000);
+        // function myFunction(value) {
+        //     document.getElementById("demo").innerHTML = value;
+        // }
+
+        //* Waiting for Intervals:
+
+        // setInterval(myFunction, 1000);
+        // function myFunction() {
+        //     let d = new Date();
+        //     document.getElementById("demo").innerHTML =
+        //         d.getHours() + ":" +
+        //         d.getMinutes() + ":" +
+        //         d.getSeconds();
+        // }
+
+        //* Waiting for Files
+
+        // function myDisplayer(some) {
+        //     document.getElementById("demo").innerHTML = some;
+        // }
+        // function getFile(myCallback) {
+        //     let req = new XMLHttpRequest();
+        //     req.open('GET', "mycar.html");
+        //     req.onload = function () {
+        //         if (req.status == 200) {
+        //             myCallback(this.responseText);
+        //         } else {
+        //             myCallback("Error: " + req.status);
+        //         }
+        //     }
+        //     req.send();
+        // }
+        // getFile(myDisplayer);
+
+
+
+
+
+        // !**! VAR AND LET KEYWORD !**!
+
+
+
+
+
+
+        // var amount = 100;
+        // console.log(amount);
+        // amount = 200;
+        // console.log(amount);
+        // var amount = "orange"
+        // console.log(amount);
+
+        // let total = 100;
+        // console.log(total);
+        // total = 200;
+        // console.log(total)
+        // // let total = "orange"
+
+        // const fruit = "orange";
+        // console.log(fruit);
+        // // fruit = "mango";
+        // // const fruit = "apple"
+
+        // const person = {name:"john"}
+        // console.log(person.name);
+        // person.name = "willium"
+        // console.log(person.name)
+        // // person = "orange"
+        // // const person = "orange"
+
+
+
+
+        // !**! PROMISES !**!
+
+
+
+
+        //* JavaScript Promise Object
+
+        // Promise Syntax
+
+        // let myPromise = new Promise(function (myResolve, myReject) {
+        //     // "Producing Code" (May take some time)
+        //     myResolve(); // when successful
+        //     myReject();  // when error
+        // });
+        // // "Consuming Code" (Must wait for a fulfilled Promise)
+        // myPromise.then(
+        //     function (value) { /* code if successful */ },
+        //     function (error) { /* code if some error */ }
+        // );
+
+        // Waiting for a Timeout
+
+        // const myPromise = new Promise(function (myResolve, myReject) {
+        //     setTimeout(function () { myResolve("I love You !!"); }, 3000);
+        // });
+        // myPromise.then(function (value) {
+        //     document.getElementById("demo").innerHTML = value;
+        // });
+
+        
+
+
+    </script>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
