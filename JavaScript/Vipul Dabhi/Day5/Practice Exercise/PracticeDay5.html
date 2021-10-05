@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+
+    <p id="demo"></p>
+
+    <button type="button" onclick="myFunction()">Count!</button>
+
+    <p id="demo1">0</p>
+
+    <script>
+
+        // !**! FUNCTION ! ** !
+
+        //* FUNCTION EXPRESSION
+
+        // const x = function (a, b) { return a * b };
+        // document.getElementById("demo").innerHTML = x(4, 3);
+
+        //* FUNCTION CONSRUCTOR
+
+        // const myFunction = function (a, b) { return a * b }
+        // document.getElementById("demo").innerHTML = myFunction(4, 3);
+
+        //* FUNCTION HOISTING
+
+        // JavaScript functions can be called before they are declared:
+
+        // myFunction(5);
+        // function myFunction(y) {
+        //     return y * y;
+        // }
+
+        //* Self-Invoking Functions
+
+        // (function () {
+        //     document.getElementById("demo").innerHTML = "Hello! I called myself";
+        // })();
+
+        //* Functions Can Be Used as Values
+
+        // function myFunction(a, b) {
+        //     return a * b;
+        // }
+        // let x = myFunction(4, 3);
+        // document.getElementById("demo").innerHTML = x;
+
+        // Functions are Objects
+
+        // function myFunction(a, b) {
+        //     return arguments.length;
+        // }
+        // document.getElementById("demo").innerHTML = myFunction(4, 3);
+
+        // function myFunction(a, b) {
+        //     return a * b;
+        // }
+        // document.getElementById("demo").innerHTML = myFunction.toString();
+
+        //* Arrow function
+
+        // const x = (x, y) => x * y;
+        // document.getElementById("demo").innerHTML = x(5, 5);
+
+        //* call method
+
+        // const youtuber1 = {
+        //     name : "abcd",
+        //     content = "programming",
+        //     feature = function( rating,support){
+        //         console.log(`very friendly way of teaching.${this.name} is my fav ${this.content} channel,
+        //         i will lovw to give ${rating} star.please ${support}${this.name} channel` );
+        //     }
+        // }
+
+        // youtuber1.feature(5,"subscribe");
+
+        // const youtuber2 = {
+        //     name : "xyz",
+        //     content: "programming&vlog"
+        // }
+        // youtuber1.feature.call(youtuber2,5,"subscribe");
+
+        //* function apply
+
+        // const person = {
+        //     fullName: function () {
+        //         return this.firstName + " " + this.lastName;
+        //     }
+        // }
+        // const person1 = {
+        //     firstName: "John",
+        //     lastName: "Doe"
+        // }
+        // document.getElementById("demo").innerHTML = person.fullName.apply(person1);
+
+        // const person = {
+        //     fullName: function (city, country) {
+        //         return this.firstName + " " + this.lastName + "," + city + "," + country;
+        //     }
+        // }
+        // const person1 = {
+        //     firstName: "John",
+        //     lastName: "Doe"
+        // }
+        // document.getElementById("demo").innerHTML = person.fullName.apply(person1, ["Oslo", "Norway"]);
+
+        // document.getElementById("demo").innerHTML = Math.max.apply(null, [1,2,3]); 
+
+        //* JavaScript Hoisting
+
+        // x = 5; // Assign 5 to x
+        // elem = document.getElementById("demo"); // Find an element
+        // elem.innerHTML = x;                     // Display x in the element
+        // var x; // Declare x
+
+        // var x; // Declare x
+        // x = 5; // Assign 5 to x
+        // elem = document.getElementById("demo"); // Find an element
+        // elem.innerHTML = x;                     // Display x in the element
+
+        // //* JavaScript Initializations are Not Hoisted
+
+        // var x = 5;  // Initialize x
+        // elem = document.getElementById("demo");      // Find an element 
+        // elem.innerHTML = "x is " + x + " and y is " + y;  // Display x and y
+        // var y = 7;  // Initialize y
+
+        // var x = 5; // Initialize x
+        // var y;   // Declare y
+        // elem = document.getElementById("demo"); // Find an element 
+        // elem.innerHTML = x + " " + y;       // Display x and y
+        // y = 7;   // Assign 7 to y
+
+        //* function closure
+
+        // const add = (function () {
+        //     let counter = 0;
+        //     return function () { counter += 1; return counter; }
+        // })();
+        // function myFunction() {
+        //     document.getElementById("demo1").innerHTML = add();
+        // }
+
+
+    </script>
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
+
