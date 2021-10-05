@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css" type="text/css">
+    <title>PracticeDay1</title>
+</head>
+<body>
+    <div id="container">
+        <nav>
+            <div><a href="/index.html">Home</a></div>
+            <div><a href="/HTML/HTML.html">HTML</a></div>
+            <div><a href="/CSS/CSS.html">CSS</a></div>
+        </nav>
+        <main>
+
+            <h1>Welcome To My html Practice Day1 Page</h1>
+            <!--Emplty html tags-->
+            <br />
+            <hr />
+            <a href="http://www.google.com" target = _Blanck>google</a>
+            <p>Make Sure your pate has planty of <i><b>fresh water</i> during hot weather.</p></b>
+            <!--Entities-->
+            <p>  1.    non-breaking space	    &nbsp;	    &#160;              
+            2.  <      less than               -&lt;	    &#60;               
+            3.  > 	    greater than	        &gt;	    &#62;               
+            4.  &	    ampersand	            & amp;	    &#38;
+            5.  "	    double quotation mark	&quot;	    &#34;
+            6.  '	    single quotation mark 	&apos;  	&#39;(apostrophe)
+            7.  ¢	    cent	                &cent;	    &#162;
+            8.  £	    pound	                &pound;	    &#163;
+            9.  ¥	    yen	                    &yen;	    &#165;
+            10. €	    euro	                &euro;	    &#8364;
+            11. ©	    copyright	            &copy;	    &#169;
+            12. ®	    registered trademark	&reg;	    &#174;  </p>
+            
+            <br />
+            <br />
+
+            <!--Table-->
+
+            <table border="3">
+                <caption>Sales for EmployeeID 2345</caption>
+                <colgroup
+                span="3"
+                style="background-color: #EEE8AA;">
+                </colgroup>
+                <colgroup
+                style="background-color: #00FA9A;">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Quater</th>
+                        <th>Total sales</th>
+                        <th>Goal Met</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Total</th>
+                        <th>$18,282</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <td>Q1</td>
+                        <td>$4,343</td>
+                        <td>yes</td>
+                    </tr>
+                    <tr>
+                        <td>Q2</td>
+                        <td>$1,123</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Q3</td>
+                        <td>$2,232</td>
+                        <td>yes</td>
+                    </tr>
+                    <tr>
+                        <td>Q4</td>
+                        <td>$3,232</td>
+                        <td>yes</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <br />
+            <!-- Nested table -->
+
+            <table border="3">
+                <tr>
+                    <th>StudentID</th>
+                    <th>Name</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>John
+                        <table border="1">
+                            <tr>
+                                <th>subjects</th>
+                            </tr>
+                            <tr><td>Maths</td></tr>
+                            <tr><td>Phsics</td></tr>
+                            <tr><td>Chemestry</td></tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Neena
+                        <table border="1">
+                            <tr>
+                                <th>subjects</th>
+                            </tr>
+                            <tr>
+                                <td>Biology</td>
+                                <tr><td>Phsics</td></tr>
+                                <tr><td>Chemestry</td></tr>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Description List -->
+
+            <dl>
+                <dt>Virat Kohli</dt>
+                    <dd>-Captain Of Team India</dd>
+                <dt>Shikhar Dhawan</dt>
+                <dt>Hardik Pandya</dt>
+            </dl>
+            <dl>
+                <dt>Eoin Morgan</dt>
+                    <dd>-Captain Of Team England</dd>
+                <dt>Moeen Ali</dt>
+                <dt>Jos Buttler</dt>
+            </dl>
+            <!--Order List-->
+            <ol type="I">
+                <li>Cofee</li>
+                <li>Tee</li>
+                <li>Cold Drinks</li>
+                <li>Milk</li>
+            </ol>
+            <!-- Unorder List-->
+            <ul type="circle">
+                <li>Bat</li>
+                <li>Ball</li>
+                <li>Stumps</li>
+            </ul>
+            <!-- Image -->
+            <figure>
+                <img src="Images/Radix logo.jpg" alt="radix logo" width="150px" height="125px"/>
+                <img src="Images/Radix Building.jpg" alt="Radix Building" width="150px" height="125px"/>
+                <figcaption>Radix Images</figcaption>
+            </figure>
+
+            <article>
+                <header>
+                    <img src="Images/html image.jpg" alt="html image" width="150px" height="125px"/>
+                    <h1>Learning html5</h1>  
+                </header>
+                <p>New html tags are more easier to make a website </p>
+                <footer>
+                    <p>Published: <time datetime="2021-09-13">Septamber 13,2021</time></p>
+                </footer>
+            </article>
+
+            <form id="my form">
+                    <label for="date-input">Please Choose a Date:</label>
+                    <input type="date" id="date-input" >    <br />
+                    <label for="time-input">Please Choose a Time:</label>
+                    <input type="time" id="time-input" >    <br />
+                    <label for="month-input">Please Select a Month:</label> 
+                    <input type="month" id="month-input" >  <br />
+                    <label for="week-input">please select a Week:</label>
+                    <input type="week" id="week-input" >    <br />
+                    <lable for="range-data">select a range:</lable>
+                    <input type="range" id="range-data" min="5" max="10" >
+                    <lable for="search-data">search:</lable>
+                    <input type="search" id="search-data" placeholder="Seaech Here" >    <br />
+                    <label for="tele-data">enter telephone number:</label>   
+                    <input type="tele" id="tele-data" placeholder="enter telephone number" required />  
+                    <input type="submit" value="submit" />   <br />
+                    <lable for="email-data">enter email:</lable>
+                    <input id="email" id="email-data" required multiple />
+                    <lable for="color-data">select color:</lable>
+                    <input type="color" id="color-data" />
+                    <label for="data-list">data list:</label>
+                    <input type="text" list="myDatalist" />
+                    <datalist id="myDatalist">
+                            <option label="Mr." value="Mr."></option>
+                            <option label="Mrs." value="Mrs."></option>
+                            <option label="Ms." value="Ms."></option>
+                    </datalist>    <br />
+                    <label for="progress-data">progress:</label>
+                    <progress id="progress-data" value="10" max="50"></progress> 
+                    <label for="meter-data">meter:</label>
+                    <meter id="meter-data" min="10" max="100" value="80" low="20" high="70" optimum="50"></meter>
+            </form>
+
+                    <label for="outsidetext-data">Other Text:</label>
+                    <input type="text" id="outsidetext-data" form="my form" >
+                    <label for="text-data">Text:</label>
+                    <input type="text" id="text-data" autofocus="autofocus" >
+
+
+        </main>
+        <div id="sidebar">
+            <ul>
+                <li>Day1
+                    <ul type="circle">
+                        <li>Assignment Work
+                            <ul>
+                                <li><a href="/HTML/Day1/Assignment Work/AssignmentDay1.html">Assignment</a></li>
+                            </ul>
+                        </li>
+                        <li>Practice Exercise
+                            <ul>
+                                <li><a href="/HTML/Day1/Practice Exercise/Exercise1.html" targer="_main">Exercise1</a></li>
+                                <li><a href="/HTML/Day1/Practice Exercise/Exercise2.html">Exercise1</a></li>
+                                <li><a href="/HTML/Day1/Practice Exercise/Exercise3.html">Exercise1</a></li>
+                                <li><a href="/HTML/Day1/Practice Exercise/Exercise4.html">Exercise1</a></li>
+                                <li><a href="/HTML/Day1/Practice Exercise/Exercise5.html">Exercise1</a></li>
+                                <li><a href="/HTML/Day1/Practice Exercise/PracticeDay1.html">PracticeExercise</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Day2
+                    <ul>
+                        <li>Practice Exercise
+                            <ul>
+                                <li><a href="/HTML/Day2/Practice Exercise/PracticeDay2.html">Practice Exercise</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <footer>
+            <p>Copyright@ AllRightReserved</p>
+        </footer>
+
+    </div>
+</body>
+</html>

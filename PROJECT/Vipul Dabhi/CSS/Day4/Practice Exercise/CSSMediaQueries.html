@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Media Queries</title>
+    
+</head>
+<body>
+    
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css" type="text/css">
+    <title>CSSMediaQueries</title>
+    <style>
+        main h1{
+            color: cadetblue;
+            text-align: center;
+        }
+        #container1{
+            display: flex;
+            justify-content: space-around;
+            line-height: 1.4;
+        }
+        .text{
+            width: 50%;
+            height: auto;
+            text-align: justify;
+        }
+
+        /* Desktop And laptop */
+
+        @media (min-width:1024px){
+            h1{color: darkblue;}
+
+            .text{
+                color: red;
+                word-spacing: 10px;
+            }
+        }
+
+        /* tablets and ipads */
+
+        @media (min-width:769px) and (max-width:1023){
+            h1{text-transform: uppercase;}
+
+            .text{color: blue;}
+
+        }
+
+        /* Mobile phones */
+
+        @media (max-width:768px){
+
+            h1{color: cyan;}
+
+            #container{
+                display: block;
+            }
+            .text{
+                width: 100%;
+            }
+            #container img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        @media (max-width:468px){
+
+            h1{color:rgb(247, 167, 20);}
+
+            #container img{
+                padding: 10%;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <nav>
+            <div><a href="/index.html">Home</a></div>
+            <div><a href="/HTML/HTML.html">HTML</a></div>
+            <div><a href="/CSS/CSS.html">CSS</a></div>
+        </nav>
+        <main>
+            <div id="header1">
+                <h1>This is a Media Queries practice</h1>
+            </div>
+            <div id="container1">
+                <div class="text">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim, exercitationem pariatur est expedita velit soluta quo harum dignissimos. Neque assumenda dignissimos numquam minus commodi, corporis earum laudantium quaerat expedita accusamus!
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error culpa beatae obcaecati ad adipisci at odit facilis quibusdam tenetur. Optio provident natus numquam aperiam aliquid omnis pariatur rem blanditiis commodi!
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic voluptate reiciendis temporibus tempore quos vero quis asperiores deserunt voluptas, itaque atque, obcaecati nostrum nesciunt similique enim perspiciatis eos ea debitis!
+                </div>
+                <div>
+                    <img src="/../../Assets/img1.jpg" alt="image related data">
+                </div>
+            </div>
+        </main>
+        <div id="sidebar">
+            <ul>
+                <li>Day1
+                    <ul type="circle">
+                        <li>Assignment Work
+                            <ul>
+                                <li><a href="/CSS/Day1/Assignment Work/AssignmentDay1.html">Assignment</a></li>
+                            </ul>
+                        </li>
+                        <li>Practice Exercise
+                            <ul>
+                                <li><a href="/CSS/Day1/Practice Exercise/PracticeDay1.html">PracticeExercise</a></li>
+                                <li><a href="/CSS/Day1/Practice Exercise/Exercise1.html" targer="_main">Exercise1</a></li>
+                                <li><a href="/CSS/Day1/Practice Exercise/Exercise2.html">Exercise1</a></li>
+                                <li><a href="/CSS/Day1/Practice Exercise/Exercise3.html">Exercise1</a></li>
+                                <li><a href="/CSS/Day1/Practice Exercise/Exercise4.html">Exercise1</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Day2
+                    <ul>
+                        <li>Assignment Work
+                            <ul>
+                                <li><a href="/CSS/Day2/Assignment Work/AssignmentDay2.html">Assignment</a></li>
+                            </ul>
+                        </li>
+                        <li>Practice Exercise
+                            <ul>
+                                <li><a href="/CSS/Day2/Practice Exercise/CSSFloatProperties.html">CSSFloatProperties</a></li>
+                                <li><a href="/CSS/Day2/Practice Exercise/CSSPositionProperties.html">CSSPositionProperties</a></li>
+                                <li><a href="/CSS/Day2/Practice Exercise/CSSOverflowProperties.html">CSSOverflowProperties</a></li>
+                                <li><a href="/CSS/Day2/Practice Exercise/Exercise1.html">Exercise1</a></li>
+                                <li><a href="/CSS/Day2/Practice Exercise/Exercise2.html">Exercise2</a></li>
+                                <li><a href="/CSS/Day2/Practice Exercise/Exercise3.html">Exercise3</a></li>
+                                
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Day3
+                    <ul>
+                        <li>Assignment Work
+                            <ul>
+                                <li><a href="/CSS/Day3/Assignment Work/AssignmentDay3.html">Assignment</a></li>
+                            </ul>
+                        </li>
+                        <li>Practice Exercise
+                            <ul>
+                                <li><a href="/CSS/Day3/Practice Exercise/CSSBoxModel.html">CSSBoxModel</a></li>
+                                <li><a href="/CSS/Day3/Practice Exercise/CSSFlexItems.html">CSSFlexItems</a></li>
+                                <li><a href="/CSS/Day3/Practice Exercise/CSSFlexModel.html">CSSFlexModel</a></li>
+                                <li><a href="/CSS/Day3/Practice Exercise/ImageGallery.html">ImageGallery</a></li>
+                                <li><a href="/CSS/Day3/Practice Exercise/Exercise1to4.html">Exercise1to4</a></li>
+                                <li><a href="/CSS/Day3/Practice Exercise/Exercise5.html">Exercise5</a></li>
+                                <li><a href="/CSS/Day3/Practice Exercise/Exercise6.html">Exercise6</a></li>
+                                <li><a href="/CSS/Day3/Practice Exercise/Exercise7.html">Exercise7</a></li>   
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Day4
+                    <ul>
+                        <li>Assignment Work
+                            <ul>
+                                <li><a href="/CSS/Day4/Assignment Work/Query1.html">Assignment</a></li>
+                            </ul>
+                        </li>
+                        <li>Practice Exercise
+                            <ul>
+                                <li><a href="/CSS/Day4/Practice Exercise/CSSMediaQueries.html">CSSMediaQueries</a></li>
+                                <li><a href="/CSS/Day4/Practice Exercise/CSSGridLayout.html">CSSGridLayout</a></li>
+                                <li><a href="/CSS/Day4/Practice Exercise/Exercise1.html">Exercise1</a></li>
+                                <li><a href="/CSS/Day4/Practice Exercise/Exercise2.html">Exercise2</a></li>
+                                <li><a href="/CSS/Day4/Practice Exercise/Exercise3.html">Exercise3</a></li>
+                                <li><a href="/CSS/Day4/Practice Exercise/Exercise4.html">Exercise4</a></li>
+                                
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <footer>
+            <p>Copyright@ AllRightReserved</p>
+        </footer>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css" type="text/css">
+    <title>CSSFlexModel</title>
+    <style>
+        .flex-container {
+            display: flex;
+            background-color: DodgerBlue;
+            /* flex-direction: column; */
+            /* flex-direction: column-reverse; */
+            /* flex-direction: row; */
+            /* flex-direction: row-reverse; */
+
+            justify-content: center;
+            justify-content: flex-start;
+            justify-content: flex-end;
+            justify-content: space-around;
+            justify-content: space-between;
+
+        }
+        
+        .flex-container > div {
+          background-color: #f1f1f1;
+          width: 100px;
+          margin: 10px;
+          padding: 20px;
+          font-size: 30px;
+          text-align: center;
+        }
+        .flex-wrap{
+            display: flex;
+            /* flex-wrap: wrap; */
+            /* flex-wrap: nowrap; */
+            /* flex-wrap: wrap-reverse; */
+            background-color: DodgerBlue;
+            flex-flow: row wrap; /*shorthand for flex-direction and flex-wrap*/
+
+            height: 600px;
+            flex-wrap: wrap;
+            align-content: space-between;
+            align-content: space-around;
+            align-content: stretch;    /*default*/
+            align-content: center;
+            align-content: flex-start;
+            align-content: flex-end; 
+
+        }
+        .flex-wrap > div {
+            background-color: #f1f1f1;
+            width: 100px;
+            margin: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
+        .align-items{
+            display: flex;
+            height: 200px;
+            align-items: center;
+            /* align-items: flex-start; */
+            /* align-items: flex-end; */
+            /* align-items: stretch; */
+            /* align-items: baseline; */
+            background-color: DodgerBlue;
+        }
+        .align-items > div{
+            background-color: #f1f1f1;
+            width: 100px;
+            margin: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <nav>
+            <div><a href="/index.html">Home</a></div>
+            <div><a href="/HTML/HTML.html">HTML</a></div>
+            <div><a href="/CSS/CSS.html">CSS</a></div>
+        </nav>
+        <main>
+
+            <!-- CSS Flex Model -->
+
+            <!-- flex-direction -->
+            <!-- justify-content -->
+
+            <div class="flex-container">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>  
+            </div>
+            <p>A Flexible Layout must have a parent element with the <em>display</em> property set to <em>flex</em>.</p>
+            <p>Direct child elements(s) of the flexible container automatically becomes flexible items.</p>
+            
+            <!-- THE FLEX WRAP PROPERTY -->
+            <!-- align-content -->
+
+            <div class="flex-wrap">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>  
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>  
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>  
+                <div>10</div>
+                <div>11</div>
+                <div>12</div>  
+            </div>
+            <br />
+
+            <div class="align-items">
+                <div><h1>1</h1></div>
+                <div><h6>2</h6></div>
+                <div><h3>3</h3></div>  
+                <div><small>4</small></div>  
+            </div>
+
+            <!-- Perfect Centering -->
+            <!-- SOLUTION: Set both the justify-content and align-items properties to center, and the flex item will be perfectly centered: -->
+
+        </main>
+        <div id="sidebar">
+            <ul>
+                <li>Day1
+                    <ul type="circle">
+                        <li>Assignment Work
+                            <ul>
+                                <li><a href="/CSS/Day1/Assignment Work/AssignmentDay1.html">Assignment</a></li>
+                            </ul>
+                        </li>
+                        <li>Practice Exercise
+                            <ul>
+                                <li><a href="/CSS/Day1/Practice Exercise/PracticeDay1.html">PracticeExercise</a></li>
+                                <li><a href="/CSS/Day1/Practice Exercise/Exercise1.html" targer="_main">Exercise1</a></li>
+                                <li><a href="/CSS/Day1/Practice Exercise/Exercise2.html">Exercise1</a></li>
+                                <li><a href="/CSS/Day1/Practice Exercise/Exercise3.html">Exercise1</a></li>
+                                <li><a href="/CSS/Day1/Practice Exercise/Exercise4.html">Exercise1</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Day2
+                    <ul>
+                        <li>Assignment Work
+                            <ul>
+                                <li><a href="/CSS/Day2/Assignment Work/AssignmentDay2.html">Assignment</a></li>
+                            </ul>
+                        </li>
+                        <li>Practice Exercise
+                            <ul>
+                                <li><a href="/CSS/Day2/Practice Exercise/CSSFloatProperties.html">CSSFloatProperties</a></li>
+                                <li><a href="/CSS/Day2/Practice Exercise/CSSPositionProperties.html">CSSPositionProperties</a></li>
+                                <li><a href="/CSS/Day2/Practice Exercise/CSSOverflowProperties.html">CSSOverflowProperties</a></li>
+                                <li><a href="/CSS/Day2/Practice Exercise/Exercise1.html">Exercise1</a></li>
+                                <li><a href="/CSS/Day2/Practice Exercise/Exercise2.html">Exercise2</a></li>
+                                <li><a href="/CSS/Day2/Practice Exercise/Exercise3.html">Exercise3</a></li>
+                                
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Day3
+                    <ul>
+                        <li>Assignment Work
+                            <ul>
+                                <li><a href="/CSS/Day3/Assignment Work/AssignmentDay3.html">Assignment</a></li>
+                            </ul>
+                        </li>
+                        <li>Practice Exercise
+                            <ul>
+                                <li><a href="/CSS/Day3/Practice Exercise/CSSBoxModel.html">CSSBoxModel</a></li>
+                                <li><a href="/CSS/Day3/Practice Exercise/CSSFlexItems.html">CSSFlexItems</a></li>
+                                <li><a href="/CSS/Day3/Practice Exercise/CSSFlexModel.html">CSSFlexModel</a></li>
+                                <li><a href="/CSS/Day3/Practice Exercise/ImageGallery.html">ImageGallery</a></li>
+                                <li><a href="/CSS/Day3/Practice Exercise/Exercise1to4.html">Exercise1to4</a></li>
+                                <li><a href="/CSS/Day3/Practice Exercise/Exercise5.html">Exercise5</a></li>
+                                <li><a href="/CSS/Day3/Practice Exercise/Exercise6.html">Exercise6</a></li>
+                                <li><a href="/CSS/Day3/Practice Exercise/Exercise7.html">Exercise7</a></li>   
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Day4
+                    <ul>
+                        <li>Assignment Work
+                            <ul>
+                                <li><a href="/CSS/Day4/Assignment Work/Query1.html">Assignment</a></li>
+                            </ul>
+                        </li>
+                        <li>Practice Exercise
+                            <ul>
+                                <li><a href="/CSS/Day4/Practice Exercise/CSSMediaQueries.html">CSSMediaQueries</a></li>
+                                <li><a href="/CSS/Day4/Practice Exercise/CSSGridLayout.html">CSSGridLayout</a></li>
+                                <li><a href="/CSS/Day4/Practice Exercise/Exercise1.html">Exercise1</a></li>
+                                <li><a href="/CSS/Day4/Practice Exercise/Exercise2.html">Exercise2</a></li>
+                                <li><a href="/CSS/Day4/Practice Exercise/Exercise3.html">Exercise3</a></li>
+                                <li><a href="/CSS/Day4/Practice Exercise/Exercise4.html">Exercise4</a></li>
+                                
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <footer>
+            <p>Copyright@ AllRightReserved</p>
+        </footer>
+
+    </div>
+</body>
+</html>

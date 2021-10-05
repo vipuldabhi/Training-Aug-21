@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css" type="text/css">
+    <title>AssignmentDay1</title>
+</head>
+<body>
+    <div id="container">
+        <nav>
+            <div><a href="/index.html">Home</a></div>
+            <div><a href="/HTML/HTML.html">HTML</a></div>
+            <div><a href="/CSS/CSS.html">CSS</a></div>
+        </nav>
+        <main>
+            <!--Design a form for storing employee details. (Employee name, age, Gender, designation, salary, location, 
+                Email ID, Date of Joining and contact number)
+                *Validation required
+                -Age should be a number
+                -Each field should contain value
+                -Email ID should be in proper format 
+                -Date of joining should be in date format
+                -Location should be in the drop down list
+                -Use radio buttons for Gender-->
+
+                <form id="EmployeeDetails">
+                    <label for="EmployeeName">EmployeeName:</label>
+                    <input type="text" id="EmployeeName" required />    <br />
+                    <label for="age">age:</label>
+                    <input type="number" id="age" required />   <br />
+                    <label for="gender">gender:</label>
+                    <input type="radio" id="gender" name="gender" value="male" required />
+                    <label for="gender">male</label>    
+                    <input type="radio" id="gender" name="gender" value="female" required />
+                    <label for="gender">female</label>  <br />
+                    <label for="designation">designation:</label>
+                    <input type="text" id="designation" required /> <br />
+                    <label for="Salary">Salary:</label>
+                    <input type="text" id="Salary" required />  <br />
+                    <label for="location">location:</label>
+                    <input type="text" list="datalist" />
+                    <datalist id="datalist">
+                        <option label="Ahmedabad" value="ahmedabad"></option>
+                        <option label="Surat" value="surat"></option>
+                        <option label="Rajkot" value="rajkot"></option>
+                    </datalist> <br />
+                    <label for="email">EmailID:</label>
+                    <input type="email" id="email" required />  <br />
+                    <label for="dateofjoining">DateOfJoining:</label>
+                    <input type="date" id="dateofjoining" required />   <br />
+                    <label for="contactnumber">contact number:</label>
+                    <input type="text" id="contactnumber" required />
+                    <input type="submit" id="submit" />
+                </form>
+        </main>
+        <div id="sidebar">
+            <ul>
+                <li>Day1
+                    <ul type="circle">
+                        <li>Assignment Work
+                            <ul>
+                                <li><a href="/HTML/Day1/Assignment Work/AssignmentDay1.html">Assignment</a></li>
+                            </ul>
+                        </li>
+                        <li>Practice Exercise
+                            <ul>
+                                <li><a href="/HTML/Day1/Practice Exercise/Exercise1.html" targer="_main">Exercise1</a></li>
+                                <li><a href="/HTML/Day1/Practice Exercise/Exercise2.html">Exercise1</a></li>
+                                <li><a href="/HTML/Day1/Practice Exercise/Exercise3.html">Exercise1</a></li>
+                                <li><a href="/HTML/Day1/Practice Exercise/Exercise4.html">Exercise1</a></li>
+                                <li><a href="/HTML/Day1/Practice Exercise/Exercise5.html">Exercise1</a></li>
+                                <li><a href="/HTML/Day1/Practice Exercise/PracticeDay1.html">PracticeExercise</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Day2
+                    <ul>
+                        <li>Practice Exercise
+                            <ul>
+                                <li><a href="/HTML/Day2/Practice Exercise/PracticeDay2.html">Practice Exercise</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <footer>
+            <p>Copyright@ AllRightReserved</p>
+        </footer>
+
+    </div>
+</body>
+</html>
