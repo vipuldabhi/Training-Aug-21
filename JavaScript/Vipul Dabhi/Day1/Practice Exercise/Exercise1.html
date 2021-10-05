@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <!-- 1. Accept three numbers from the user using prompt, 
+    find the greater of these the numbers and do the sum of that numbers which are greater than 40. -->
+
+    <button class="btn btn-primary m-3" onclick="getvalue()">Enter 3 Values</button> <br />
+
+    <p id="demo"></p>
+    <script>
+        function getvalue() {
+            var num1 = parseInt(prompt("Enter First Number"));
+            var num2 = parseInt(prompt("Enter Second Number"));
+            var num3 = parseInt(prompt("Enter Third Number"));
+
+            if (isNaN(num1) != 1 && isNaN(num2) != 1 && isNaN(num3) != 1) {
+                if (num1 > num2) {
+                    if (num1 > num3) {
+                        var greatervalue = num1;
+                    }
+                    else {
+                        var greatervalue = num3;
+                    }
+                }
+                if (num2 > num3) {
+                    var greatervalue = num2;
+                }
+                else {
+                    var greatervalue = num3
+                }
+            } else {
+                var greatervalue = "Enter valid number";
+            }
+
+            var sum = 0
+            if (num1 > 40) {
+                sum = sum + num1;
+            }
+            if (num2 > 40) {
+                sum = sum + num2;
+            }
+            if (num3 > 40) {
+                sum = sum + num3;
+            }
+            var sumofvalue = sum;
+
+            document.getElementById("demo").innerHTML = "greater value is " + greatervalue + " sumof value is " + sumofvalue
+
+        }
+       
+
+    </script>
+
+
+    
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
