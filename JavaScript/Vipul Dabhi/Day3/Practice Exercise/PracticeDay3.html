@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+
+    <div>
+        <span title="hello" id="hi" class="hi1 hi2">Hello</span>
+        <span id="bye"> bye </span>
+    </div>
+
+<body>
+
+    <!-- <p id="intro">Finding HTML Elements by Id</p>
+    <p>This example demonstrates the <b>getElementsByTagName</b> method.</p>
+
+    <div id="main">
+        <p>Finding HTML Elements by Tag Name</p>
+        <p>This example demonstrates the <b>getElementsByTagName</b> method.</p>
+    </div>
+
+    <p id="demo"></p>
+
+    <div class="container">
+        <button type="submit" class="btn btn-primary mt-3" onclick="navigate()">Navigate to Other Page</button>
+    </div>
+
+    <div class="container mt-3">
+        <button class="btn btn-secondary btn-sm" onclick="windowresize()">Resize Window</button>
+    </div>
+
+    <div class="container w-25">
+        <button class="btn btn-secondary btn-sm" onclick="windowresize()">Resize Window</button>
+    </div>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <button onclick="goForward()">Go Forward</button>
+
+    <button onclick="goBack()">Go Back 2 Pages</button> -->
+
+
+
+    <script>
+
+        //* JavaScript - HTML DOM Methods 
+
+        // document.getElementById("demo").innerHTML = "Hello World!";
+
+        //* JavaScript HTML DOM Document
+
+        //* JavaScript HTML DOM Elements
+
+        // Finding HTML Element by Id
+
+        // const element = document.getElementById("intro");
+        // document.getElementById("demo").innerHTML =
+        //     "The text from the intro paragraph is: " + element.innerHTML;
+
+        // Finding HTML Elements by Tag Name
+
+        // const element = document.getElementsByTagName("p");
+        // document.getElementById("demo").innerHTML = 'The text in first paragraph (index 0) is:'
+        // + element[1].innerHTML;
+
+        // const x = document.getElementById("main");
+        // const y = x.getElementsByTagName("p");
+        // document.getElementById("demo").innerHTML =
+        //     'The first paragraph (index 0) inside "main" is: ' + y[0].innerHTML;
+
+        // document.getElementById("image").src = "pic_mountain.jpg";
+
+        // document.getElementById("demo").style.color = "red";
+
+
+        // !**! window !**!
+
+        // function navigate(){
+        //     window.location.href = "http://www.google.com";
+        // }
+
+        // function windowresize() {
+        //     var newwin = window.open("", "newwin", "width=600,height=600");
+        //     //   newwin.resizeTo(250,250);
+        // }
+
+
+        // !**! NAVIGATOR !**!
+
+        // function myFunction() {
+        //     var x = "Browser CodeName: " + navigator.appCodeName;
+        //     document.getElementById("demo").innerHTML = x;
+        // }
+
+        // function myFunction() {
+        //     var x = "Browser Name: " + navigator.appName;
+        //     document.getElementById("demo").innerHTML = x;
+        // }
+
+        // function myFunction() {
+        //     var x = "Version info: " + navigator.appVersion;
+        //     document.getElementById("demo").innerHTML = x;
+        // }
+
+        // function myFunction() {
+        //     var x = "Language of the browser: " + navigator.language;
+        //     document.getElementById("demo").innerHTML = x;
+        // }
+
+        // function myFunction() {
+        //     var x = "Is the browser online? " + navigator.onLine;
+        //     document.getElementById("demo").innerHTML = x;
+        // }
+
+        // function myFunction() {
+        //     var x = "Platform: " + navigator.platform;
+        //     document.getElementById("demo").innerHTML = x;
+        // }
+
+        // function myFunction() {
+        //     var x = "Browser's Engine Name: " + navigator.product;
+        //     document.getElementById("demo").innerHTML = x;
+        // }
+
+
+        // !**! HISTORY !**!
+
+        // function navigateback() {
+        //     history.back();
+        // }
+
+        // function goForward() {
+        //     window.history.forward();
+        // }
+
+        // function goBack() {
+        //     window.history.go(-2);
+        // }
+
+        // var x = history.length;
+        // document.getElementById("demo").innerHTML = x;
+
+
+        // DOM
+
+        const body = document.body;
+        // const div = document.createElement("div");
+        // body.append(div);
+
+        // // div.innerText = "hello world";
+        // div.textContent = "hello world2";
+        // console.log(div.innerText);
+        // console.log(div.textContent);
+
+        // const strong = document.createElement("strong");
+        // strong.innerText = "hello world";
+        // div.append(strong)
+        
+        const div = document.querySelector("div");
+        const spanhi = document.querySelector("#hi");
+        const spanbye = document.querySelector("#bye");
+
+        // spanhi.remove('#hi');
+        // div.append(spanhi);
+
+        // console.log(spanhi.getAttribute('title'));
+        // console.log(spanhi.getAttribute('id'));
+        // console.log(spanhi.setAttribute('title','sdshdjshd'))//same
+        // console.log(spanhi.getAttribute('title'));
+        // console.log(spanhi.title = 'aaa');//same
+        // spanhi.removeAttribute('title');
+
+        // spanhi.classList.add("new");
+        // spanhi.classList.remove("new");
+        // spanhi.classList.toggle("new");
+        // spanhi.classList.toggle("new",false);
+        // spanhi.classList.toggle("new",true);
+
+        // spanhi.style.color = "red";
+        // spanhi.style.backgroundColor = "blue";
+
+        
+        
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
