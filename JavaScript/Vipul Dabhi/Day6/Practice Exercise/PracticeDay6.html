@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.0.2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <button class="btn btn-primary" onclick="getData()">GetData</button>
+
+    <input id="id1" type="number" min="100" max="1000" required>
+    <button class="btn btn-primary" onclick="myFunction()">OK</button>
+
+    <p id="demo"></p>
+
+    <button onclick="myFunction()">Go Back </button>
+
+    <button onclick="goForward()">Go Forward</button>
+
+
+
+
+    <script>
+
+        // !**! local & session storage api !**!
+
+        // localStorage.setItem("Name", "Rohan");
+        // localStorage.setItem("Name2", "Mahesh");
+
+        // let name = localStorage.getItem("Name2");
+        // console.log(name);
+
+        // localStorage.clear();
+        // localStorage.removeItem("Name");
+        // localStorage.removeItem("Name2");
+
+        // var names = ["john","mehul","neena"];
+        // localStorage.setItem("arr",JSON.stringify(names));
+
+        // var get = JSON.parse(localStorage.getItem("arr"));
+        // console.log(get);
+
+        // sessionStorage.setItem("sname","hetal");
+        // sessionStorage.setItem("sname2","ramesh");
+        // sessionStorage.clear();
+        // sessionStorage.removeItem("sname")
+
+
+        // !**! Fetch api !**!
+
+        // function getData() {
+
+        //     url = "temp.txt";
+        //     fetch(url).then((response) => {
+        //         return response.text();
+        //     }).then((data) => {
+        //         document.getElementById("demo").innerHTML = data;
+        //     })
+        // }
+
+        // validation api
+
+        // function myFunction() {
+        //     const inpObj = document.getElementById("id1");
+        //     if (!inpObj.checkValidity()) {
+        //         document.getElementById("demo").innerHTML = inpObj.validationMessage;
+        //     } else {
+        //         document.getElementById("demo").innerHTML = "Input OK";
+        //     }
+        // }
+
+        // var x = history.length;
+        // document.getElementById("demo").innerHTML = x;
+
+        // function myFunction() {
+        //     window.history.back();
+        // }
+
+        // function goForward() {
+        //     window.history.forward();
+        // }
+
+
+
+
+
+    </script>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
