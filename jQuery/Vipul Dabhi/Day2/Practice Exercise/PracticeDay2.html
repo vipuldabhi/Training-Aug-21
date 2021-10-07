@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/jquery/jquery-3.6.0.js"></script>
+
+    <title>PracticeDay2</title>
+    <style>
+        .ancestors * {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+
+        .siblings * {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+    <script>
+
+        // jQuery parent() Method
+
+        // $(document).ready(function () {
+        //     $("span").parent().css({ "color": "red", "border": "2px solid red" });
+        // });
+
+        // jQuery parents() Method
+
+        // $(document).ready(function () {
+        //     $("span").parents().css({ "color": "red", "border": "2px solid red" });
+        // });
+
+        // $(document).ready(function () {
+        //     $("span").parents("ul").css({ "color": "red", "border": "2px solid red" });
+        // });
+
+        // jQuery parentsUntil() Method
+
+        // $(document).ready(function () {
+        //     $("span").parentsUntil("div").css({ "color": "red", "border": "2px solid red" });
+        // });;
+
+        // jQuery children() Method
+
+        // $(document).ready(function () {
+        //     $("div").children().css({ "color": "red", "border": "2px solid red" });
+        // });
+
+        // $(document).ready(function () {
+        //     $("div").children("p.first").css({ "color": "red", "border": "2px solid red" });
+        // });
+
+        // jQuery find() Method
+
+        // $(document).ready(function () {
+        //     $("div").find("span").css({ "color": "red", "border": "2px solid red" });
+        // });
+
+        // $(document).ready(function () {
+        //     $("div").find("*").css({ "color": "red", "border": "2px solid red" });
+        // });
+
+        // !**! jQuery siblings() Method
+
+        // $(document).ready(function () {
+        //     $("h2").siblings().css({ "color": "red", "border": "2px solid red" });
+        // });
+
+        // $(document).ready(function () {
+        //     $("h2").siblings("p").css({ "color": "red", "border": "2px solid red" });
+        // });
+
+        // jQuery next() Method
+
+        // $(document).ready(function () {
+        //     $("h2").next().css({ "color": "red", "border": "2px solid red" });
+        // });
+
+        // $(document).ready(function () {
+        //     $("h2").nextAll().css({ "color": "red", "border": "2px solid red" });
+        // });
+
+        // $(document).ready(function () {
+        //     $("h2").nextUntil("h6").css({ "color": "red", "border": "2px solid red" });
+        // });
+
+        // jQuery Traversing - Filtering
+
+        // first()
+
+        // $(document).ready(function () {
+        //     $("div").first().css("background-color", "yellow");
+        // });
+
+        // last()
+
+        // $(document).ready(function () {
+        //     $("div").last().css("background-color", "yellow");
+        // });
+
+        // eq()
+
+        // $(document).ready(function () {
+        //     $("p").eq(1).css("background-color", "yellow");
+        // });
+
+        // filter()
+
+        // $(document).ready(function () {
+        //     $("p").filter(".first").css("background-color", "yellow");
+        // });
+
+        // not()
+
+        // $(document).ready(function () {
+        //     $("p").not(".first").css("background-color", "yellow");
+        // });
+
+
+
+        // jQuery - AJAX
+
+
+        // load()
+
+        // $(document).ready(function () {
+        //     $("button").click(function () {
+        //         $("#div1").load("demo_test.txt");
+        //     });
+        // });
+
+        // $(document).ready(function () {
+        //     $("button").click(function () {
+        //         $("#div1").load("demo_tst.txt", function (responseTxt, statusTxt, xhr) {
+        //             if (statusTxt == "success")
+        //                 alert("External content loaded successfully!");
+        //             if (statusTxt == "error")
+        //                 alert("Error: " + xhr.status + ": " + xhr.statusText);
+        //         });
+        //     });
+        // });
+
+        // jQuery $.get() Method
+
+        // $(document).ready(function () {
+        //     $("button").click(function () {
+        //         $.get("demo_test.asp", function (data, status) {
+        //             alert("Data: " + data + "\nStatus: " + status);
+        //         });
+        //     });
+        // });
+
+        // jQuery $.post() Method
+
+        // $(document).ready(function () {
+        //     $("button").click(function () {
+        //         $.post("demo_test_post.asp",
+        //             {
+        //                 name: "Donald Duck",
+        //                 city: "Duckburg"
+
+        //             },
+        //             function (data, status) {
+        //                 alert("Data: " + data + "\nStatus: " + status);
+        //             });
+        //     });
+        // });
+
+        // getJSON
+
+        // $(document).ready(function () {
+        //     $("button").click(function () {
+        //         $.getJSON("demo_ajax_json.js", function (result) {
+        //             $.each(result, function (i, field) {
+        //                 $("div").append(field + " ");
+        //             });
+        //         });
+        //     });
+        // });
+
+        // getScript() 
+
+        // $(document).ready(function () {
+        //     $("button").click(function () {
+        //         $.getScript("demo_ajax_script.js");
+        //     });
+        // });
+
+    </script>
+</head>
+
+<body>
+    <div class="ancestors">
+        <div style="width:500px;">div (great-grandparent)
+            <p class="first">para</p>
+            <ul>ul (grandparent)
+                <li>li (direct parent)
+                    <span>span</span>
+                </li>
+            </ul>
+        </div>
+
+        <div style="width:500px;">div (grandparent)
+            <p>p (direct parent)
+                <span>span</span>
+            </p>
+        </div>
+    </div>
+    <div class="siblings">
+        <div>div (parent)
+            <p>p</p>
+            <span>span</span>
+            <h2>h2</h2>
+            <h3>h3</h3>
+            <p>p</p>
+        </div>
+    </div>
+</body>
+
+<div id="div1">
+    <h2>Let jQuery AJAX Change This Text</h2>
+</div>
+
+<button>Get External Content</button>
+
+</html>
