@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../style.css" type="text/css">
+    <title>Document</title>
+    <style>
+        #container1 {
+            display: grid;
+            height: 100vh;
+            grid-template-columns: 0.2fr 0.8fr;
+            grid-template-rows: 0.2fr 0.6fr 0.2fr;
+            grid-template-areas:
+                "nav nav"
+                "sidebar main"
+                "sidebar footer";
+            grid-gap: 0.2rem;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: center;
+        }
+
+        #container1 #nav1 {
+            background-color: cyan;
+            grid-area: nav;
+        }
+
+        #container1 #main1 {
+            background-color: rgb(155, 238, 238);
+            grid-area: main;
+        }
+
+        #container1 #sidebar1 {
+            background-color: rgb(179, 219, 219);
+            grid-area: sidebar;
+        }
+
+        #footer1 {
+            background-color: rgb(72, 105, 105);
+            grid-area: footer;
+        }
+
+        #container1 .li {
+            display: inline-block;
+            padding-left: 20px;
+            font-size: 20px;
+        }
+
+        @media (max-width:500px) {
+            #container {
+                grid-template-columns: 1fr;
+                grid-template-rows: 0.2fr 0.2fr 0.4fr 0.2fr;
+                grid-template-areas:
+                    "nav"
+                    "sidebar"
+                    "main"
+                    "footer";
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <nav>
+            <div><a href="../../../index.html">Home</a></div>
+            <div><a href="../../../HTML/HTML.html">HTML</a></div>
+            <div><a href="../../CSS.html">CSS</a></div>
+        </nav>
+        <main>
+
+            <!-- Create Responsive Layout with Navigation. Image will be shared through redmine. -->
+
+            <div id="container">
+                <nav id="nav">
+                    <ul type="none">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">AboutUS</a></li>
+                        <li><a href="#">ContactUs</a></li>
+                    </ul>
+                </nav>
+                <main id="main">main</main>
+                <div id="sidebar">sidebar</div>
+                <footer id="footer">footer</footer>
+            </div>
+        </main>
+        <div id="sidebar">
+            <ul>
+                <li>Day1
+                    <ul type="circle">
+                        <li>Assignment Work
+                            <ul>
+                                <li><a href="../../Day1/Assignment Work/AssignmentDay1.html">Assignment</a></li>
+                            </ul>
+                        </li>
+                        <li>Practice Exercise
+                            <ul>
+                                <li><a href="../../Day1/Practice Exercise/PracticeDay1.html">PracticeExercise</a></li>
+                                <li><a href="../../Day1/Practice Exercise/Exercise1.html" targer="_main">Exercise1</a>
+                                </li>
+                                <li><a href="../../Day1/Practice Exercise/Exercise2.html">Exercise2</a></li>
+                                <li><a href="../../Day1/Practice Exercise/Exercise3.html">Exercise3</a></li>
+                                <li><a href="../../Day1/Practice Exercise/Exercise4.html">Exercise4</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Day2
+                    <ul>
+                        <li>Assignment Work
+                            <ul>
+                                <li><a href="../../Day2/Assignment Work/AssignmentDay2.html">Assignment</a></li>
+                            </ul>
+                        </li>
+                        <li>Practice Exercise
+                            <ul>
+                                <li><a
+                                        href="../../Day2/Practice Exercise/CSSFloatProperties.html">CSSFloatProperties</a>
+                                </li>
+                                <li><a
+                                        href="../../Day2/Practice Exercise/CSSPositionProperties.html">CSSPositionProperties</a>
+                                </li>
+                                <li><a
+                                        href="../../Day2/Practice Exercise/CSSOverflowProperties.html">CSSOverflowProperties</a>
+                                </li>
+                                <li><a href="../../Day2/Practice Exercise/Exercise1.html">Exercise1</a></li>
+                                <li><a href="../../Day2/Practice Exercise/Exercise2.html">Exercise2</a></li>
+                                <li><a href="../../Day2/Practice Exercise/Exercise3.html">Exercise3</a></li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Day3
+                    <ul>
+                        <li>Assignment Work
+                            <ul>
+                                <li><a href="../../Day3/Assignment Work/AssignmentDay3.html">Assignment</a></li>
+                            </ul>
+                        </li>
+                        <li>Practice Exercise
+                            <ul>
+                                <li><a href="../../Day3/Practice Exercise/CSSBoxModel.html">CSSBoxModel</a></li>
+                                <li><a href="../../Day3/Practice Exercise/CSSFlexItems.html">CSSFlexItems</a></li>
+                                <li><a href="../../Day3/Practice Exercise/CSSFlexModel.html">CSSFlexModel</a></li>
+                                <li><a href="../../Day3/Practice Exercise/ImageGallery.html">ImageGallery</a></li>
+                                <li><a href="../../Day3/Practice Exercise/Exercise1to4.html">Exercise1to4</a></li>
+                                <li><a href="../../Day3/Practice Exercise/Exercise5.html">Exercise5</a></li>
+                                <li><a href="../../Day3/Practice Exercise/Exercise6.html">Exercise6</a></li>
+                                <li><a href="../../Day3/Practice Exercise/Exercise7.html">Exercise7</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Day4
+                    <ul>
+                        <li>Assignment Work
+                            <ul>
+                                <li><a href="../../Day4/Assignment Work/Query1.html">Assignment</a></li>
+                            </ul>
+                        </li>
+                        <li>Practice Exercise
+                            <ul>
+                                <li><a href="../../Day4/Practice Exercise/CSSMediaQueries.html">CSSMediaQueries</a></li>
+                                <li><a href="../../Day4/Practice Exercise/CSSGridLayout.html">CSSGridLayout</a></li>
+                                <li><a href="../../Day4/Practice Exercise/Exercise1.html">Exercise1</a></li>
+                                <li><a href="../../Day4/Practice Exercise/Exercise2.html">Exercise2</a></li>
+                                <li><a href="../../Day4/Practice Exercise/Exercise3.html">Exercise3</a></li>
+                                <li><a href="../../Day4/Practice Exercise/Exercise4.html">Exercise4</a></li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <footer>
+            <p>Copyright@ AllRightReserved</p>
+        </footer>
+
+    </div>
+</body>
+
+</html>
