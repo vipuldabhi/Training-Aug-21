@@ -66,6 +66,53 @@
                 $(".sunday").append($("<tr></tr>")
                     .append($("<td></td>").text(i)).append($("<td></td>").text(result)));
             });
+
+
+            // DINNER MENU
+
+           
+            var mondaymenudinner = JSON.parse(localStorage.getItem("mondaymenudinner"));
+            $.each(mondaymenudinner, function (i, result) {
+                // console.log(result)
+                $(".mondaydinner").append($("<tr></tr>")
+                    .append($("<td></td>").text(i)).append($("<td></td>").text(result)));
+            });
+            var tuesdaymenudinner = JSON.parse(localStorage.getItem("tuesdaymenudinner"));
+            $.each(tuesdaymenudinner, function (i, result) {
+                // console.log(result)
+                $(".tuesdaydinner").append($("<tr></tr>")
+                    .append($("<td></td>").text(i)).append($("<td></td>").text(result)));
+            });
+            var wednesdaymenudinner = JSON.parse(localStorage.getItem("wednesdaymenudinner"));
+            $.each(wednesdaymenudinner, function (i, result) {
+                // console.log(result)
+                $(".wednesdaydinner").append($("<tr></tr>")
+                    .append($("<td></td>").text(i)).append($("<td></td>").text(result)));
+            });
+            var thursdaymenudinner = JSON.parse(localStorage.getItem("thursdaymenudinner"));
+            $.each(thursdaymenudinner, function (i, result) {
+                // console.log(result)
+                $(".thursdaydinner").append($("<tr></tr>")
+                    .append($("<td></td>").text(i)).append($("<td></td>").text(result)));
+            });
+            var fridaymenudinner = JSON.parse(localStorage.getItem("fridaymenudinner"));
+            $.each(fridaymenudinner, function (i, result) {
+                // console.log(result)
+                $(".fridaydinner").append($("<tr></tr>")
+                    .append($("<td></td>").text(i)).append($("<td></td>").text(result)));
+            });
+            var saturdaymenudinner = JSON.parse(localStorage.getItem("saturdaymenudinner"));
+            $.each(saturdaymenudinner, function (i, result) {
+                // console.log(result)
+                $(".saturdaydinner").append($("<tr></tr>")
+                    .append($("<td></td>").text(i)).append($("<td></td>").text(result)));
+            });
+            var sundaymenudinner = JSON.parse(localStorage.getItem("sundaymenudinner"));
+            $.each(sundaymenudinner, function (i, result) {
+                // console.log(result)
+                $(".sundaydinner").append($("<tr></tr>")
+                    .append($("<td></td>").text(i)).append($("<td></td>").text(result)));
+            });
         });
 
     </script>
@@ -297,7 +344,7 @@
                                             <td>Monday</td>
                                         </tr>
                                     </thead>
-                                    <tbody class="monday">
+                                    <tbody class="mondaydinner">
 
                                     </tbody>
                                 </table>
@@ -318,7 +365,7 @@
                                             <td>Tuesday</td>
                                         </tr>
                                     </thead>
-                                    <tbody class="tuesday">
+                                    <tbody class="tuesdaydinner">
 
                                     </tbody>
                                 </table>
@@ -339,7 +386,7 @@
                                             <td>Wednesday</td>
                                         </tr>
                                     </thead>
-                                    <tbody class="wednesday">
+                                    <tbody class="wednesdaydinner">
 
                                     </tbody>
                                 </table>
@@ -360,7 +407,7 @@
                                             <td>Thursday</td>
                                         </tr>
                                     </thead>
-                                    <tbody class="thursday">
+                                    <tbody class="thursdaydinner">
 
                                     </tbody>
                                 </table>
@@ -381,7 +428,7 @@
                                             <td>Friday</td>
                                         </tr>
                                     </thead>
-                                    <tbody class="friday">
+                                    <tbody class="fridaydinner">
 
                                     </tbody>
                                 </table>
@@ -402,7 +449,7 @@
                                             <td>Saturday</td>
                                         </tr>
                                     </thead>
-                                    <tbody class="saturday">
+                                    <tbody class="saturdaydinner">
 
                                     </tbody>
                                 </table>
@@ -423,7 +470,7 @@
                                             <td>Sunday</td>
                                         </tr>
                                     </thead>
-                                    <tbody class="sunday">
+                                    <tbody class="sundaydinner">
 
                                     </tbody>
                                 </table>
