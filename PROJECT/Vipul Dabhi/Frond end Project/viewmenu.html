@@ -18,101 +18,272 @@
             text-align: center;
             font-size: x-large;
         }
+
+        #mondaymenudivlunch,
+        #mondaymenudivdinner {
+            display: none;
+        }
+
+        #tuesdaymenudivlunch,
+        #tuesdaymenudivdinner {
+            display: none;
+        }
+
+        #wednesdaymenudivlunch,
+        #wednesdaymenudivdinner {
+            display: none;
+        }
+
+        #thursdaymenudivlunch,
+        #thursdaymenudivdinner {
+            display: none;
+        }
+
+        #fridaymenudivlunch,
+        #fridaymenudivdinner {
+            display: none;
+        }
+
+        #saturdaymenudivlunch,
+        #saturdaymenudivdinner {
+            display: none;
+        }
+
+        #sundaymenudivlunch,
+        #sundaymenudivdinner {
+            display: none;
+        }
     </style>
 
     <script>
 
         $(document).ready(function () {
 
+            // LUNCH MENU
+
             var mondaymenu = JSON.parse(localStorage.getItem("mondaymenu"));
             $.each(mondaymenu, function (i, result) {
                 // console.log(result)
                 $(".monday").append($("<tr></tr>")
-                    .append($("<td></td>").text(i)).append($("<td></td>").text(result)));
+                    .append($("<td></td>").text(i + 1)).append($("<td></td>").text(result)));
             });
             var tuesdaymenu = JSON.parse(localStorage.getItem("tuesdaymenu"));
             $.each(tuesdaymenu, function (i, result) {
                 // console.log(result)
                 $(".tuesday").append($("<tr></tr>")
-                    .append($("<td></td>").text(i)).append($("<td></td>").text(result)));
+                    .append($("<td></td>").text(i + 1)).append($("<td></td>").text(result)));
             });
             var wednesdaymenu = JSON.parse(localStorage.getItem("wednesdaymenu"));
             $.each(wednesdaymenu, function (i, result) {
                 // console.log(result)
                 $(".wednesday").append($("<tr></tr>")
-                    .append($("<td></td>").text(i)).append($("<td></td>").text(result)));
+                    .append($("<td></td>").text(i + 1)).append($("<td></td>").text(result)));
             });
             var thursdaymenu = JSON.parse(localStorage.getItem("thursdaymenu"));
             $.each(thursdaymenu, function (i, result) {
                 // console.log(result)
                 $(".thursday").append($("<tr></tr>")
-                    .append($("<td></td>").text(i)).append($("<td></td>").text(result)));
+                    .append($("<td></td>").text(i + 1)).append($("<td></td>").text(result)));
             });
             var fridaymenu = JSON.parse(localStorage.getItem("fridaymenu"));
             $.each(fridaymenu, function (i, result) {
                 // console.log(result)
                 $(".friday").append($("<tr></tr>")
-                    .append($("<td></td>").text(i)).append($("<td></td>").text(result)));
+                    .append($("<td></td>").text(i + 1)).append($("<td></td>").text(result)));
             });
             var saturdaymenu = JSON.parse(localStorage.getItem("saturdaymenu"));
             $.each(saturdaymenu, function (i, result) {
                 // console.log(result)
                 $(".saturday").append($("<tr></tr>")
-                    .append($("<td></td>").text(i)).append($("<td></td>").text(result)));
+                    .append($("<td></td>").text(i + 1)).append($("<td></td>").text(result)));
             });
             var sundaymenu = JSON.parse(localStorage.getItem("sundaymenu"));
             $.each(sundaymenu, function (i, result) {
                 // console.log(result)
                 $(".sunday").append($("<tr></tr>")
-                    .append($("<td></td>").text(i)).append($("<td></td>").text(result)));
+                    .append($("<td></td>").text(i + 1)).append($("<td></td>").text(result)));
+            });
+
+
+
+            $(".mondaylunchmenushow").click(function () {
+                $("#mondaymenudivlunch").css("display", "flex");
+                $("#tuesdaymenudivlunch").css("display", "none");
+                $("#wednesdaymenudivlunch").css("display", "none");
+                $("#thursdaymenudivlunch").css("display", "none");
+                $("#fridaymenudivlunch").css("display", "none");
+                $("#saturdaymenudivlunch").css("display", "none");
+                $("#sundaymenudivlunch").css("display", "none");
+            });
+            $(".tuesdaylunchmenushow").click(function () {
+                $("#mondaymenudivlunch").css("display", "none");
+                $("#tuesdaymenudivlunch").css("display", "flex");
+                $("#wednesdaymenudivlunch").css("display", "none");
+                $("#thursdaymenudivlunch").css("display", "none");
+                $("#fridaymenudivlunch").css("display", "none");
+                $("#saturdaymenudivlunch").css("display", "none");
+                $("#sundaymenudivlunch").css("display", "none");
+            });
+            $(".wednesdaylunchmenushow").click(function () {
+                $("#mondaymenudivlunch").css("display", "none");
+                $("#tuesdaymenudivlunch").css("display", "none");
+                $("#wednesdaymenudivlunch").css("display", "flex");
+                $("#thursdaymenudivlunch").css("display", "none");
+                $("#fridaymenudivlunch").css("display", "none");
+                $("#saturdaymenudivlunch").css("display", "none");
+                $("#sundaymenudivlunch").css("display", "none");
+            });
+            $(".thursdaylunchmenushow").click(function () {
+                $("#mondaymenudivlunch").css("display", "none");
+                $("#tuesdaymenudivlunch").css("display", "none");
+                $("#wednesdaymenudivlunch").css("display", "none");
+                $("#thursdaymenudivlunch").css("display", "flex");
+                $("#fridaymenudivlunch").css("display", "none");
+                $("#saturdaymenudivlunch").css("display", "none");
+                $("#sundaymenudivlunch").css("display", "none");
+            });
+            $(".fridaylunchmenushow").click(function () {
+                $("#mondaymenudivlunch").css("display", "none");
+                $("#tuesdaymenudivlunch").css("display", "none");
+                $("#wednesdaymenudivlunch").css("display", "none");
+                $("#thursdaymenudivlunch").css("display", "none");
+                $("#fridaymenudivlunch").css("display", "flex");
+                $("#saturdaymenudivlunch").css("display", "none");
+                $("#sundaymenudivlunch").css("display", "none");
+            });
+            $(".saturdaylunchmenushow").click(function () {
+                $("#mondaymenudivlunch").css("display", "none");
+                $("#tuesdaymenudivlunch").css("display", "none");
+                $("#wednesdaymenudivlunch").css("display", "none");
+                $("#thursdaymenudivlunch").css("display", "none");
+                $("#fridaymenudivlunch").css("display", "none");
+                $("#saturdaymenudivlunch").css("display", "flex");
+                $("#sundaymenudivlunch").css("display", "none");
+            });
+            $(".sundaylunchmenushow").click(function () {
+                $("#mondaymenudivlunch").css("display", "none");
+                $("#tuesdaymenudivlunch").css("display", "none");
+                $("#wednesdaymenudivlunch").css("display", "none");
+                $("#thursdaymenudivlunch").css("display", "none");
+                $("#fridaymenudivlunch").css("display", "none");
+                $("#saturdaymenudivlunch").css("display", "none");
+                $("#sundaymenudivlunch").css("display", "flex");
             });
 
 
             // DINNER MENU
 
-           
+
             var mondaymenudinner = JSON.parse(localStorage.getItem("mondaymenudinner"));
             $.each(mondaymenudinner, function (i, result) {
                 // console.log(result)
                 $(".mondaydinner").append($("<tr></tr>")
-                    .append($("<td></td>").text(i)).append($("<td></td>").text(result)));
+                    .append($("<td></td>").text(i + 1)).append($("<td></td>").text(result)));
             });
             var tuesdaymenudinner = JSON.parse(localStorage.getItem("tuesdaymenudinner"));
             $.each(tuesdaymenudinner, function (i, result) {
                 // console.log(result)
                 $(".tuesdaydinner").append($("<tr></tr>")
-                    .append($("<td></td>").text(i)).append($("<td></td>").text(result)));
+                    .append($("<td></td>").text(i + 1)).append($("<td></td>").text(result)));
             });
             var wednesdaymenudinner = JSON.parse(localStorage.getItem("wednesdaymenudinner"));
             $.each(wednesdaymenudinner, function (i, result) {
                 // console.log(result)
                 $(".wednesdaydinner").append($("<tr></tr>")
-                    .append($("<td></td>").text(i)).append($("<td></td>").text(result)));
+                    .append($("<td></td>").text(i + 1)).append($("<td></td>").text(result)));
             });
             var thursdaymenudinner = JSON.parse(localStorage.getItem("thursdaymenudinner"));
             $.each(thursdaymenudinner, function (i, result) {
                 // console.log(result)
                 $(".thursdaydinner").append($("<tr></tr>")
-                    .append($("<td></td>").text(i)).append($("<td></td>").text(result)));
+                    .append($("<td></td>").text(i + 1)).append($("<td></td>").text(result)));
             });
             var fridaymenudinner = JSON.parse(localStorage.getItem("fridaymenudinner"));
             $.each(fridaymenudinner, function (i, result) {
                 // console.log(result)
                 $(".fridaydinner").append($("<tr></tr>")
-                    .append($("<td></td>").text(i)).append($("<td></td>").text(result)));
+                    .append($("<td></td>").text(i + 1)).append($("<td></td>").text(result)));
             });
             var saturdaymenudinner = JSON.parse(localStorage.getItem("saturdaymenudinner"));
             $.each(saturdaymenudinner, function (i, result) {
                 // console.log(result)
                 $(".saturdaydinner").append($("<tr></tr>")
-                    .append($("<td></td>").text(i)).append($("<td></td>").text(result)));
+                    .append($("<td></td>").text(i + 1)).append($("<td></td>").text(result)));
             });
             var sundaymenudinner = JSON.parse(localStorage.getItem("sundaymenudinner"));
             $.each(sundaymenudinner, function (i, result) {
                 // console.log(result)
                 $(".sundaydinner").append($("<tr></tr>")
-                    .append($("<td></td>").text(i)).append($("<td></td>").text(result)));
+                    .append($("<td></td>").text(i + 1 + 1)).append($("<td></td>").text(result)));
             });
+
+
+
+            $(".mondaydinnermenushow").click(function () {
+                $("#mondaymenudivdinner").css("display", "flex");
+                $("#tuesdaymenudivdinner").css("display", "none");
+                $("#wednesdaymenudivdinner").css("display", "none");
+                $("#thursdaymenudivdinner").css("display", "none");
+                $("#fridaymenudivdinner").css("display", "none");
+                $("#saturdaymenudivdinner").css("display", "none");
+                $("#sundaymenudivdinner").css("display", "none");
+            });
+            $(".tuesdaydinnermenushow").click(function () {
+                $("#mondaymenudivdinner").css("display", "none");
+                $("#tuesdaymenudivdinner").css("display", "flex");
+                $("#wednesdaymenudivdinner").css("display", "none");
+                $("#thursdaymenudivdinner").css("display", "none");
+                $("#fridaymenudivdinner").css("display", "none");
+                $("#saturdaymenudivdinner").css("display", "none");
+                $("#sundaymenudivdinner").css("display", "none");
+            });
+            $(".wednesdaydinnermenushow").click(function () {
+                $("#mondaymenudivdinner").css("display", "none");
+                $("#tuesdaymenudivdinner").css("display", "none");
+                $("#wednesdaymenudivdinner").css("display", "flex");
+                $("#thursdaymenudivdinner").css("display", "none");
+                $("#fridaymenudivdinner").css("display", "none");
+                $("#saturdaymenudivdinner").css("display", "none");
+                $("#sundaymenudivdinner").css("display", "none");
+            });
+            $(".thursdaydinnermenushow").click(function () {
+                $("#mondaymenudivdinner").css("display", "none");
+                $("#tuesdaymenudivdinner").css("display", "none");
+                $("#wednesdaymenudivdinner").css("display", "none");
+                $("#thursdaymenudivdinner").css("display", "flex");
+                $("#fridaymenudivdinner").css("display", "none");
+                $("#saturdaymenudivdinner").css("display", "none");
+                $("#sundaymenudivdinner").css("display", "none");
+            });
+            $(".fridaydinnermenushow").click(function () {
+                $("#mondaymenudivdinner").css("display", "none");
+                $("#tuesdaymenudivdinner").css("display", "none");
+                $("#wednesdaymenudivdinner").css("display", "none");
+                $("#thursdaymenudivdinner").css("display", "none");
+                $("#fridaymenudivdinner").css("display", "flex");
+                $("#saturdaymenudivdinner").css("display", "none");
+                $("#sundaymenudivdinner").css("display", "none");
+            });
+            $(".saturdaydinnermenushow").click(function () {
+                $("#mondaymenudivdinner").css("display", "none");
+                $("#tuesdaymenudivdinner").css("display", "none");
+                $("#wednesdaymenudivdinner").css("display", "none");
+                $("#thursdaymenudivdinner").css("display", "none");
+                $("#fridaymenudivdinner").css("display", "none");
+                $("#saturdaymenudivdinner").css("display", "flex");
+                $("#sundaymenudivdinner").css("display", "none");
+            });
+            $(".sundaydinnermenushow").click(function () {
+                $("#mondaymenudivdinner").css("display", "none");
+                $("#tuesdaymenudivdinner").css("display", "none");
+                $("#wednesdaymenudivdinner").css("display", "none");
+                $("#thursdaymenudivdinner").css("display", "none");
+                $("#fridaymenudivdinner").css("display", "none");
+                $("#saturdaymenudivdinner").css("display", "none");
+                $("#sundaymenudivdinner").css("display", "flex");
+            });
+
+
         });
 
     </script>
@@ -151,336 +322,359 @@
 
     <section>
 
-        <div class="container d-flex" style="background-image:url(./Assets/13.jpg); background-attachment:fixed;">
+        <div id="abc" class="container" style="background-image:url(./Assets/13.jpg); background-attachment:fixed;">
 
             <!-- <div class="row"> -->
-                <!-- LUNCH MENU START -->
+            <!-- LUNCH MENU START -->
 
 
-                <div id="Menu" class="">
+            <div id="Menu" class="">
+
+
+                <div id="lunchmenubutton" class="text-center">
                     <div class="text-center mt-3">
                         <p class="display-5">Lunch-Menu</p>
                         <hr class="w-50 mx-auto mb-3" />
                     </div>
-
-
-                    <!-- MONDAY -->
-                    <div id="mondaymenudivlunch">
-                        <div class="card text-center w-75 mx-auto mb-5 col d-flex justify-content-center">
-                            <div class="card-header">
-                                Monday
-                            </div>
-                            <div class="card-body table-responsive">
-                                <table class="table table-primary table-hover text-center mb-5">
-                                    <thead>
-                                        <tr>
-                                            <td>Index</td>
-                                            <td>Monday</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="monday">
-
-                                    </tbody>
-                                </table>
-                            </div>
+                    <button class="mondaylunchmenushow btn btn-outline-dark mx-auto">Monday</button>
+                    <button class="tuesdaylunchmenushow btn btn-outline-dark mx-auto">Tuesday</button>
+                    <button class="wednesdaylunchmenushow btn btn-outline-dark mx-auto">Wednesday</button>
+                    <button class="thursdaylunchmenushow btn btn-outline-dark mx-auto">Thursday</button>
+                    <button class="fridaylunchmenushow btn btn-outline-dark mx-auto">Friday</button>
+                    <button class="saturdaylunchmenushow btn btn-outline-dark mx-auto">Saturday</button>
+                    <button class="sundaylunchmenushow btn btn-outline-dark mx-auto">Sunday</button>
+                    <hr class="w-50 mx-auto mb-3" />
+                </div>
+                <!-- MONDAY -->
+                <div id="mondaymenudivlunch">
+                    <div class="card text-center w-75 mx-auto mb-5 col d-flex justify-content-center">
+                        <div class="card-header">
+                            Monday
                         </div>
-                    </div>
-                    <!-- TUESDAY -->
-                    <div id="tuesdaymenudivlunch">
-                        <div class="card text-center w-75 mx-auto mb-5 col d-flex justify-content-center">
-                            <div class="card-header">
-                                Tuesday
-                            </div>
-                            <div class="card-body table-responsive">
-                                <table class="table table-secondary table-hover text-center mb-5">
-                                    <thead>
-                                        <tr>
-                                            <td>Index</td>
-                                            <td>Tuesday</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="tuesday">
+                        <div class="card-body table-responsive">
+                            <table class="table table-hover text-center mb-5">
+                                <thead>
+                                    <tr>
+                                        <td>Item-No</td>
+                                        <td>Items</td>
+                                    </tr>
+                                </thead>
+                                <tbody class="monday">
 
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- WEDNESDAY -->
-                    <div id="wednesdaymenudivlunch">
-                        <div class="card text-center w-75 mx-auto mb-5 col d-flex justify-content-center">
-                            <div class="card-header">
-                                Wednesday
-                            </div>
-                            <div class="card-body table-responsive">
-                                <table class="table table-info table-hover text-center mb-5">
-                                    <thead>
-                                        <tr>
-                                            <td>Index</td>
-                                            <td>Wednesday</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="wednesday">
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- THURSDAY -->
-                    <div id="thursdaymenudivlunch">
-                        <div class="card text-center w-75 mx-auto mb-5 col d-flex justify-content-center">
-                            <div class="card-header">
-                                Thursday
-                            </div>
-                            <div class="card-body table-responsive">
-                                <table class="table table-warning table-hover text-center mb-5">
-                                    <thead>
-                                        <tr>
-                                            <td>Index</td>
-                                            <td>Thursday</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="thursday">
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- FRIDAY -->
-                    <div id="fridaymenudivlunch">
-                        <div class="card text-center w-75 mx-auto mb-5 col d-flex justify-content-center">
-                            <div class="card-header">
-                                Friday
-                            </div>
-                            <div class="card-body table-responsive">
-                                <table class="table table-danger table-hover text-center mb-5">
-                                    <thead>
-                                        <tr>
-                                            <td>Index</td>
-                                            <td>Friday</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="friday">
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- SATURDAY -->
-                    <div id="saturdaymenudivlunch">
-                        <div class="card text-center w-75 mx-auto mb-5 col d-flex justify-content-center">
-                            <div class="card-header">
-                                Saturday
-                            </div>
-                            <div class="card-body table-responsive">
-                                <table class="table table-light table-hover text-center mb-5">
-                                    <thead>
-                                        <tr>
-                                            <td>Index</td>
-                                            <td>Saturday</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="saturday">
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- SUNDAY -->
-                    <div id="sundaymenudivlunch">
-                        <div class="card text-center w-75 mx-auto mb-5 col d-flex justify-content-center">
-                            <div class="card-header">
-                                Sunday
-                            </div>
-                            <div class="card-body table-responsive">
-                                <table class="table table-dark table-hover text-center mb-5">
-                                    <thead>
-                                        <tr>
-                                            <td>Index</td>
-                                            <td>Sunday</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="sunday">
-
-                                    </tbody>
-                                </table>
-                            </div>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
+                <!-- TUESDAY -->
+                <div id="tuesdaymenudivlunch">
+                    <div class="card text-center w-75 mx-auto mb-5 col d-flex justify-content-center">
+                        <div class="card-header">
+                            Tuesday
+                        </div>
+                        <div class="card-body table-responsive">
+                            <table class="table table-hover text-center mb-5">
+                                <thead>
+                                    <tr>
+                                        <td>Item-No</td>
+                                        <td>Items</td>
+                                    </tr>
+                                </thead>
+                                <tbody class="tuesday">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- WEDNESDAY -->
+                <div id="wednesdaymenudivlunch">
+                    <div class="card text-center w-75 mx-auto mb-5 col d-flex justify-content-center">
+                        <div class="card-header">
+                            Wednesday
+                        </div>
+                        <div class="card-body table-responsive">
+                            <table class="table table-hover text-center mb-5">
+                                <thead>
+                                    <tr>
+                                        <td>Item-No</td>
+                                        <td>Items</td>
+                                    </tr>
+                                </thead>
+                                <tbody class="wednesday">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- THURSDAY -->
+                <div id="thursdaymenudivlunch">
+                    <div class="card text-center w-75 mx-auto mb-5 col d-flex justify-content-center">
+                        <div class="card-header">
+                            Thursday
+                        </div>
+                        <div class="card-body table-responsive">
+                            <table class="table table-hover text-center mb-5">
+                                <thead>
+                                    <tr>
+                                        <td>Item-No</td>
+                                        <td>Items</td>
+                                    </tr>
+                                </thead>
+                                <tbody class="thursday">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- FRIDAY -->
+                <div id="fridaymenudivlunch">
+                    <div class="card text-center w-75 mx-auto mb-5 col d-flex justify-content-center">
+                        <div class="card-header">
+                            Friday
+                        </div>
+                        <div class="card-body table-responsive">
+                            <table class="table table-hover text-center mb-5">
+                                <thead>
+                                    <tr>
+                                        <td>Item-No</td>
+                                        <td>Items</td>
+                                    </tr>
+                                </thead>
+                                <tbody class="friday">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- SATURDAY -->
+                <div id="saturdaymenudivlunch">
+                    <div class="card text-center w-75 mx-auto mb-5 col d-flex justify-content-center">
+                        <div class="card-header">
+                            Saturday
+                        </div>
+                        <div class="card-body table-responsive">
+                            <table class="table table-hover text-center mb-5">
+                                <thead>
+                                    <tr>
+                                        <td>Item-No</td>
+                                        <td>Items</td>
+                                    </tr>
+                                </thead>
+                                <tbody class="saturday">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- SUNDAY -->
+                <div id="sundaymenudivlunch">
+                    <div class="card text-center w-75 mx-auto mb-5 col d-flex justify-content-center">
+                        <div class="card-header">
+                            Sunday
+                        </div>
+                        <div class="card-body table-responsive">
+                            <table class="table table-hover text-center mb-5">
+                                <thead>
+                                    <tr>
+                                        <td>Item-No</td>
+                                        <td>Items</td>
+                                    </tr>
+                                </thead>
+                                <tbody class="sunday">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- LUNCH MENU END -->
 
 
 
-                <!-- LUNCH MENU END -->
+        <!-- DINNEItem-NoU -->
+
+        <div id="abc" class="container" style="background-image:url(./Assets/13.jpg); background-attachment:fixed;">
+
+            <div id="Menu" class="">
 
 
-
-                <!-- DINNER MENU -->
-
-
-
-                <div id="Menu" class="">
+                <div id="dinnermenubutton" class="text-center">
                     <div class="text-center mt-3">
                         <p class="display-5">Dinner-Menu</p>
-                        <hr class="w-50 mx-auto mb-3" />
+                        <hr class="w-50 mx-auto mb-5" />
                     </div>
-
-
-                    <!-- MONDAY -->
-                    <div id="mondaymenudivlunch">
-                        <div class="card text-center w-75 mx-auto mb-5 col d-flex justify-content-center">
-                            <div class="card-header">
-                                Monday
-                            </div>
-                            <div class="card-body table-responsive">
-                                <table class="table table-primary table-hover text-center mb-5">
-                                    <thead>
-                                        <tr>
-                                            <td>Index</td>
-                                            <td>Monday</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="mondaydinner">
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- TUESDAY -->
-                    <div id="tuesdaymenudivlunch">
-                        <div class="card text-center w-75 mx-auto mb-5 col d-flex justify-content-center">
-                            <div class="card-header">
-                                Tuesday
-                            </div>
-                            <div class="card-body table-responsive">
-                                <table class="table table-secondary table-hover text-center mb-5">
-                                    <thead>
-                                        <tr>
-                                            <td>Index</td>
-                                            <td>Tuesday</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="tuesdaydinner">
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- WEDNESDAY -->
-                    <div id="wednesdaymenudivlunch">
-                        <div class="card text-center w-75 mx-auto mb-5 col d-flex justify-content-center">
-                            <div class="card-header">
-                                Wednesday
-                            </div>
-                            <div class="card-body table-responsive">
-                                <table class="table table-info table-hover text-center mb-5">
-                                    <thead>
-                                        <tr>
-                                            <td>Index</td>
-                                            <td>Wednesday</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="wednesdaydinner">
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- THURSDAY -->
-                    <div id="thursdaymenudivlunch">
-                        <div class="card text-center w-75 mx-auto mb-5 col d-flex justify-content-center">
-                            <div class="card-header">
-                                Thursday
-                            </div>
-                            <div class="card-body table-responsive">
-                                <table class="table table-warning table-hover text-center mb-5">
-                                    <thead>
-                                        <tr>
-                                            <td>Index</td>
-                                            <td>Thursday</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="thursdaydinner">
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- FRIDAY -->
-                    <div id="fridaymenudivlunch">
-                        <div class="card text-center w-75 mx-auto mb-5 col d-flex justify-content-center">
-                            <div class="card-header">
-                                Friday
-                            </div>
-                            <div class="card-body table-responsive">
-                                <table class="table table-danger table-hover text-center mb-5">
-                                    <thead>
-                                        <tr>
-                                            <td>Index</td>
-                                            <td>Friday</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="fridaydinner">
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- SATURDAY -->
-                    <div id="saturdaymenudivlunch">
-                        <div class="card text-center w-75 mx-auto mb-5 col d-flex justify-content-center">
-                            <div class="card-header">
-                                Saturday
-                            </div>
-                            <div class="card-body table-responsive">
-                                <table class="table table-light table-hover text-center mb-5">
-                                    <thead>
-                                        <tr>
-                                            <td>Index</td>
-                                            <td>Saturday</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="saturdaydinner">
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- SUNDAY -->
-                    <div id="sundaymenudivlunch">
-                        <div class="card text-center w-75 mx-auto mb-5 col d-flex justify-content-center">
-                            <div class="card-header">
-                                Sunday
-                            </div>
-                            <div class="card-body table-responsive">
-                                <table class="table table-dark table-hover text-center mb-5">
-                                    <thead>
-                                        <tr>
-                                            <td>Index</td>
-                                            <td>Sunday</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="sundaydinner">
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+                    <button class="mondaydinnermenushow btn btn-outline-dark mx-auto">Monday</button>
+                    <button class="tuesdaydinnermenushow btn btn-outline-dark mx-auto">Tuesday</button>
+                    <button class="wednesdaydinnermenushow btn btn-outline-dark mx-auto">Wednesday</button>
+                    <button class="thursdaydinnermenushow btn btn-outline-dark mx-auto">Thursday</button>
+                    <button class="fridaydinnermenushow btn btn-outline-dark mx-auto">Friday</button>
+                    <button class="saturdaydinnermenushow btn btn-outline-dark mx-auto">Saturday</button>
+                    <button class="sundaydinnermenushow btn btn-outline-dark mx-auto">Sunday</button>
+                    <hr class="w-50 mx-auto mb-3" />
                 </div>
 
 
-                <!-- DINNER MENU END -->
+                <!-- MONDAY -->
+                <div id="mondaymenudivdinner">
+                    <div class="card text-center w-75 mx-auto  col d-flex justify-content-center">
+                        <div class="card-header">
+                            Monday
+                        </div>
+                        <div class="card-body table-responsive">
+                            <table class="table table-hover text-center mb-5">
+                                <thead>
+                                    <tr>
+                                        <td>Item-No</td>
+                                        <td>Items</td>
+                                    </tr>
+                                </thead>
+                                <tbody class="mondaydinner">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- TUESDAY -->
+                <div id="tuesdaymenudivdinner">
+                    <div class="card text-center w-75 mx-auto mb-5 col d-flex justify-content-center">
+                        <div class="card-header">
+                            Tuesday
+                        </div>
+                        <div class="card-body table-responsive">
+                            <table class="table table-hover text-center mb-5">
+                                <thead>
+                                    <tr>
+                                        <td>Item-No</td>
+                                        <td>Items</td>
+                                    </tr>
+                                </thead>
+                                <tbody class="tuesdaydinner">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- WEDNESDAY -->
+                <div id="wednesdaymenudivdinner">
+                    <div class="card text-center w-75 mx-auto mb-5 col d-flex justify-content-center">
+                        <div class="card-header">
+                            Wednesday
+                        </div>
+                        <div class="card-body table-responsive">
+                            <table class="table table-hover text-center mb-5">
+                                <thead>
+                                    <tr>
+                                        <td>Item-No</td>
+                                        <td>Items</td>
+                                    </tr>
+                                </thead>
+                                <tbody class="wednesdaydinner">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- THURSDAY -->
+                <div id="thursdaymenudivdinner">
+                    <div class="card text-center w-75 mx-auto mb-5 col d-flex justify-content-center">
+                        <div class="card-header">
+                            Thursday
+                        </div>
+                        <div class="card-body table-responsive">
+                            <table class="table table-hover text-center mb-5">
+                                <thead>
+                                    <tr>
+                                        <td>Item-No</td>
+                                        <td>Items</td>
+                                    </tr>
+                                </thead>
+                                <tbody class="thursdaydinner">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- FRIDAY -->
+                <div id="fridaymenudivdinner">
+                    <div class="card text-center w-75 mx-auto mb-5 col d-flex justify-content-center">
+                        <div class="card-header">
+                            Friday
+                        </div>
+                        <div class="card-body table-responsive">
+                            <table class="table table-hover text-center mb-5">
+                                <thead>
+                                    <tr>
+                                        <td>Item-No</td>
+                                        <td>Items</td>
+                                    </tr>
+                                </thead>
+                                <tbody class="fridaydinner">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- SATURDAY -->
+                <div id="saturdaymenudivdinner">
+                    <div class="card text-center w-75 mx-auto mb-5 col d-flex justify-content-center">
+                        <div class="card-header">
+                            Saturday
+                        </div>
+                        <div class="card-body table-responsive">
+                            <table class="table table-hover text-center mb-5">
+                                <thead>
+                                    <tr>
+                                        <td>Item-No</td>
+                                        <td>Items</td>
+                                    </tr>
+                                </thead>
+                                <tbody class="saturdaydinner">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- SUNDAY -->
+                <div id="sundaymenudivdinner">
+                    <div class="card text-center w-75 mx-auto mb-5 col d-flex justify-content-center">
+                        <div class="card-header">
+                            Sunday
+                        </div>
+                        <div class="card-body table-responsive">
+                            <table class="table table-hover text-center mb-5">
+                                <thead>
+                                    <tr>
+                                        <td>Index-No</td>
+                                        <td>Items</td>
+                                    </tr>
+                                </thead>
+                                <tbody class="sundaydinner">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- DINNER MENU END -->
 
             <!-- </div> -->
         </div>

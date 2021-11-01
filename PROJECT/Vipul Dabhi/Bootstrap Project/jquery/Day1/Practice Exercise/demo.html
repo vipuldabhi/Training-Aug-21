@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/jquery/jquery-3.6.0.js"></script>
+    <title>Document</title>
+    <script>
+        $(document).ready(function(){
+            var jsondata = [{"ID":1,"Name":"John"},{"ID":2,"Name":"Willium"}];
+            $.each(jsondata,function(index,value){
+                // $("#tbldata").append($("<tr></tr>").append($("<td></td>").text(value.ID)).append($("<td></td>").text(value.Name)));
+                $("<tr></tr>").append($("<td></td>").text(value.ID)).append($("<td></td>").text(value.Name))
+                .appendTo($("#tbldata"))
+            })
+        })
+    </script>
+</head>
+<body>
+    <table id="tbldata">
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+        </thead>
+    </table>
+    
+</body>
+</html>

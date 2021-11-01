@@ -13,21 +13,71 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./Style.css" type="text/css">
     <script src="./jquery-3.6.0.js"></script>
-    <script src="./JS/admin.js"></script>
+    <script src="./JS/newadmin.js"></script>
 
     <style>
-        body {
-            background-image: url(./Assets/19.jpg);
-            background-attachment: fixed;
+        table,
+        thead,
+        tr,
+        td,
+        th {
+            border: 1px solid black;
         }
 
-        table {
-            font-weight: bold;
+        .popup-content-monday-lunch {
+            display: none;
         }
-        footer{
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+
+        .popup-content-tuesday-lunch {
+            display: none;
+        }
+
+        .popup-content-wednesday-lunch {
+            display: none;
+        }
+
+        .popup-content-thursday-lunch {
+            display: none;
+        }
+
+        .popup-content-friday-lunch {
+            display: none;
+        }
+
+        .popup-content-saturday-lunch {
+            display: none;
+        }
+
+        .popup-content-sunday-lunch {
+            display: none;
+        }
+
+        .popup-content-monday-dinner {
+            display: none;
+        }
+
+        .popup-content-tuesday-dinner {
+            display: none;
+        }
+
+        .popup-content-wednesday-dinner {
+            display: none;
+        }
+
+        .popup-content-thursday-dinner {
+            display: none;
+        }
+
+        .popup-content-friday-dinner {
+            display: none;
+        }
+
+        .popup-content-saturday-dinner {
+            display: none;
+        }
+
+        .popup-content-sunday-dinner {
+            display: none;
         }
     </style>
 
@@ -52,7 +102,7 @@
                         <li class="nav-item"><a class="nav-link" href="./ordertiffin.html">OrderTiffin</a></li>
                         <li class="nav-item"><a class="nav-link" href="./howitworks.html">HowItWorks</a></li>
                         <li class="nav-item"><a class="nav-link" href="./contactus.html">ContactUs</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./admin.html">Admin</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./newadmin.html">Admin</a></li>
                     </ul>
                 </div>
             </div>
@@ -62,361 +112,553 @@
     <!-- HEADER SECTION END -->
 
 
-    <!-- EDIT-MENU SECTION START  -->
-
     <section id="editmenu">
-        <div class="d-flex">
-            <!-- LUNCH MENU START -->
-            <div class="w-50">
-                <div class="">
-                    <div class="text-center text-white mt-3">
-                        <p class="display-5">Add or Remove Item From Lunch</p>
-                        <hr class="w-50 mx-auto text-white mb-3" />
-                    </div>
-                </div>
+        <div class="container">
+            <div class="popup">
+                <div id="pop-content">
 
-                <div class="">
+                    <!-- LUNCH MENU -->
 
-                    <!-- MONDAY -->
+                    <div class="popup-content-monday-lunch">
+                        <div class="card text-center mx-auto mb-5 col d-flex justify-content-center">
+                            <div class="card-header text-dark addtomonday">
+                                Add To Monday
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-light table-hover text-center mb-5">
+                                    <thead>
+                                        <tr>
+                                            <td>Menu</td>
+                                            <td>Remove Item</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="m">
 
-                    <div class="card text-center text-white w-75 mx-auto mb-5 col d-flex justify-content-center">
-                        <div class="card-header">
-                            Monday
-                        </div>
-                        <div class="card-body table-responsive">
-                            <table class="table table-primary table-hover text-center mb-5">
-                                <thead>
-                                    <tr>
-                                        <td class="addtomonday">Index [Add Menu]</td>
-                                        <td>Menu</td>
-                                        <td>Remove Item</td>
-                                    </tr>
-                                </thead>
-                                <tbody class="m">
-
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="submitdata btn btn-primary">Dont't Want To Edit</button>
+                            </div>
                         </div>
                     </div>
+                    <div class="popup-content-tuesday-lunch">
+                        <div class="card text-center mx-auto mb-5 col d-flex justify-content-center">
+                            <div class="card-header text-dark addtotuesday">
+                                Add To Tuesday
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-light table-hover text-center mb-5">
+                                    <thead>
+                                        <tr>
+                                            <td>Menu</td>
+                                            <td>Remove Item</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="t">
 
-                    <!-- TUESDAY -->
-
-                    <div class="card text-center text-white w-75 mx-auto mb-5 col d-flex justify-content-center">
-                        <div class="card-header">
-                            Tuesday
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="submitdata btn btn-primary">Dont't Want To Edit</button>
+                            </div>
                         </div>
-                        <div class="card-body table-responsive">
-                            <table class="table table-secondary table-hover text-center mb-5">
-                                <thead>
-                                    <tr>
-                                        <td class="addtotuesday">Index [Add Menu]</td>
-                                        <td>Menu</td>
-                                        <td>Remove Item</td>
-                                    </tr>
-                                </thead>
-                                <tbody class="t">
+                    </div>
+                    <div class="popup-content-wednesday-lunch">
+                        <div class="card text-center mx-auto mb-5 col d-flex justify-content-center">
+                            <div class="card-header text-dark addtowednesday">
+                                Add To Wednesday
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-light table-hover text-center mb-5">
+                                    <thead>
+                                        <tr>
+                                            <td>Menu</td>
+                                            <td>Remove Item</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="w">
 
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="submitdata btn btn-primary">Dont't Want To Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popup-content-thursday-lunch">
+                        <div class="card text-center mx-auto mb-5 col d-flex justify-content-center">
+                            <div class="card-header text-dark addtothursday">
+                                Add To Thursday
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-light table-hover text-center mb-5">
+                                    <thead>
+                                        <tr>
+                                            <td>Menu</td>
+                                            <td>Remove Item</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="th">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="submitdata btn btn-primary">Dont't Want To Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popup-content-friday-lunch">
+                        <div class="card text-center mx-auto mb-5 col d-flex justify-content-center">
+                            <div class="card-header text-dark addtofriday">
+                                Add To Friday
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-light table-hover text-center mb-5">
+                                    <thead>
+                                        <tr>
+                                            <td>Menu</td>
+                                            <td>Remove Item</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="f">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="submitdata btn btn-primary">Dont't Want To Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popup-content-saturday-lunch">
+                        <div class="card text-center mx-auto mb-5 col d-flex justify-content-center">
+                            <div class="card-header text-dark addtosaturday">
+                                Add To Saturday
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-light table-hover text-center mb-5">
+                                    <thead>
+                                        <tr>
+                                            <td>Menu</td>
+                                            <td>Remove Item</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="sa">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="submitdata btn btn-primary">Dont't Want To Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popup-content-sunday-lunch">
+                        <div class="card text-center mx-auto mb-5 col d-flex justify-content-center">
+                            <div class="card-header text-dark addtosunday">
+                                Add To Sunday
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-light table-hover text-center mb-5">
+                                    <thead>
+                                        <tr>
+                                            <td>Menu</td>
+                                            <td>Remove Item</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="su">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="submitdata btn btn-primary">Dont't Want To Edit</button>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- WEDNESDAY -->
 
-                    <div class="card text-center text-white w-75 mx-auto mb-5 col d-flex justify-content-center">
-                        <div class="card-header">
-                            Wednesday
-                        </div>
-                        <div class="card-body table-responsive">
-                            <table class="table table-info table-hover text-center mb-5">
-                                <thead>
-                                    <tr>
-                                        <td class="addtowednesday">Index [Add Menu]</td>
-                                        <td>Menu</td>
-                                        <td>Remove Item</td>
-                                    </tr>
-                                </thead>
-                                <tbody class="w">
+                    <!--##### DINNER MENU #####-->
 
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                    <div class="popup-content-monday-dinner">
+                        <div class="card text-center mx-auto mb-5 col d-flex justify-content-center">
+                            <div class="card-header text-dark addtomondaydinner">
+                                Add To Monday
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-light table-hover text-center mb-5">
+                                    <thead>
+                                        <tr>
+                                            <td>Menu</td>
+                                            <td>Remove Item</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="mdinner">
 
-
-
-                    <!-- THURSDAY -->
-
-                    <div class="card text-center text-white w-75 mx-auto mb-5 col d-flex justify-content-center">
-                        <div class="card-header">
-                            Thursday
-                        </div>
-                        <div class="card-body table-responsive">
-                            <table class="table table-warning table-hover text-center mb-5">
-                                <thead>
-                                    <tr>
-                                        <td class="addtothursday">Index [Add Menu]</td>
-                                        <td>Menu</td>
-                                        <td>Remove Item</td>
-                                    </tr>
-                                </thead>
-                                <tbody class="th">
-
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="submitdata btn btn-primary">Dont't Want To Edit</button>
+                            </div>
                         </div>
                     </div>
+                    <div class="popup-content-tuesday-dinner">
+                        <div class="card text-center mx-auto mb-5 col d-flex justify-content-center">
+                            <div class="card-header text-dark addtotuesdaydinner">
+                                Add To Tuesday
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-light table-hover text-center mb-5">
+                                    <thead>
+                                        <tr>
+                                            <td>Menu</td>
+                                            <td>Remove Item</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="tdinner">
 
-                    <!-- FRIDAY -->
-
-                    <div class="card text-center text-white w-75 mx-auto mb-5 col d-flex justify-content-center">
-                        <div class="card-header">
-                            Friday
-                        </div>
-                        <div class="card-body table-responsive">
-                            <table class="table table-danger table-hover text-center mb-5">
-                                <thead>
-                                    <tr>
-                                        <td class="addtofriday">Index [Add Menu]</td>
-                                        <td>Menu</td>
-                                        <td>Remove Item</td>
-                                    </tr>
-                                </thead>
-                                <tbody class="f">
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <!-- SATURDAY -->
-
-                    <div class="card text-center text-white w-75 mx-auto mb-5 col d-flex justify-content-center">
-                        <div class="card-header">
-                            Saturday
-                        </div>
-                        <div class="card-body table-responsive">
-                            <table class="table table-light table-hover text-center mb-5">
-                                <thead>
-                                    <tr>
-                                        <td class="addtosaturday">Index [Add Menu]</td>
-                                        <td>Menu</td>
-                                        <td>Remove Item</td>
-                                    </tr>
-                                </thead>
-                                <tbody class="sa">
-
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="submitdata btn btn-primary">Dont't Want To Edit</button>
+                            </div>
                         </div>
                     </div>
+                    <div class="popup-content-wednesday-dinner">
+                        <div class="card text-center mx-auto mb-5 col d-flex justify-content-center">
+                            <div class="card-header text-dark addtowednesdaydinner">
+                                Add To Wednesday
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-light table-hover text-center mb-5">
+                                    <thead>
+                                        <tr>
+                                            <td>Menu</td>
+                                            <td>Remove Item</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="wdinner">
 
-                    <!-- SUNDAY -->
-
-                    <div class="card text-center text-white w-75 mx-auto mb-5 col d-flex justify-content-center">
-                        <div class="card-header">
-                            Sunday
-                        </div>
-                        <div class="card-body table-responsive">
-                            <table class="table table-primary table-hover text-center mb-5">
-                                <thead>
-                                    <tr>
-                                        <td class="addtosunday">Index [Add Menu]</td>
-                                        <td>Menu</td>
-                                        <td>Remove Item</td>
-                                    </tr>
-                                </thead>
-                                <tbody class="su">
-
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="submitdata btn btn-primary">Dont't Want To Edit</button>
+                            </div>
                         </div>
                     </div>
+                    <div class="popup-content-thursday-dinner">
+                        <div class="card text-center mx-auto mb-5 col d-flex justify-content-center">
+                            <div class="card-header text-dark addtothursdaydinner">
+                                Add To Thursday
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-light table-hover text-center mb-5">
+                                    <thead>
+                                        <tr>
+                                            <td>Menu</td>
+                                            <td>Remove Item</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="thdinner">
 
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="submitdata btn btn-primary">Dont't Want To Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popup-content-friday-dinner">
+                        <div class="card text-center mx-auto mb-5 col d-flex justify-content-center">
+                            <div class="card-header text-dark addtofridaydinner">
+                                Add To Friday
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-light table-hover text-center mb-5">
+                                    <thead>
+                                        <tr>
+                                            <td>Menu</td>
+                                            <td>Remove Item</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="fdinner">
 
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="submitdata btn btn-primary">Dont't Want To Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popup-content-saturday-dinner">
+                        <div class="card text-center mx-auto mb-5 col d-flex justify-content-center">
+                            <div class="card-header text-dark addtosaturdaydinner">
+                                Add To Saturday
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-light table-hover text-center mb-5">
+                                    <thead>
+                                        <tr>
+                                            <td>Menu</td>
+                                            <td>Remove Item</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="sadinner">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="submitdata btn btn-primary">Dont't Want To Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popup-content-sunday-dinner">
+                        <div class="card text-center mx-auto mb-5 col d-flex justify-content-center">
+                            <div class="card-header text-dark addtosundaydinner">
+                                Add To Sunday
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-light table-hover text-center mb-5">
+                                    <thead>
+                                        <tr>
+                                            <td>Menu</td>
+                                            <td>Remove Item</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="sudinner">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="submitdata btn btn-primary">Dont't Want To Edit</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- LUNCH MENU END -->
+        </div>
 
+        <div class="container">
+            <div class="main-section">
+                <div class="text-cente mt-3 text-center">
+                    <p class="display-6 mx-auto">Add or Remove Item From Lunch</p>
+                    <!-- <hr class="w-50 mx-auto mb-3" /> -->
+                    <button class="editlunchmenu btn btn-outline-dark mx-5 mb-3" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">Edit Lunch-Menu</button>
+                    <button class="editdinnermenu btn btn-outline-dark mx-5 mb-3" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal1">Edit Dinner-Menu</button>
+                </div>
+                <!-- Edit Lunch Model -->
+                <div class="modal" tabindex="-1" id="exampleModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Edit Lunch-Menu</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body" style="height: 400px;">
+                                <form class="form-group">
+                                    <button type="button" class="mondaylunch btn btn-outline-dark d-flex mb-3 mx-auto"
+                                        data-bs-dismiss="modal" aria-label="Close">Monday</button>
 
-
-            <!-- DINNER MENU START -->
-
-            <div class="w-50">
-                <div class="">
-                    <div class="text-center text-white mt-3">
-                        <p class="display-5">Add or Remove Item From Dinner</p>
-                        <hr class="w-50 mx-auto text-white mb-3" />
+                                    <button type="button" class="tuesdaylunch btn btn-outline-dark d-flex mb-3 mx-auto"
+                                        data-bs-dismiss="modal" aria-label="Close">Tuesday</button>
+                                    <button type="button"
+                                        class="wednesdaylunch btn btn-outline-dark d-flex mb-3 mx-auto"
+                                        data-bs-dismiss="modal" aria-label="Close">Wednesday</button>
+                                    <button type="button" class="thursdaylunch btn btn-outline-dark d-flex mb-3 mx-auto"
+                                        data-bs-dismiss="modal" aria-label="Close">Thursday</button>
+                                    <button type="button" class="fridaylunch btn btn-outline-dark d-flex mb-3 mx-auto"
+                                        data-bs-dismiss="modal" aria-label="Close">Friday</button>
+                                    <button type="button" class="saturdaylunch btn btn-outline-dark d-flex mb-3 mx-auto"
+                                        data-bs-dismiss="modal" aria-label="Close">Saturday</button>
+                                    <button type="button" class="sundaylunch btn btn-outline-dark d-flex mb-3 mx-auto"
+                                        data-bs-dismiss="modal" aria-label="Close">Sunday</button>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Submit</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="">
 
-                    <!-- MONDAY -->
+                <!-- EDIT LUNCH MENU END -->
 
-                    <div class="card text-center text-white w-75 mx-auto mb-5 col d-flex justify-content-center">
-                        <div class="card-header">
-                            Monday
-                        </div>
-                        <div class="card-body table-responsive">
-                            <table class="table table-primary table-hover text-center mb-5">
-                                <thead>
-                                    <tr>
-                                        <td class="addtomondaydinner">Index [Add Menu]</td>
-                                        <td>Menu</td>
-                                        <td>Remove Item</td>
-                                    </tr>
-                                </thead>
-                                <tbody class="mdinner">
 
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <!-- TUESDAY -->
-
-                    <div class="card text-center text-white w-75 mx-auto mb-5 col d-flex justify-content-center">
-                        <div class="card-header">
-                            Tuesday
-                        </div>
-                        <div class="card-body table-responsive">
-                            <table class="table table-secondary table-hover text-center mb-5">
-                                <thead>
-                                    <tr>
-                                        <td class="addtotuesdaydinner">Index [Add Menu]</td>
-                                        <td>Menu</td>
-                                        <td>Remove Item</td>
-                                    </tr>
-                                </thead>
-                                <tbody class="tdinner">
-
-                                </tbody>
-                            </table>
+                <!-- Edit Dinner Model -->
+                <div class="modal" tabindex="-1" id="exampleModal1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Edit Dinner-Menu</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body" style="height: 400px;">
+                                <form class="form-group">
+                                    <button type="button" class="mondaydinner btn btn-outline-dark d-flex mb-3 mx-auto"
+                                        data-bs-dismiss="modal" aria-label="Close">Monday</button>
+                                    <button type="button" class="tuesdaydinner btn btn-outline-dark d-flex mb-3 mx-auto"
+                                        data-bs-dismiss="modal" aria-label="Close">Tuesday</button>
+                                    <button type="button"
+                                        class="wednesdaydinner btn btn-outline-dark d-flex mb-3 mx-auto"
+                                        data-bs-dismiss="modal" aria-label="Close">Wednesday</button>
+                                    <button type="button"
+                                        class="thursdaydinner btn btn-outline-dark d-flex mb-3 mx-auto"
+                                        data-bs-dismiss="modal" aria-label="Close">Thursday</button>
+                                    <button type="button" class="fridaydinner btn btn-outline-dark d-flex mb-3 mx-auto"
+                                        data-bs-dismiss="modal" aria-label="Close">Friday</button>
+                                    <button type="button"
+                                        class="saturdaydinner btn btn-outline-dark d-flex mb-3 mx-auto"
+                                        data-bs-dismiss="modal" aria-label="Close">Saturday</button>
+                                    <button type="button" class="sundaydinner btn btn-outline-dark d-flex mb-3 mx-auto"
+                                        data-bs-dismiss="modal" aria-label="Close">Sunday</button>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Submit</button>
+                            </div>
                         </div>
                     </div>
-
-                    <!-- WEDNESDAY -->
-
-                    <div class="card text-center text-white w-75 mx-auto mb-5 col d-flex justify-content-center">
-                        <div class="card-header">
-                            Wednesday
-                        </div>
-                        <div class="card-body table-responsive">
-                            <table class="table table-info table-hover text-center mb-5">
-                                <thead>
-                                    <tr>
-                                        <td class="addtowednesdaydinner">Index [Add Menu]</td>
-                                        <td>Menu</td>
-                                        <td>Remove Item</td>
-                                    </tr>
-                                </thead>
-                                <tbody class="wdinner">
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-
-
-                    <!-- THURSDAY -->
-
-                    <div class="card text-center text-white w-75 mx-auto mb-5 col d-flex justify-content-center">
-                        <div class="card-header">
-                            Thursday
-                        </div>
-                        <div class="card-body table-responsive">
-                            <table class="table table-warning table-hover text-center mb-5">
-                                <thead>
-                                    <tr>
-                                        <td class="addtothursdaydinner">Index [Add Menu]</td>
-                                        <td>Menu</td>
-                                        <td>Remove Item</td>
-                                    </tr>
-                                </thead>
-                                <tbody class="thdinner">
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <!-- FRIDAY -->
-
-                    <div class="card text-center text-white w-75 mx-auto mb-5 col d-flex justify-content-center">
-                        <div class="card-header">
-                            Friday
-                        </div>
-                        <div class="card-body table-responsive">
-                            <table class="table table-danger table-hover text-center mb-5">
-                                <thead>
-                                    <tr>
-                                        <td class="addtofridaydinner">Index [Add Menu]</td>
-                                        <td>Menu</td>
-                                        <td>Remove Item</td>
-                                    </tr>
-                                </thead>
-                                <tbody class="fdinner">
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <!-- SATURDAY -->
-
-                    <div class="card text-center text-white w-75 mx-auto mb-5 col d-flex justify-content-center">
-                        <div class="card-header">
-                            Saturday
-                        </div>
-                        <div class="card-body table-responsive">
-                            <table class="table table-light table-hover text-center mb-5">
-                                <thead>
-                                    <tr>
-                                        <td class="addtosaturdaydinner">Index [Add Menu]</td>
-                                        <td>Menu</td>
-                                        <td>Remove Item</td>
-                                    </tr>
-                                </thead>
-                                <tbody class="sadinner">
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <!-- SUNDAY -->
-
-                    <div class="card text-center text-white w-75 mx-auto mb-5 col d-flex justify-content-center">
-                        <div class="card-header">
-                            Sunday
-                        </div>
-                        <div class="card-body table-responsive">
-                            <table class="table table-primary table-hover text-center mb-5">
-                                <thead>
-                                    <tr>
-                                        <td class="addtosundaydinner">Index [Add Menu]</td>
-                                        <td>Menu</td>
-                                        <td>Remove Item</td>
-                                    </tr>
-                                </thead>
-                                <tbody class="sudinner">
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
                 </div>
 
 
-                <!-- DINNER MENU END -->
+
+
+
+                <!-- MENU SECTION START -->
+
+                <table class="table mx-auto text-center">
+                    <thead>
+                        <tr>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                            <th>Saturday</th>
+                            <th>Sunday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Item-1</td>
+                            <td>Item-1</td>
+                            <td>Item-1</td>
+                            <td>Item-1</td>
+                            <td>Item-1</td>
+                            <td>Item-1</td>
+                            <td>Item-1</td>
+                        </tr>
+                        <tr>
+                            <td>Item-2</td>
+                            <td>Item-2</td>
+                            <td>Item-2</td>
+                            <td>Item-2</td>
+                            <td>Item-2</td>
+                            <td>Item-2</td>
+                            <td>Item-2</td>
+                        </tr>
+                        <tr>
+                            <td>Item-3</td>
+                            <td>Item-3</td>
+                            <td>Item-3</td>
+                            <td>Item-3</td>
+                            <td>Item-3</td>
+                            <td>Item-3</td>
+                            <td>Item-3</td>
+                        </tr>
+                        <tr>
+                            <td>Item-4</td>
+                            <td>Item-4</td>
+                            <td>Item-4</td>
+                            <td>Item-4</td>
+                            <td>Item-4</td>
+                            <td>Item-4</td>
+                            <td>Item-4</td>
+                        </tr>
+                        <tr>
+                            <td>Item-5</td>
+                            <td>Item-5</td>
+                            <td>Item-5</td>
+                            <td>Item-5</td>
+                            <td>Item-5</td>
+                            <td>Item-5</td>
+                            <td>Item-5</td>
+                        </tr>
+                        <tr>
+                            <td>Item-1</td>
+                            <td>Item-1</td>
+                            <td>Item-1</td>
+                            <td>Item-1</td>
+                            <td>Item-1</td>
+                            <td>Item-1</td>
+                            <td>Item-1</td>
+                        </tr>
+                        <tr>
+                            <td>Item-2</td>
+                            <td>Item-2</td>
+                            <td>Item-2</td>
+                            <td>Item-2</td>
+                            <td>Item-2</td>
+                            <td>Item-2</td>
+                            <td>Item-2</td>
+                        </tr>
+                        <tr>
+                            <td>Item-3</td>
+                            <td>Item-3</td>
+                            <td>Item-3</td>
+                            <td>Item-3</td>
+                            <td>Item-3</td>
+                            <td>Item-3</td>
+                            <td>Item-3</td>
+                        </tr>
+                        <tr>
+                            <td>Item-4</td>
+                            <td>Item-4</td>
+                            <td>Item-4</td>
+                            <td>Item-4</td>
+                            <td>Item-4</td>
+                            <td>Item-4</td>
+                            <td>Item-4</td>
+                        </tr>
+                        <tr>
+                            <td>Item-5</td>
+                            <td>Item-5</td>
+                            <td>Item-5</td>
+                            <td>Item-5</td>
+                            <td>Item-5</td>
+                            <td>Item-5</td>
+                            <td>Item-5</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- MENU SECTION END -->
+
+
             </div>
+
+
+
         </div>
     </section>
 
-    <!-- EDIT-MENU SECTION START  -->
+
 
 
 
@@ -426,13 +668,13 @@
     <section id="customer">
         <div class="container mt-5">
             <div>
-                <div class="text-center text-white mt-5">
+                <div class="text-center text-dark mt-5">
                     <p class="display-5">Customers</p>
                     <hr class="w-50 mx-auto mb-5" />
                 </div>
             </div>
             <div class="table-responsive">
-                <table class="table text-white mb-5">
+                <table class="table text-dark mb-5">
                     <thead class="table-dark">
                         <td>Id</td>
                         <td>FullName</td>
@@ -461,15 +703,15 @@
 
 
     <section id="contact">
-        <div class="container mt-5">
+        <div class="container my-5">
             <div>
-                <div class="text-center text-white mt-5">
+                <div class="text-center text-dark mt-5">
                     <p class="display-5">ContactUs Info</p>
                     <hr class="w-50 mx-auto mb-5" />
                 </div>
             </div>
             <div class="table-responsive">
-                <table class="table text-white mb-5">
+                <table class="table text-dark mb-5">
                     <thead class="table-dark">
                         <td>Id</td>
                         <td>FullName</td>
@@ -501,12 +743,15 @@
         <div class="notloginasadmin">
             <div class="container">
                 <div class="row d-flex justify-content-center">
-                    <div class="col text-center text-white mt-5">
+                    <div class="col text-center text-dark mt-5">
+                        <p class="display-5">Admin</p>
+                        <hr class="w-50 mx-auto text-dark mb-5" />
+
                         <p class="display-5">Please Login As Admin</p>
-                        <hr class="w-50 mx-auto text-white mb-3" />
+                        <hr class="w-50 mx-auto text-dark mb-5" />
 
                         <button type="button" class="adminloginbtn btn btn-danger w-25 mt-3" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal">
+                            data-bs-target="#exampleModallogin">
                             Login As Admin
                         </button>
                     </div>
@@ -520,7 +765,7 @@
 
 
         <div class="adminlogin">
-            <div class="modal" tabindex="-1" id="exampleModal">
+            <div class="modal" tabindex="-1" id="exampleModallogin">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -559,6 +804,8 @@
 
 
 
+
+
     <!-- FOOTER SECTION START -->
 
     <section class="footer-section">
@@ -573,7 +820,7 @@
     </section>
 
     <!-- FOOTER SECTION END -->
-    
+
 
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"

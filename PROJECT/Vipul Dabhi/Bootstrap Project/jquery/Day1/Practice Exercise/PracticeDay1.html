@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>PracticeDay1</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.0.2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../../../stylebs.css" type="text/css">
+    <script src="../../jquery-3.6.0.js"></script>
+
+    <style>
+        .important {
+            font-weight: bold;
+            font-size: xx-large;
+        }
+
+        .blue {
+            color: blue;
+        }
+    </style>
+    <script>
+
+        // jQuery Selectors
+
+        // $(document).ready(function () {
+        //     $("button").click(function () {
+        //         $("p").hide();
+        //     });
+        // });
+        // $(document).ready(function () {
+        //     $("button").click(function () {
+        //         $("#test").hide();
+        //     });
+        // });
+        // $(document).ready(function () {
+        //     $("button").click(function () {
+        //         $(".test").hide();
+        //     });
+        // });
+
+        // Commonly Used jQuery Event Methods
+
+        // $(document).ready(function () {
+        //     $("p").click(function () {
+        //         $(this).hide();
+        //     });
+        // });
+        // $(document).ready(function () {
+        //     $("p").dblclick(function () {
+        //         $(this).hide();
+        //     });
+        // });
+        // $(document).ready(function () {
+        //     $("#p1").mouseenter(function () {
+        //         alert("You entered p1!");
+        //     });
+        // });
+        // $(document).ready(function () {
+        //     $("#p1").mouseleave(function () {
+        //         alert("You entered p1!");
+        //     });
+        // });
+        // $(document).ready(function () {
+        //     $("#p1").mousedown(function () {
+        //         alert("You entered p1!");
+        //     });
+        // });
+        // $(document).ready(function () {
+        //     $("#p1").mouseup(function () {
+        //         alert("You entered p1!");
+        //     });
+        // });
+        // $(document).ready(function () {
+        //     $("#p1").hover(function () {
+        //         alert("You entered p1!");
+        //     },
+        //     function () {
+        //         alert("Bye! You now leave p1!");
+        //     });
+        // });
+        // $(document).ready(function () {
+        //     $("input").focus(function () {
+        //         $(this).css("background-color", "yellow");
+        //     });
+        //     $("input").blur(function () {
+        //         $(this).css("background-color", "green");
+        //     });
+        //     $("input").keypress(function () {
+        //         $(this).css("background-color", "white");
+        //     });
+        // });
+        // $(document).ready(function () {
+        //     $("p").on({
+        //         mouseenter: function () {
+        //             $(this).css("background-color", "lightgray");
+        //         },
+        //         mouseleave: function () {
+        //             $(this).css("background-color", "lightblue");
+        //         },
+        //         click: function () {
+        //             $(this).css("background-color", "yellow");
+        //         }
+        //     });
+        // });
+
+        //* jQuery Effects - Hide and Show
+
+        // $(document).ready(function () {
+        //     $("#hide").click(function () {
+        //         $("p").hide();
+        //     });
+        //     $("#show").click(function () {
+        //         $("p").show();
+        //     });
+        // });
+        // $(document).ready(function () {
+        //     $("#hide").click(function () {
+        //         $("p").hide("1000");
+        //     });
+        // });
+
+        //* jQuery toggle()
+
+        // $(document).ready(function () {
+        //     $("#toggle").click(function () {
+        //         $("p").toggle();
+        //     });
+        // });
+        // Syntax:
+        // $(selector).toggle(speed, callback);
+
+        //* jQuery Effects - Fading
+
+        // jQuery fadeIn() Method
+
+        // $(document).ready(function () {
+        //     $("#fadeIn").click(function () {
+        //         $("#div1").fadeIn();
+        //         $("#div2").fadeIn("slow");
+        //         $("#div3").fadeIn(3000);
+        //     });
+        // });
+
+        // jQuery fadeOut() Method
+
+        // $(document).ready(function () {
+        //     $("#fadeout").click(function () {
+        //         $("#div4").fadeOut();
+        //         $("#div5").fadeOut("slow");
+        //         $("#div6").fadeOut(3000);
+        //     });
+        // });
+
+        // jQuery fadeToggle() Method
+
+        // $(document).ready(function () {
+        //     $("#fadeToggle").click(function () {
+        //         $("#div4").fadeToggle();
+        //         $("#div5").fadeToggle("slow");
+        //         $("#div6").fadeToggle(3000);
+        //     });
+        // });
+
+        // jQuery fadeTo() Method
+
+        // $(document).ready(function () {
+        //     $("#fadeTo").click(function () {
+        //         $("#div4").fadeTo("slow", 0.1);
+        //         $("#div5").fadeTo("slow", 0.4);
+        //         $("#div6").fadeTo("slow", 0.7);
+        //     });
+        // });
+
+        //* Get Content - text(), html(), and val()
+
+        // $(document).ready(function () {
+        //     $("#btn1").click(function () {
+        //         alert("Text: " + $("#test").text());
+        //     });
+        //     $("#btn2").click(function () {
+        //         alert("HTML: " + $("#test").html());
+        //     });
+        // });
+
+        // $(document).ready(function () {
+        //     $("#value").click(function () {
+        //         alert("Value: " + $("#test").val());
+        //     });
+        // });
+
+        // $(document).ready(function () {
+        //     $("#attr").click(function () {
+        //         alert($("#w3s").attr("href"));
+        //     });
+        // });
+
+        //* Set Content - text(), html(), and val()
+
+        // $(document).ready(function () {
+        //     $("#btn3").click(function () {
+        //         $("#Test1").text("Hello world!");
+        //     });
+        //     $("#btn4").click(function () {
+        //         $("#Test2").html("<b>Hello world!</b>");
+        //     });
+        //     $("#btn5").click(function () {
+        //         $("#Test3").val("Dolly Duck");
+        //     });
+        // });
+
+        // $(document).ready(function () {
+        //     $("#btn7").click(function () {
+        //         $("#test1").text(function (i, origText) {
+        //             return "Old text: " + origText + " New text: Hello world! (index: " + i + ")";
+        //         });
+        //     });
+
+        //     $("#btn8").click(function () {
+        //         $("#test2").html(function (i, origText) {
+        //             return "Old html: " + origText + " New html: Hello <b>world!</b> (index: " + i + ")";
+        //         });
+        //     });
+        // });
+
+        //* jQuery - Add Elements
+
+        //* jQuery append() Method
+
+        // $(document).ready(function(){
+        //     $("#btn9").click(function(){
+        //         $("#p2").append("World");
+        //     })
+        // })
+
+        //* jQuery prepend() Method
+
+        // $(document).ready(function(){
+        //     $("#btn9").click(function(){
+        //         $("#p2").prepend("World");
+        //     })
+        // })
+
+        //* remove
+
+        // $(document).ready(function () {
+        //     $("#btn10").click(function () {
+        //         $("p").remove(".test, .demo");
+        //     });
+        // });
+
+        //* empty
+
+        // $(document).ready(function () {
+        //     $("#btn11").click(function () {
+        //         $("#div7").empty();
+        //     });
+        // });
+
+        //* CSS classes
+
+        // $(document).ready(function () {
+        //     $("#btn12").click(function () {
+        //         $("#div8").addClass("important blue");
+        //     });
+        // });
+
+        // toggleClass
+
+        // $(document).ready(function () {
+        //     $("#btn12").click(function () {
+        //         $("p").toggleClass("blue");
+        //     });
+        // });
+
+        //* css
+
+        // $(document).ready(function () {
+        //     $("#btn13").click(function () {
+        //         $(".addcss").css({ "background-color": "yellow", "font-size": "200%" });
+        //     });
+        // });
+
+
+    </script>
+</head>
+
+<body>
+
+    <div id="container">
+
+        <div id="div1">
+            <nav class="navbar navbar-expand-sm navbar-dark mb-3">
+                <div class="container-fluid mt-3">
+                    <a class="navbar-brand" href="#">Vipul Dabhi</a>
+                    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span
+                            class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav blockquote fw-bold ms-auto">
+                            <li class="nav-item"><a class="nav-link" href="../../../index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../../../HTML/HTML.html">HTML</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../../../CSS/CSS.html">CSS</a></li>
+                            <li class="nav-item"><a class="nav-link"
+                                    href="../../../Bootstrap/Bootstrap.html">BOOTSTRAP</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link"
+                                    href="../../../JavaScript/JavaScript.html">JavaScript</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="../../../jquery/jQuery.html">jQuery</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <main>
+            <h2>This is a heading</h2>
+
+            <p>This is a paragraph.</p>
+            <p id="p1">This is another paragraph.</p>
+
+            <button>Click me to hide paragraphs</button><br>
+
+            Name: <input type="text" name="fullname"><br>
+            Email: <input type="text" name="email"><br>
+
+            <button id="show">Show</button>
+            <button id="hide">Hide</button><br>
+
+            <button id="toggle">Toggle between hiding and showing the paragraphs</button><br>
+
+            <button id="fadeIn">Click to fade in boxes</button><br><br>
+
+            <button id="fadeout">Click to fade out boxes</button><br><br>
+
+            <button id="fadeToggle">Click to fade Toggle boxes</button><br><br>
+
+            <button id="fadeTo">Click to fade To boxes</button><br><br>
+
+            <div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+            <div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
+            <div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+
+            <div id="div4" style="width:80px;height:80px;background-color:red;"></div><br>
+            <div id="div5" style="width:80px;height:80px;background-color:green;"></div><br>
+            <div id="div6" style="width:80px;height:80px;background-color:blue;"></div>
+
+            <button id="btn1">Show Text</button>
+            <button id="btn2">Show HTML</button>
+            <br>
+            <p>Name: <input type="text" id="test" value="Mickey Mouse"></p>
+
+
+            <button id="value">Show Value</button>
+
+
+            <p><a href="https://www.w3schools.com" id="w3s">W3Schools.com</a></p>
+
+            <button id="attr">Show href Value</button>
+
+
+            <p id="Test1">This is a paragraph.</p>
+            <p id="Test2">This is another paragraph.</p>
+
+            <p>Input field: <input type="text" id="Test3" value="Mickey Mouse"></p>
+
+            <button id="btn3">Set Text</button>
+            <button id="btn4">Set HTML</button>
+            <button id="btn5">Set Value</button>
+
+            <br>
+            <p id="test1">This is a <b>bold</b> paragraph.</p>
+            <p id="test2">This is another <b>bold</b> paragraph.</p>
+
+            <button id="btn7">Show Old/New Text</button>
+            <button id="btn8">Show Old/New HTML</button>
+
+            <br>
+
+            <p id="p2">Hello</p><br>
+            <button id="btn9">Append</button>
+
+            <p>This is a paragraph.</p>
+            <p class="test">This is p element with class="test".</p>
+            <p class="test">This is p element with class="test".</p>
+            <p class="demo">This is p element with class="demo".</p>
+
+            <button id="btn10">Remove all p elements with class="test" and class="demo"</button>
+
+            <div id="div7" style="height:100px;width:300px;border:1px solid black;background-color:yellow;">
+
+                This is some text in the div.
+                <p>This is a paragraph in the div.</p>
+                <p>This is another paragraph in the div.</p>
+
+            </div>
+            <br>
+
+            <button id="btn11">Empty the div element</button>
+
+
+            <div id="div8">This is some text.</div>
+            <div id="div9">This is some text.</div>
+            <br>
+
+            <button id="btn12">Add classes</button>
+
+            <p class="addcss" style="background-color:#ff0000">This is a paragraph.</p>
+            <p class="addcss" style="background-color:#00ff00">This is a paragraph.</p>
+            <p class="addcss" style="background-color:#0000ff">This is a paragraph.</p>
+
+            <button id="btn13">Add classes</button>
+
+
+
+        </main>
+
+        <div id="sidebar">
+            <ul>
+                <li>Day1
+                    <ul type="circle">
+                        <li>Assignment Work
+                            <ul>
+                                <li><a href="../../Day1/Assignment Work/AssignmentDay1.html">Assignment</a></li>
+                            </ul>
+                        </li>
+                        <li>Practice Exercise
+                            <ul>
+                                <li><a href="../../Day1/Practice Exercise/PracticeDay1.html">PracticeDay1</a></li>
+                                <li><a href="../../Day1/Practice Exercise/Exercise1.html" targer="_main">Exercise1</a>
+                                </li>
+                                <li><a href="../../Day1/Practice Exercise/Exercise2.html">Exercise2</a></li>
+                                <li><a href="../../Day1/Practice Exercise/Exercise3.html">Exercise3</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Day2
+                    <ul>
+                        <li>Assignment Work
+                            <ul>
+                                <li><a href="../../Day2/Assignment Work/AssignmentDay2.html">Assignment</a></li>
+                            </ul>
+                        </li>
+                        <li>Practice Exercise
+                            <ul>
+                                <li><a href="../../Day2/Practice Exercise/PracticeDay2.html">PracticeDay2</a></li>
+                                <li><a
+                                        href="../../Day2/Practice Exercise/custome_pseudo_selector.html">Custome_Pseudo_Selector</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <footer class="text-center pt-4">
+            <p>Copyright@ AllRightReserved</p>
+        </footer>
+
+    </div>
+
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

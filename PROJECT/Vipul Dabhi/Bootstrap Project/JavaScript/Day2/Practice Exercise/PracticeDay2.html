@@ -1,0 +1,1097 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>PracticeDay2</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.0.2 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="../../../stylebs.css" type="text/css">
+
+</head>
+
+<body>
+
+  <div id="container">
+
+    <div id="div1">
+      <nav class="navbar navbar-expand-sm navbar-dark mb-3">
+        <div class="container-fluid mt-3">
+          <a class="navbar-brand" href="#">Vipul Dabhi</a>
+          <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span
+              class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav blockquote fw-bold ms-auto">
+              <li class="nav-item"><a class="nav-link" href="../../../index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="../../../HTML/HTML.html">HTML</a></li>
+              <li class="nav-item"><a class="nav-link" href="../../../CSS/CSS.html">CSS</a></li>
+              <li class="nav-item"><a class="nav-link" href="../../../Bootstrap/Bootstrap.html">BOOTSTRAP</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="../../../JavaScript/JavaScript.html">JavaScript</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="../../../jquery/jQuery.html">jQuery</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <main>
+
+      <!-- ARRAY METHODS -->
+
+    <!-- Converting Arrays to Strings -->
+
+    <p id="demo"></p>
+    <P id="demo1"></P>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+
+    <button onclick="myFunction()">Try it</button>
+    <p id="Demo"></p>
+    <p id="demo4">Please visit Microsoft and Microsoft!</p>
+
+    <p id="p01">The best things in life are free!</p>
+
+
+
+    <script>
+
+        // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        // document.getElementById("demo").innerHTML = fruits.toString();
+
+        // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        // document.getElementById("demo").innerHTML = fruits.join(" * ");
+
+        // Popping
+
+        // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        // document.getElementById("demo1").innerHTML = fruits;
+        // fruits.pop();
+        // document.getElementById("demo2").innerHTML = fruits;
+
+        // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        // let x = fruits.pop();  // x = "Mango"
+
+        // Pushing
+
+        // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        // document.getElementById("demo1").innerHTML = fruits;
+
+        // function myFunction() {
+        // fruits.push("Kiwi");
+        // document.getElementById("Demo").innerHTML = fruits;
+        // }
+
+        // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        // let x = fruits.push("Kiwi");   //  x = 5
+
+        // Shifting Elements
+
+        // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        // document.getElementById("demo1").innerHTML = fruits;
+        // fruits.shift();
+        // document.getElementById("demo2").innerHTML = fruits;
+
+        // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        // let x = fruits.shift();    // x = "Banana"
+
+        // unshift
+
+        // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        // document.getElementById("demo").innerHTML = fruits;
+        // function myFunction() {
+        //     fruits.unshift("Lemon");
+        //     document.getElementById("demo").innerHTML = fruits;
+        // }
+
+        // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        // document.getElementById("demo1").innerHTML = fruits;
+        // document.getElementById("demo2").innerHTML = fruits.unshift("Lemon");
+        // document.getElementById("demo3").innerHTML = fruits;
+
+        // Changing Elements
+
+        // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        // document.getElementById("demo1").innerHTML = fruits;
+        // fruits[0] = "Kiwi";
+        // document.getElementById("demo2").innerHTML = fruits;
+
+        // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        // document.getElementById("Demo").innerHTML = fruits;
+        // function myFunction() {
+        //     fruits[fruits.length] = "Kiwi";
+        //     document.getElementById("Demo").innerHTML = fruits;
+        // }
+
+        // Deleting Elements
+
+        // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        // document.getElementById("demo1").innerHTML =
+        // "The first fruit is: " + fruits[0];
+        // delete fruits[0];
+        // document.getElementById("demo2").innerHTML =
+        // "The first fruit is: " + fruits[0];
+
+        // Splicing an Array
+
+        // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        // document.getElementById("demo1").innerHTML = "Original Array:<br>" + fruits;
+        // function myFunction() {
+        // fruits.splice(2, 0, "Lemon", "Kiwi");
+        // document.getElementById("demo2").innerHTML = "New Array:<br>" + fruits;
+        // }
+
+        // Using splice() to Remove Elements
+
+        // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        // document.getElementById("demo").innerHTML = fruits;
+        // function myFunction() {
+        // fruits.splice(0, 1);
+        // document.getElementById("demo").innerHTML = fruits;
+        // }
+
+        // Merging (Concatenating) Arrays
+
+        // const myGirls = ["Cecilie", "Lone"];
+        // const myBoys = ["Emil", "Tobias", "Linus"];
+        // const myChildren = myGirls.concat(myBoys);
+        // document.getElementById("demo").innerHTML = myChildren;
+
+        // const array1 = ["Cecilie", "Lone"];
+        // const array2 = ["Emil", "Tobias", "Linus"];
+        // const array3 = ["Robin", "Morgan"];
+        // const myChildren = array1.concat(array2, array3);
+        // document.getElementById("demo").innerHTML = myChildren;
+
+        // const arr1 = ["Emil", "Tobias", "Linus"];
+        // const myChildren = arr1.concat("Peter");
+
+        // Slicing an Array
+
+        // const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+        // const citrus = fruits.slice(1);
+        // document.getElementById("demo").innerHTML = fruits + "<br><br>" + citrus;
+        // The slice() method creates a new array.It does not remove any elements from the source array.
+
+        // const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+        // const citrus = fruits.slice(1, 3);
+        // document.getElementById("demo").innerHTML = fruits + "<br><br>" + citrus;
+
+        // Sorting an Array
+
+        // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        // document.getElementById("demo").innerHTML = fruits;
+        // function myFunction() {
+        //     fruits.sort();
+        //     document.getElementById("demo").innerHTML = fruits;
+        // }
+
+        // Reversing an Array
+
+        // Create and display an array:
+        // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        // document.getElementById("demo").innerHTML = fruits;
+        // function myFunction() {
+        //     // First sort the array
+        //     fruits.sort();
+        //     // Then reverse it:
+        //     fruits.reverse();
+        //     document.getElementById("demo").innerHTML = fruits;
+        // }
+
+        // Numeric Sort
+
+        // const points = [40, 100, 1, 5, 25, 10];
+        // document.getElementById("demo").innerHTML = points;
+        // function myFunction() {
+        //     points.sort(function (a, b) { return a - b });
+        //     document.getElementById("demo").innerHTML = points;
+        // }
+
+
+
+
+        // !**! STRINGS !**!
+
+
+
+        // JavaScript Strings
+
+        // let carName1 = "Volvo XC60";  // Double quotes
+        // let carName2 = 'Volvo XC60';  // Single quotes
+
+        //* String Length
+
+        // let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        // document.getElementById("demo").innerHTML = text.length;  
+
+        //* Escape Character      
+
+        // let text = "We are the so-called \"Vikings\" from the north.";
+        // document.getElementById("demo").innerHTML = text; 
+
+        // let text= 'It\'s alright.';
+
+        // let text = "The character \\ is called backslash.";
+        // document.getElementById("demo").innerHTML = text; 
+
+        //* Breaking Long Code Lines
+
+        // document.getElementById("demo").innerHTML =
+        // "Hello Dolly!";
+
+        // document.getElementById("demo").innerHTML = "Hello " +
+        // "Dolly!";
+
+        //* Strings Can be Objects
+
+        // let x = "John";
+        // let y = new String("John");
+        // // typeof x will return string
+        // // typeof y will return object
+
+        // let x = "John";        // x is a string
+        // let y = new String("John");  // y is an object
+        // document.getElementById("demo").innerHTML = (x==y);
+
+        // let x = "John";        // x is a string
+        // let y = new String("John");  // y is an object
+        // document.getElementById("demo").innerHTML = (x===y);
+
+        // let x = new String("John");  // x is an object
+        // let y = new String("John");  // y is an object
+        // document.getElementById("demo").innerHTML = (x==y);
+
+
+
+        //* JavaScript String Methods
+
+        //* String Length
+
+        // let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        // document.getElementById("demo").innerHTML = text.length;
+
+        //* Extracting String Parts
+
+        //* The slice() Method
+
+        // let str = "Apple, Banana, Kiwi";
+        // document.getElementById("demo").innerHTML = str.slice(7,13);
+
+        // let str = "Apple, Banana, Kiwi";
+        // document.getElementById("demo").innerHTML = str.slice(-12,-6);
+
+        // let str = "Apple, Banana, Kiwi";
+        // document.getElementById("demo").innerHTML = str.slice(-12);
+
+        //* The substring() Method
+        // The difference is that substring() cannot accept negative indexes.
+
+        // let str = "Apple, Banana, Kiwi";
+        // document.getElementById("demo").innerHTML = str.substring(7,13);
+
+        //* The substr() Method
+
+        // let str1 = "Apple, Banana, Kiwi";
+        // document.getElementById("demo1").innerHTML = str1.substr(7,6);
+
+        // let str = "Apple, Banana, Kiwi";
+        // document.getElementById("demo").innerHTML = str.substr(7);
+
+        // let str = "Apple, Banana, Kiwi";
+        // document.getElementById("demo").innerHTML = str.substr(-4);
+
+        //* Replacing String Content
+
+        // let text = "Please visit Microsoft!";
+        // let newText = text.replace("Microsoft", "W3Schools");
+
+        // let x = "abc"
+        // let xy = x.replace("c","d")
+        // document.write(xy) 
+
+        // function myFunction() {
+        //     let text = document.getElementById("demo4").innerHTML;
+        //     document.getElementById("demo4").innerHTML =
+        //         text.replace("Microsoft", "W3Schools");
+        // }
+
+        // function myFunction() {
+        //     let text = document.getElementById("demo4").innerHTML;
+        //     document.getElementById("demo4").innerHTML =
+        //         text.replace(/MICROSOFT/i, "W3Schools");
+        // }
+
+        // function myFunction() {
+        //     let text = document.getElementById("demo4").innerHTML;
+        //     document.getElementById("demo4").innerHTML =
+        //         text.replace(/Microsoft/g, "W3Schools");
+        // }
+
+        //* Converting to Upper and Lower Case
+
+        // function myFunction() {
+        // let text = document.getElementById("demo4").innerHTML;
+        // document.getElementById("demo4").innerHTML =
+        // text.toUpperCase();
+        // }
+
+        // function myFunction() {
+        // let text = document.getElementById("demo4").innerHTML;
+        // document.getElementById("demo4").innerHTML =
+        // text.toLowerCase();
+        // }
+
+        // //* The concat() Method
+
+        // let text1 = "Hello";
+        // let text2 = "World!";
+        // let text3 = text1.concat(" ",text2);
+        // document.getElementById("demo").innerHTML = text3;
+
+        //* String.trim()
+
+        // function myFunction() {
+        // let text = "     Hello World!     ";
+        // alert(text.trim());
+        // }
+
+        //* JavaScript String Padding
+
+        // let text = "5";
+        // document.getElementById("demo").innerHTML = text.padStart(5,0)
+
+        // let text = "5";
+        // document.getElementById("demo").innerHTML = text.padEnd(4,0);
+
+        //* Extracting String Characters
+
+        //* The charAt() Method
+
+        // var text = "HELLO WORLD";
+        // document.getElementById("demo").innerHTML = text.charAt(11);
+
+        //* The charCodeAt() Method
+
+        // let text = "HELLO WORLD";
+        // document.getElementById("demo").innerHTML = text.charCodeAt(0);
+
+        //* Property Access
+
+        // var str = "HELLO WORLD";
+        // document.getElementById("demo").innerHTML = str[11];
+
+        // let text = "HELLO WORLD";
+        // text[0] = "A";  // Does not work
+        // document.getElementById("demo").innerHTML = text;
+
+        //* Converting a String to an Array
+
+        // let text = "a,b,c,d,e,f";
+        // const myArray = text.split(",");
+        // document.getElementById("demo").innerHTML = myArray[0];
+
+        // let text = "Hello";
+        // const myArr = text.split("");
+        // text = "";
+        // for (let i = 0; i < myArr.length; i++) {
+        //     text += myArr[i] + "<br>"
+        // }
+        // document.getElementById("demo").innerHTML = text;
+
+
+
+
+
+        // !**! NUMBER !**!
+
+
+
+
+        //* JavaScript Numbers
+
+        // let x = 3.14;    // A number with decimals
+        // let y = 3;       // A number without decimals
+
+        // let x = 123e5;    // 12300000
+        // let y = 123e-5;   // 0.00123
+
+        // //* Precision
+
+        // let x = 999999999999999;
+        // let y = 9999999999999999;
+        // document.getElementById("demo").innerHTML = x + "<br>" + y;
+
+        // let x = 0.2 + 0.1;
+        // document.getElementById("demo").innerHTML = "0.2 + 0.1 = " + x;
+
+        // let x = 0.2 + 0.1;
+        // document.getElementById("demo1").innerHTML = "0.2 + 0.1 = " + x;
+        // let y = (0.2 * 10 + 0.1 * 10) / 10;
+        // document.getElementById("demo2").innerHTML = "0.2 + 0.1 = " + y;
+
+        //* Adding Numbers and Strings
+
+        // let x = 10;
+        // let y = 20;
+        // let z = x + y;           // z will be 30 (a number)
+
+        // let x = "10";
+        // let y = "20";
+        // let z = x + y;           // z will be 1020 (a string)
+
+        // let x = 10;
+        // let y = "20";
+        // let z = x + y;           // z will be 1020 (a string)
+
+        // var x = 10;
+        // var y = 20;
+        // document.getElementById("demo").innerHTML =
+        // "The result is: " + x + y;
+
+        // let x = 10;
+        // let y = 20;
+        // let z = "30";
+        // let result = x + y + z;
+        // document.getElementById("demo").innerHTML = result;
+
+        //* Numeric Strings
+
+        // let x = 100;         // x is a number
+        // let y = "100";       // y is a string
+
+        // JavaScript will try to convert strings to numbers in all numeric operations:
+        // let x = "100";
+        // let y = "10";
+        // let z = x / y;   
+        // document.getElementById("demo").innerHTML = z;
+
+        // But this will not work:
+        // let x = "100";
+        // let y = "10";
+        // let z = x + y;       // z will not be 110 (It will be 10010)
+
+        //* NaN - Not a Number
+
+        // document.getElementById("demo").innerHTML = 100 / "Apple";
+
+        // document.getElementById("demo").innerHTML = 100 / "10";
+
+        // let x = 100 / "Apple";
+        // document.getElementById("demo").innerHTML = isNaN(x);
+
+        // let x = NaN;
+        // let y = 5;
+        // document.getElementById("demo").innerHTML = x + y;
+
+        // let x = NaN;
+        // let y = "5";
+        // document.getElementById("demo").innerHTML = x + y;
+
+        // let x = NaN;
+        // document.getElementById("demo").innerHTML = typeof x;
+
+        //* Infinity
+
+        // let myNumber = 2;
+        // let txt = "";
+        // while (myNumber != Infinity) {
+        //     myNumber = myNumber * myNumber;
+        //     txt = txt + myNumber + "<br>";
+        // }
+        // document.getElementById("demo").innerHTML = txt;
+
+        // let x = 2 / 0;
+        // let y = -2 / 0;
+        // document.getElementById("demo").innerHTML = x + "<br>" + y;
+
+        // document.getElementById("demo").innerHTML = typeof Infinity;
+
+        //* Hexadecimal
+
+        // let x = 0xFF;
+        // document.getElementById("demo").innerHTML = "0xFF = " + x;
+
+        // let myNumber = 32;
+        // document.getElementById("demo").innerHTML =
+        //     "32 = " + "<br>" +
+        //     " Decimal " + myNumber.toString(10) + "<br>" +
+        //     " Hexadecimal " + myNumber.toString(16) + "<br>" +
+        //     " Octal " + myNumber.toString(8) + "<br>" +
+        //     " Binary " + myNumber.toString(2);
+
+
+        // Numbers Can be Objects
+
+        // let x = 123;
+        // let y = new Number(123);
+        // document.getElementById("demo").innerHTML = typeof x + "<br>" + typeof y;
+
+        // let x = 500;        // x is a number
+        // let y = new Number(500);  // y is an object
+        // document.getElementById("demo").innerHTML = (x == y);
+
+        // let x = 500;        // x is a number
+        // let y = new Number(500);  // y is an object
+        // document.getElementById("demo").innerHTML = (x === y);
+
+        // let x = new Number(500);  // x is an object
+        // let y = new Number(500);  // y is an object
+        // document.getElementById("demo").innerHTML = (x == y);
+
+
+
+        //* Number Methods and Properties
+
+        //* The toString() Method
+
+        // let x = 123;
+        // document.getElementById("demo").innerHTML =
+        //     x.toString() + "<br>" +
+        //     (123).toString() + "<br>" +
+        //     (100 + 23).toString();
+
+        //* The toExponential() Method 
+
+        // let x = 9.656;
+        // document.getElementById("demo").innerHTML =
+        //     x.toExponential() + "<br>" +
+        //     x.toExponential(2) + "<br>" +
+        //     x.toExponential(4) + "<br>" +
+        //     x.toExponential(6);
+
+        //* The toFixed() Method
+
+        // let x = 9.656;
+        // document.getElementById("demo").innerHTML =
+        //     x.toFixed(0) + "<br>" +
+        //     x.toFixed(2) + "<br>" +
+        //     x.toFixed(4) + "<br>" +
+        //     x.toFixed(6);
+
+
+
+
+
+        // !**! DATE  !**!
+
+
+
+
+
+        //* JavaScript Date Objects
+
+        // const d = new Date();
+        // document.getElementById("demo").innerHTML = d;
+
+        // //* new Date(year, month, ...)
+
+        // const d = new Date(2018, 11, 24, 10, 33, 30, 0);
+        // document.getElementById("demo").innerHTML = d;
+
+        // //* Using 6, 4, 3, or 2 Numbers
+
+        // const d = new Date(2018, 11, 24, 10);
+        // document.getElementById("demo").innerHTML = d;
+
+        // const d = new Date(2018, 11);
+        // document.getElementById("demo").innerHTML = d;
+
+        // You cannot omit month. If you supply only one parameter it will be treated as milliseconds.
+
+        // const d = new Date(2018);
+        // document.getElementById("demo").innerHTML = d;
+
+        //* Previous Century
+
+        // const d = new Date(99, 11, 24);
+        // document.getElementById("demo").innerHTML = d;
+
+        // const d = new Date(9, 11, 24);
+        // document.getElementById("demo").innerHTML = d;
+
+        // //* new Date(dateString)
+
+        // const d = new Date("October 13, 2014 11:13:00");
+        // document.getElementById("demo").innerHTML = d;
+
+        // JavaScript Stores Dates as Milliseconds
+        // JavaScript stores dates as number of milliseconds since January 01, 1970, 00:00:00 UTC (Universal Time Coordinated).
+        // Zero time is January 01, 1970 00:00:00 UTC.
+
+        //* new Date(milliseconds)
+
+        // const d = new Date(100000000000);
+        // document.getElementById("demo").innerHTML = d;
+
+        // const d = new Date(-100000000000);
+        // document.getElementById("demo").innerHTML = d;
+
+        //* Displaying Dates
+
+        // const d = new Date();
+        // document.getElementById("demo").innerHTML = d;
+
+        // const d = new Date();
+        // document.getElementById("demo").innerHTML = d.toUTCString();
+
+        // const d = new Date();
+        // document.getElementById("demo").innerHTML = d.toDateString();
+
+        // const d = new Date();
+        // document.getElementById("demo").innerHTML = d.toISOString();
+
+
+
+        //* DATE METHODS
+
+        // getDate() 
+
+        // function myFunction() {
+            // var d = new Date();
+            // var n = d.getDate();
+            // document.getElementById("demo").innerHTML = n;
+        // }
+
+        // getday()
+
+        // function myFunction() {
+        //     var d = new Date();
+        //     var n = d.getDay()
+        //     document.getElementById("demo").innerHTML = n;
+        // }
+
+        // getFullYear()
+
+        // function myFunction() {
+        //     var d = new Date();
+        //     var n = d.getFullYear();
+        //     document.getElementById("demo").innerHTML = n;
+        // }
+
+        // getHours()
+
+        // function myFunction() {
+        //     var d = new Date();
+        //     var n = d.getHours();
+        //     document.getElementById("demo").innerHTML = n;
+        // }
+
+        // function myFunction() {
+        //     var d = new Date();
+        //     var n = d.getMilliseconds();
+        //     document.getElementById("demo").innerHTML = n;
+        // }
+
+        // function myFunction() {
+        //     var d = new Date();
+        //     var n = d.getMinutes();
+        //     document.getElementById("demo").innerHTML = n;
+        // }
+
+        // function myFunction() {
+            // var d = new Date();
+            // var n = d.getMonth();
+            // document.getElementById("demo").innerHTML = n;
+        // }
+
+        // function myFunction() {
+        //     var d = new Date();
+        //     var n = d.getSeconds();
+        //     document.getElementById("demo").innerHTML = n;
+        // }
+
+        // function myFunction() {
+        //     var d = new Date();
+        //     var n = d.getSeconds();
+        //     document.getElementById("demo").innerHTML = n;
+        // }
+
+        // function myFunction() {
+        //     var d = new Date();
+        //     var n = d.getTimezoneOffset();
+        //     document.getElementById("demo").innerHTML = n;
+        // }
+
+        // function myFunction() {
+        //     var d = new Date();
+        //     var n = d.getUTCDate();
+        //     document.getElementById("demo").innerHTML = n;
+        // }
+
+        // function myFunction() {
+            // var n = Date.now();
+            // document.getElementById("demo").innerHTML = n;
+        // }
+
+        // function myFunction() {
+            var d = Date.parse("March 21, 2012");
+            document.getElementById("demo").innerHTML = d;
+        // }
+
+        // Date.prototype.myMet = function () {
+        //     if (this.getMonth() == 0) { this.myProp = "January" };
+        //     if (this.getMonth() == 1) { this.myProp = "February" };
+        //     if (this.getMonth() == 2) { this.myProp = "March" };
+        //     if (this.getMonth() == 3) { this.myProp = "April" };
+        //     if (this.getMonth() == 4) { this.myProp = "May" };
+        //     if (this.getMonth() == 5) { this.myProp = "June" };
+        //     if (this.getMonth() == 6) { this.myProp = "July" };
+        //     if (this.getMonth() == 7) { this.myProp = "August" };
+        //     if (this.getMonth() == 8) { this.myProp = "September" };
+        //     if (this.getMonth() == 9) { this.myProp = "October" };
+        //     if (this.getMonth() == 10) { this.myProp = "November" };
+        //     if (this.getMonth() == 11) { this.myProp = "December" };
+        // };
+        // function myFunction() {
+        //     var d = new Date();
+        //     d.myMet();
+        //     document.getElementById("demo").innerHTML = d.myProp;
+        // }
+
+        // function myFunction() {
+        //     var d = new Date();
+        //     d.setDate(15);
+        //     document.getElementById("demo").innerHTML = d;
+        // }
+
+        // function myFunction() {
+        //     var d = new Date();
+        //     d.setFullYear(2020);
+        //     document.getElementById("demo").innerHTML = d;
+        // }
+
+        // function myFunction() {
+        //     var d = new Date();
+        //     d.setTime(1332403882588);
+        //     document.getElementById("demo").innerHTML = d;
+        // }
+
+        // function myFunction() {
+        //     var d = new Date();
+        //     d.setUTCDate(15);
+        //     document.getElementById("demo").innerHTML = d;
+        // }
+
+        // function myFunction() {
+        //     var d = new Date();
+        //     d.setUTCMinutes(17);
+        //     document.getElementById("demo").innerHTML = d;
+        // }
+
+        // function myFunction() {
+        //     var d = new Date();
+        //     d.setUTCMinutes(17);
+        //     document.getElementById("demo").innerHTML = d;
+        // }
+
+        // function myFunction() {
+        //     var d = new Date();
+        //     d.setUTCMilliseconds(192);
+        //     var n = d.getUTCMilliseconds();
+        //     document.getElementById("demo").innerHTML = n;
+        // }
+
+        // const d = new Date();
+        // document.getElementById("demo").innerHTML = d.toDateString();
+
+        // function myFunction() {
+        //     var d = new Date();
+        //     var n = d.toISOString();
+        //     document.getElementById("demo").innerHTML = n;
+        // }
+
+        // function myFunction() {
+        //     var d = new Date();
+        //     var n = d.toJSON();
+        //     document.getElementById("demo").innerHTML = n;
+        // }
+
+        // function myFunction() {
+            var d = new Date();
+            var n = d.toLocaleDateString();
+            document.getElementById("demo").innerHTML = n;
+        // }
+
+        function myFunction() {
+            var d = new Date();
+            var n = d.toLocaleTimeString();
+            document.getElementById("demo").innerHTML = n;
+        }
+
+        function myFunction() {
+            var d = new Date();
+            var n = d.toLocaleString();
+            document.getElementById("demo").innerHTML = n;
+        }
+
+        function myFunction() {
+            var d = new Date();
+            var n = d.toString();
+            document.getElementById("demo").innerHTML = n;
+        }
+
+        function myFunction() {
+            var d = new Date();
+            var n = d.toTimeString();
+            document.getElementById("demo").innerHTML = n;
+        }
+
+        function myFunction() {
+            var d = new Date();
+            var n = d.toUTCString();
+            document.getElementById("demo").innerHTML = n;
+        }
+
+        function myFunction() {
+            var d = Date.UTC(2012, 02, 30);
+            document.getElementById("demo").innerHTML = d;
+        }
+
+        function myFunction() {
+            var d = new Date();
+            var n = d.valueOf();
+            document.getElementById("demo").innerHTML = n;
+        }
+
+
+
+
+
+        // !**! REGULAR EXPRESSION !**!
+
+
+
+
+        //* Syntax
+        // /pattern/modifiers;
+
+        //* Using String search() With a String
+
+        // let text = "Visit W3Schools!";
+        // let n = text.search("W3Schools");
+        // document.getElementById("demo").innerHTML = n;
+
+        //* Using String search() With a Regular Expression
+
+        // let text = "Visit W3Schools!";
+        // let n = text.search(/w3Schools/i);
+        // document.getElementById("demo").innerHTML = n;
+
+        //* Use String replace() With a Regular Expression
+
+        // Perform case-insensitive matching	
+        // function myFunction() {
+        //     let text = document.getElementById("demo4").innerHTML;
+        //     document.getElementById("demo4").innerHTML =
+        //         text.replace(/microsoft/i, "W3Schools");
+        // }
+
+        // Perform a global match
+
+        // let text = "Is this all there is?";
+        // let result = text.match(/is/g);
+        // document.getElementById("demo").innerHTML = result;
+
+        // Perform multiline matching	
+
+        // let text = "\nIs th\nis it?";
+        // let result = text.match(/^is/m);
+        // document.getElementById("demo").innerHTML = "Result is: " + result;
+
+        //* Regular Expression Patterns
+
+        // let text = "Is this all there is?";
+        // let result = text.match(/[he]/g);
+        // document.getElementById("demo").innerHTML = result;
+
+        // let text = "123456789";
+        // let result = text.match(/[1-4]/g);
+        // document.getElementById("demo").innerHTML = result;
+
+        // let text = "red, green, red, green, gren, gr, blue, yellow";
+        // let result = text.match(/(red|green)/g);
+        // document.getElementById("demo").innerHTML = result;
+
+        //* Metacharacters 
+
+        // let text = "red, green, red, green, gren, gr, blue, yellow";
+        // let result = text.match(/(red|green)/g);
+        // document.getElementById("demo").innerHTML = result;
+
+        // let text = "Is this all there is?";
+        // let result = text.match(/\s/g);
+        // document.getElementById("demo").innerHTML = result;
+
+        // let text = "HELLO, LOOK AT YOU!";
+        // let result = text.search(/\bLO/);
+        // document.getElementById("demo").innerHTML = result;
+
+        // let text = "HELLO, LOOK AT YOU!";
+        // let result = text.search(/LO\b/);
+        // document.getElementById("demo").innerHTML = result;
+
+        // let text = "Visit W3Schools. Hello World!";
+        // let result = text.match(/\u0057/g);
+        // document.getElementById("demo").innerHTML = result;
+
+        //* Quantifiers
+
+        // let text = "Hellooo World! Hello W3Schools!";
+        // let result = text.match(/o+/g);
+        // document.getElementById("demo").innerHTML = result;
+
+        // let text = "Hellooo World! Hello W3Schools!";
+        // let result = text.match(/lo*/g);
+        // document.getElementById("demo").innerHTML = result;
+
+        // let text = "1, 100 or 1000?";
+        // let result = text.match(/10?/g);
+        // document.getElementById("demo").innerHTML = result;
+
+        // let text = document.getElementById("p01").innerHTML;
+        // const pattern = /e/;
+        // document.getElementById("demo").innerHTML = pattern.test(text);
+
+        // /e/.test("The best things in life are free!");
+
+
+
+    </script>
+
+    </main>
+
+    <div id="sidebar">
+      <ul>
+        <li>Day1
+          <ul type="circle">
+            <li>Assignment Work
+              <ul>
+                <li><a href="../../Day1/Assignment Work/AssignmentDay1.html">Assignment</a></li>
+              </ul>
+            </li>
+            <li>Practice Exercise
+              <ul>
+                <li><a href="../../Day1/Practice Exercise/PracticeDay1.html">PracticeDay1</a></li>
+                <li><a href="../../Day1/Practice Exercise/Exercise1.html" targer="_main">Exercise1</a>
+                </li>
+                <li><a href="../../Day1/Practice Exercise/Exercise2.html">Exercise2</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Day2
+          <ul>
+            <li>Assignment Work
+              <ul>
+                <li><a href="../../Day2/Assignment Work/AssignmentDay2.html">Assignment</a></li>
+              </ul>
+            </li>
+            <li>Practice Exercise
+              <ul>
+                <li><a href="../../Day2/Practice Exercise/PracticeDay2.html">PracticeDay2</a></li>
+                <li><a href="../../Day2/Practice Exercise/Exercise1.html">Exercise1</a></li>
+                <li><a href="../../Day2/Practice Exercise/Exercise2.html">Exercise2</a></li>
+                <li><a href="../../Day2/Practice Exercise/Exercise3.html">Exercise3</a></li>
+                <li><a href="../../Day2/Practice Exercise/Exercise4.html">Exercise4</a></li>
+                <li><a href="../../Day2/Practice Exercise/Exercise5.html">Exercise5</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Day3
+          <ul>
+            <li>Assignment Work
+              <ul>
+                <li><a href="../../Day3/Assignment Work/AssignmentDay3.html">Assignment</a></li>
+              </ul>
+            </li>
+            <li>Practice Exercise
+              <ul>
+                <li><a href="../../Day3/Practice Exercise/PracticeDay3.html">PracticeDay3</a></li>
+                <li><a href="../../Day3/Practice Exercise/Exercise1.html">Exercise1</a></li>
+                <li><a href="../../Day3/Practice Exercise/Exercise2.html">Exercise2</a></li>
+                <li><a href="../../Day3/Practice Exercise/Exercise3.html">Exercise3</a></li>
+                <li><a href="../../Day3/Practice Exercise/Exercise4.html">Exercise4</a></li>
+                <li><a href="../../Day3/Practice Exercise/Exercise5.html">Exercise5</a></li>
+                <li><a href="../../Day3/Practice Exercise/Exercise6.html">Exercise6</a></li>
+                <li><a href="../../Day3/Practice Exercise/Exercise7.html">Exercise7</a></li>
+                <li><a href="../../Day3/Practice Exercise/Exercise8.html">Exercise8</a></li>
+                <li><a href="../../Day3/Practice Exercise/Exercise9.html">Exercise9</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Day4
+          <ul>
+            <li>Assignment Work
+              <ul>
+                <li><a href="../../Day4/Assignment Work/AssignmentDay4.html">Assignment</a></li>
+              </ul>
+            </li>
+            <li>Practice Exercise
+              <ul>
+                <li><a href="../../Day4/Practice Exercise/PracticeDay4.html">PracticeDay4</a></li>
+                <li><a href="../../Day4/Practice Exercise/Exercise1.html">Exercise1</a></li>
+                <li><a href="../../Day4/Practice Exercise/Exercise2.html">Exercise2</a></li>
+                <li><a href="../../Day4/Practice Exercise/Exercise3.html">Exercise3</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Day5
+          <ul>
+            <li>Practice Exercise
+              <ul>
+                <li><a href="../../Day5/Practice Exercise/PracticeDay5.html">PracticeDay5</a></li>
+                <li><a href="../../Day5/Practice Exercise/Exercise1.html">Exercise1</a></li>
+                <li><a href="../../Day5/Practice Exercise/Exercise2.html">Exercise2</a></li>
+                <li><a href="../../Day5/Practice Exercise/Exercise3.html">Exercise3</a></li>
+                <li><a href="../../Day5/Practice Exercise/Exercise4.html">Exercise4</a></li>
+                <li><a href="../../Day5/Practice Exercise/Exercise5.html">Exercise5</a></li>
+                <li><a href="../../Day5/Practice Exercise/Exercise6.html">Exercise6</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Day6
+          <ul>
+            <li>Assignment Work
+              <ul>
+                <li><a href="../../Day6/Assignment Work/AssignmentDay6.html">Assignment</a></li>
+              </ul>
+            </li>
+            <li>Practice Exercise
+              <ul>
+                <li><a href="../../Day6/Practice Exercise/PracticeDay6.html">PracticeDay6</a></li>
+                <li><a href="../../Day6/Practice Exercise/Exercise.html">Exercise</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <footer class="text-center pt-4">
+      <p>Copyright@ AllRightReserved</p>
+    </footer>
+
+  </div>
+
+
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

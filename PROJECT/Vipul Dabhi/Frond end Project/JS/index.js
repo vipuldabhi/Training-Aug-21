@@ -118,6 +118,8 @@ $(document).ready(function () {
     $("thead").append($("<tr></tr>").append($("<th></th>")).append($("<th>Lunch</th>"))
         .append($("<th>Dinner</th>")).append($("<th>Lunch-Dinner</th>")))
     $(".tbldata").append($("<tbody></tbody>"))
+    $("tbody").append($("<tr></tr>").append($("<td>1-Day</td>")).append($("<td>&#x20B9; 70</td>"))
+        .append($("<td>&#x20B9; 50</td>")).append($("<td>&#x20B9; 120</td>")))
     $("tbody").append($("<tr></tr>").append($("<td>1-Week</td>")).append($("<td>&#x20B9; 700</td>"))
         .append($("<td>&#x20B9; 500</td>")).append($("<td>&#x20B9; 1200</td>")))
     $("tbody").append($("<tr></tr>").append($("<td>1-Month</td>")).append($("<td>&#x20B9; 2800</td>"))

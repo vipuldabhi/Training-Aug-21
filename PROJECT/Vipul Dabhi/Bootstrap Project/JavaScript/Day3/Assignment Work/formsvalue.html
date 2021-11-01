@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <p>Id :<span id="Id"></span></p>   <br>
+        <p>Name :<span id="Name"></span></p>   <br>
+        <p>Age :<span id="Age"></span></p> <br>
+        <p>Gender :<span id="Gender"></span></p>   <br>
+        <p>Designation :<span id="Designation"></span></p> <br>
+        <p>Salary :<span id="Salary"></span></p>   <br>
+        <p>Location :<span id="Location"></span></p>   <br>
+        <p>Email :<span id="Email"></span></p> <br>
+        <p>DateOfJoining :<span id="DateOfJoining"></span></p> <br>
+        <p>ContactNumber :<span id="ContactNumber"></span></p> <br>
+    </div>
+    
+    
+    <script>
+
+        // var formvalues = window.location.search;
+        // alert(formvalues);
+
+        document.getElementById("Id").innerHTML = localStorage.getItem("employeeid")
+        document.getElementById("Name").innerHTML = localStorage.getItem("employeename")
+        document.getElementById("Age").innerHTML = localStorage.getItem("age")
+        document.getElementById("Gender").innerHTML = localStorage.getItem("gender")
+        document.getElementById("Designation").innerHTML = localStorage.getItem("designation")
+        document.getElementById("Salary").innerHTML = localStorage.getItem("salary")
+        document.getElementById("Location").innerHTML = localStorage.getItem("locations")
+        document.getElementById("Email").innerHTML = localStorage.getItem("email")
+        document.getElementById("DateOfJoining").innerHTML = localStorage.getItem("dateofjoining")
+        document.getElementById("ContactNumber").innerHTML = localStorage.getItem("contactnumber")
+        
+    </script>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
