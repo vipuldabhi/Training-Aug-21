@@ -123,7 +123,50 @@
 //     console.log("The coordinate's x value is " + pt.x);
 //     console.log("The coordinate's y value is " + pt.y);
 //   }
-   
+
+
+interface Book{
+  id:number;
+  title:string;
+  author:string;
+  available:boolean;
+
+}
+
+function bookDetails(books:Book) {
+    console.log("Book Id is "+books.id+"Book title is" + books.title);
+
+}
+
+var mybook = {
+  id:1,
+  title:"ege",
+  author:"dgd",
+  available:true,
+  year:"1212"
+}
+
+var mybook1 : Book = {
+  id:1,
+  title:"ege",
+  author:"dgd",
+  available:true,
+}
+
+bookDetails(mybook);
+
+
+// function type interface
+
+interface fun{
+  (str : string) : void;
+}
+
+var demoFunction : fun;
+demoFunction = () => console.log("hello world");
+
+
+
 //   printCoord({ x: 100, y: 100 });
 
 // Classes
