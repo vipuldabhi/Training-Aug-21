@@ -1,42 +1,43 @@
 // Generic
-function identity(arg) {
-    return arg;
-}
-var output1 = identity("myString");
-var output2 = identity(100);
-console.log(output1);
-console.log(output2);
-// Multi-type variables
-function displayDataType(id, name) {
-    console.log("DataType of Id: " + typeof (id) + "\nDataType of Name: " + typeof (name));
-}
-displayDataType(101, "Abhishek");
-//   Generic with non-generic Type
-// function displayDataType<T>(id:T, name:string): void {   
+// function identity<T>(arg: T): T {    
+//     return arg;    
+// }    
+// let output1 = identity<string>("myString");    
+// let output2 = identity<number>( 100 );  
+// console.log(output1);  
+// console.log(output2);  
+// // Multi-type variables
+// function displayDataType<T, U>(id:T, name:U): void {   
 //     console.log("DataType of Id: "+typeof(id) + "\nDataType of Name: "+ typeof(name));    
 //   }  
-//   displayDataType<number>(1, "Abhishek");  
-//   Generics Classes
-var StudentInfo = /** @class */ (function () {
-    function StudentInfo() {
-    }
-    StudentInfo.prototype.setValue = function (id, name) {
-        this.Id = id;
-        this.Name = name;
-    };
-    StudentInfo.prototype.display = function () {
-        console.log("Id = ".concat(this.Id, ", Name = ").concat(this.Name));
-    };
-    return StudentInfo;
-}());
-var st = new StudentInfo();
-st.setValue(101, "Virat");
-st.display();
-var std = new StudentInfo();
-std.setValue("201", "Rohit");
-std.display();
+//   displayDataType<number, string>(101, "Abhishek");  
+// //   Generic with non-generic Type
+// // function displayDataType<T>(id:T, name:string): void {   
+// //     console.log("DataType of Id: "+typeof(id) + "\nDataType of Name: "+ typeof(name));    
+// //   }  
+// //   displayDataType<number>(1, "Abhishek");  
+// //   Generics Classes
+//   class StudentInfo<T,U>  
+// {   
+//     private Id: T;  
+//     private Name: U;  
+//     setValue(id: T, name: U): void {   
+//         this.Id = id;  
+//         this.Name = name;  
+//     }  
+//     display():void {   
+//         console.log(`Id = ${this.Id}, Name = ${this.Name}`);  
+//     }  
+// }  
+// let st = new StudentInfo<number, string>();  
+// st.setValue(101, "Virat");  
+// st.display();  
+// let std = new StudentInfo<string, string>();  
+// std.setValue("201", "Rohit");  
+// std.display();
 // namespace
-/// <reference path="namespaces.ts" />
-var data = employee.salary.DisplaySalary(23);
-console.log(data);
-var display = employee.displayDataType(2323);
+///<reference path="namespaces.ts" />
+// var data = employee.salary.DisplaySalary(23);
+// console.log(data);
+// var display = employee.displayDataType(2323);
+// module
