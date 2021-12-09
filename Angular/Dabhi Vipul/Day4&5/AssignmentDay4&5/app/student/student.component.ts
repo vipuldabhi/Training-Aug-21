@@ -24,29 +24,29 @@ export class StudentComponent implements OnInit {
       pin : ['',Validators.minLength(6)]
     }),
     father : this.fb.group({
-      fatherfirstname : ['',[Validators.required,Validators.pattern('[a-zA-Z]*')]],
-      fathermiddlename : ['',[Validators.required,Validators.pattern('[a-zA-Z]*')]],
-      fatherlastname : ['',[Validators.required,Validators.pattern('[a-zA-Z]*')]],
-      fatheremail : ['',Validators.email],
-      fatherqualification : [''],
-      fatherprofession : [''],
-      fatherdesignation : [''],
-      fatherphone : ['',Validators.pattern('[1-9][0-9]{9,9}')]
+      firstname : ['',[Validators.required,Validators.pattern('[a-zA-Z]*')]],
+      middlename : ['',[Validators.required,Validators.pattern('[a-zA-Z]*')]],
+      lastname : ['',[Validators.required,Validators.pattern('[a-zA-Z]*')]],
+      email : ['',Validators.email],
+      qualification : [''],
+      profession : [''],
+      designation : [''],
+      phone : ['']
     }),
     mother : this.fb.group({
-      motherfirstname : ['',[Validators.required,Validators.pattern('[a-zA-Z]*')]],
-      mothermiddlename : ['',[Validators.required,Validators.pattern('[a-zA-Z]*')]],
-      motherlastname : ['',[Validators.required,Validators.pattern('[a-zA-Z]*')]],
-      motheremail : ['',Validators.email],
-      motherqualification : [''],
-      motherprofession : [''],
-      motherdesignation : [''],
-      motherphone : ['',Validators.pattern('[1-9][0-9]{9,9}')]
+      firstname : ['',[Validators.required,Validators.pattern('[a-zA-Z]*')]],
+      middlename : ['',[Validators.required,Validators.pattern('[a-zA-Z]*')]],
+      lastname : ['',[Validators.required,Validators.pattern('[a-zA-Z]*')]],
+      email : ['',Validators.email],
+      qualification : [''],
+      profession : [''],
+      designation : [''],
+      phone : ['']
     }),
     emergency : this.fb.array([
         this.fb.group({
         relation : ['',Validators.required],
-        emergencyphone : ['',Validators.required]
+        phone : ['',Validators.required]
       })
     ]),
     reference : this.fb.group({
