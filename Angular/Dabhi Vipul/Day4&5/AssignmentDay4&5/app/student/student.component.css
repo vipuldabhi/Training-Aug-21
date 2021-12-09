@@ -1,0 +1,7 @@
+input.ng-invalid{
+    border: 1px solid red;
+    box-shadow: 0 0 13px inset red;
+}
+.validation{
+    color: red;
+}

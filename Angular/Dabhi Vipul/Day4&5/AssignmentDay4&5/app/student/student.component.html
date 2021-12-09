@@ -1,0 +1,281 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 mx-auto">
+
+            <form  [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+                <h2 class="text-center mt-4">Student's Details</h2>
+                <div class="form-group mb-3">
+                    <label for="firstname" class="form-label">FirstName</label>
+                    <input type="text" id="firstname"
+                    class="form-control" placeholder="Enter FirstName" formControlName="firstname">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="middlename" class="form-label">MiddleName</label>
+                    <input type="text" id="middlename"
+                    class="form-control" placeholder="Enter MiddleName" formControlName="middlename">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="lastname" class="form-label">LastName</label>
+                    <input type="text" id="lastname"
+                    class="form-control" placeholder="Enter LastName" formControlName="lastname">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="dateofbirth" class="form-label">DateOfBirth</label>
+                    <input type="date" id="dateofbirth"
+                    class="form-control" placeholder="Enter DateOfBirth" formControlName="dateofbirth">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="placeofbirth" class="form-label">PlaceOfBirth</label>
+                    <input type="text" id="placeofbirth"
+                    class="form-control" placeholder="Enter PlaceOfBirth" formControlName="placeofbirth">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="firstlanguage" class="form-label">First Language</label>
+                    <input type="text" id="firstlanguage"
+                    class="form-control" placeholder="Enter First Language" formControlName="firstlanguage">
+                </div>
+                <div class="form-group mb-3" formGroupName="address">
+                    <h2 class="text-center mt-4">Address</h2>
+                  
+                    <label for="city" class="form-label">City: </label>
+                    <input id="city" type="text" class="form-control" formControlName="city"
+                     placeholder="Enter City">
+                  
+                    <label for="state" class="form-label">State: </label>
+                    <input id="state" type="text" class="form-control" formControlName="state"
+                     placeholder="Enter State">
+                  
+                    <label for="country" class="form-label">Country: </label>
+                    <input id="country" type="text" class="form-control" formControlName="country"
+                     placeholder="Enter Country">
+                    
+                    <label for="pin" class="form-label">Pin: </label>
+                    <input id="pin" type="text" class="form-control" formControlName="pin"
+                     placeholder="Enter Pin">
+                </div>
+                <div class="form-group mb-3" formGroupName="father">
+                    <h2 class="text-center mt-4">Father's Details</h2>
+
+                    <label for="fatherfirstname" class="form-label">FirstName</label>
+                    <input type="text" id="fatherfirstname"
+                    class="form-control" placeholder="Enter FirstName" 
+                    formControlName="fatherfirstname">
+
+                    <label for="fathermiddlename" class="form-label">MiddleName</label>
+                    <input type="text" id="fathermiddlename"
+                    class="form-control" placeholder="Enter MiddleName" 
+                    formControlName="fathermiddlename">
+                    
+                    <label for="fatherlastname" class="form-label">LastName</label>
+                    <input type="text" id="fatherlastname"
+                    class="form-control" placeholder="Enter LastName" 
+                    formControlName="fatherlastname">
+
+                    <label for="fatheremail" class="form-label">Email</label>
+                    <input type="email" class="form-control" 
+                    id="fatheremail" placeholder="Enter Email Address" 
+                    formControlName="fatheremail">
+
+                    <label for="fatherqualification" class="form-label">Education Qualification</label>
+                    <input type="text" class="form-control" 
+                    id="fatherqualification" placeholder="Enter Education Qualification" 
+                    formControlName="fatherqualification">
+
+                    <label for="fatherprofession" class="form-label">Profession</label>
+                    <input type="text" class="form-control" 
+                    id="fatherprofession" placeholder="Enter Profession" 
+                    formControlName="fatherprofession">
+
+                    <label for="fatherdesignation" class="form-label">Designation</label>
+                    <input type="text" class="form-control" 
+                    id="fatherdesignation" placeholder="Enter Designation" 
+                    formControlName="fatherdesignation">
+
+                    <label for="fatherphone" class="form-label">Phone Number</label>
+                    <input type="text" class="form-control" 
+                    id="fatherphone" placeholder="Enter Phone Number" 
+                    formControlName="fatherphone">
+                </div>  
+                <div class="form-group mb-3" formGroupName="mother">
+                    <h2 class="text-center mt-4">Mother's Details</h2>
+
+                    <label for="motherfirstname" class="form-label">FirstName</label>
+                    <input type="text" id="motherfirstname"
+                    class="form-control" placeholder="Enter FirstName" 
+                    formControlName="motherfirstname">
+
+                    <label for="mothermiddlename" class="form-label">MiddleName</label>
+                    <input type="text" id="mothermiddlename"
+                    class="form-control" placeholder="Enter MiddleName" 
+                    formControlName="mothermiddlename">
+                    
+                    <label for="motherlastname" class="form-label">LastName</label>
+                    <input type="text" id="motherlastname"
+                    class="form-control" placeholder="Enter LastName" 
+                    formControlName="motherlastname">
+
+                    <label for="motheremail" class="form-label">Email</label>
+                    <input type="email" class="form-control" 
+                    id="motheremail" placeholder="Enter Email Address" 
+                    formControlName="motheremail">
+
+                    <label for="motherqualification" class="form-label">Education Qualification</label>
+                    <input type="text" class="form-control" 
+                    id="motherqualification" placeholder="Enter Education Qualification" 
+                    formControlName="motherqualification">
+
+                    <label for="motherprofession" class="form-label">Profession</label>
+                    <input type="text" class="form-control" 
+                    id="motherprofession" placeholder="Enter Profession" 
+                    formControlName="motherprofession">
+
+                    <label for="motherdesignation" class="form-label">Designation</label>
+                    <input type="text" class="form-control" 
+                    id="motherdesignation" placeholder="Enter Designation" 
+                    formControlName="motherdesignation">
+                    
+                    <label for="motherphone" class="form-label">Phone Number</label>
+                    <input type="text" class="form-control" 
+                    id="motherphone" placeholder="Enter Phone Number" 
+                    formControlName="motherphone">
+                </div>  
+                <div>
+                    <h5 class="text-center mt-4">Emergency Contact List</h5>
+                    <div formArrayName="emergency"  *ngFor="let value of emergency.controls; let i=index">
+                        
+                        <p class="fw-bold mt-3">Contact{{i+1}}</p>
+                            <div class="form-group" [formGroupName]="i">
+                                <label for="relation" class="form-label">Relation</label>
+                                <input type="text" class="form-control" 
+                                id="relation" placeholder="Enter Relation" 
+                                formControlName="relation">
+
+                                <label for="emergencyphone" class="form-label">Phone Number</label>
+                                <input type="text" class="form-control" 
+                                id="emergencyphone" placeholder="Enter Phone Number" 
+                                formControlName="emergencyphone">
+                            </div>
+                        <!-- <button type="button" class="btn btn-primary" (click)="addContact()">Add Contact</button> -->
+                    </div>
+                </div>
+                <div class="form-group mb-3" formGroupName="reference">
+                    <h2 class="text-center mt-4">Reference Details</h2>
+
+                    <label for="refdetails" class="form-label">Reference Details</label>
+                    <input type="text" class="form-control" 
+                    id="refdetails" placeholder="Enter Reference Details" 
+                    formControlName="refdetails">
+
+                    <label for="refthrough" class="form-label">Reference Through</label>
+                    <input type="text" class="form-control" 
+                    id="refthrough" placeholder="Enter Reference Through" 
+                    formControlName="refthrough">
+
+                    <label for="refaddress" class="form-label">Address</label>
+                    <input type="text" class="form-control" 
+                    id="refaddress" placeholder="Enter Address" 
+                    formControlName="refaddress">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+
+        <div class="col-sm-12 my-5">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>FirstName</th>
+                        <th>LastName</th>
+                        <th>MiddleName</th>
+                        <th>DateOfBirth</th>
+                        <th>PlaceOfBirth</th>
+                        <th>First Language</th>
+                        <th>Address</th>
+                        <th>Father Details</th>
+                        <th>Mother Details</th>
+                        <th>Emergency Contact Details</th>
+                    </tr>
+                </thead>
+                <tbody  *ngFor="let i of StudentList">
+                    <tr>
+                        <td>{{i.firstname}}</td>
+                        <td>{{i.lastname}}</td>
+                        <td>{{i.middlename}}</td>
+                        <td>{{i.dateofbirth}}</td>
+                        <td>{{i.placeofbirth}}</td>
+                        <td>{{i.firstlanguage}}</td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <th>City</th>
+                                    <th>State</th>
+                                    <th>Country</th>
+                                    <th>Pin</th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Qualification</th>
+                                    <th>Profession</th>
+                                    <th>Designation</th>
+                                    <th>Phone</th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Qualification</th>
+                                    <th>Profession</th>
+                                    <th>Designation</th>
+                                    <th>Phone</th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <th>Relation</th>
+                                    <th>Phone</th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
