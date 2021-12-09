@@ -1,0 +1,47 @@
+<div class="container mt-5">
+
+    <div>
+        <p class="display-5 my-2 text-center mb-5">AssignmentDay3</p>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-12">
+
+            <table class="table text-center">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Average</th>
+                        <th>Grade</th>
+                        <th>Active</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let s of students">
+                        <ng-container *ngIf="s.Active" [ngSwitch]="s.Grade" >
+                            <td>{{s.ID}}</td>
+                            <td>{{s.Name}}</td>
+                            <td>{{s.Age}}</td>
+                            <td>{{s.Average}}</td>
+                            <!-- Using ngSwitch and ngStyle -->
+                            <!-- <td *ngSwitchCase="'A+'" [ngStyle]="{backgroundColor:'green'}">{{s.Grade}}</td>
+                            <td *ngSwitchCase="'A'" [ngStyle]="{backgroundColor:'blue'}">{{s.Grade}}</td>
+                            <td *ngSwitchCase="'B'" [ngStyle]="{backgroundColor:'yellow'}">{{s.Grade}}</td>
+                            <td *ngSwitchCase="'C'" [ngStyle]="{backgroundColor:'orange'}">{{s.Grade}}</td>
+                            <td *ngSwitchCase="'F'" [ngStyle]="{backgroundColor:'red'}">{{s.Grade}}</td> -->
+                            <!-- Using ngSwitch and ngClass -->
+                            <td *ngSwitchCase="'A+'" [ngClass]="'bg-success'">{{s.Grade}}</td>
+                            <td *ngSwitchCase="'A'" [ngClass]="'bg-primary'">{{s.Grade}}</td>
+                            <td *ngSwitchCase="'B'" [ngClass]="'bg-info'">{{s.Grade}}</td>
+                            <td *ngSwitchCase="'C'" [ngClass]="'bg-warning'">{{s.Grade}}</td>
+                            <td *ngSwitchCase="'F'" [ngClass]="'bg-danger'">{{s.Grade}}</td>
+                            <td>{{s.Active}}</td>
+                        </ng-container>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

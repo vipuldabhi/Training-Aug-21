@@ -1,0 +1,53 @@
+
+<div class="container mt-5">
+    
+    <div>
+        <p class="display-5 my-2 text-center mb-5">PracticeDay3</p>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-12">
+            <input type="text" class="form-control my-2" [(ngModel)]="show" disabled>
+            <button class="btn btn-outline-primary mb-2" (click)="showhide()">ShowHide</button>
+            <div *ngIf="show">
+                <p>A car is a wheeled motor vehicle used for transportation. 
+                    Most definitions of cars say that they run primarily on roads, 
+                    seat one to eight people, have four tires, and mainly transport 
+                    people rather than goods. Cars came into global use during the 20th century, 
+                    and developed economies depend on them
+                </p>
+            </div>
+
+            <hr />
+
+            <div *ngFor="let value of productList">
+                <li>{{value.ProductName}} | {{value.ProductPrice}}</li>
+            </div>
+
+            <hr />
+
+            <div *ngFor="let value of productList" [ngSwitch]="value.rating">
+                <span *ngSwitchCase="'1'" [ngStyle]="{'font-size':'18px','color':'green'}">{{value.ProductName}}</span>
+                <span *ngSwitchCase="'2'" [ngStyle]="{'font-size':'18px','color':'red'}">{{value.ProductName}}</span>
+            </div>
+
+            <hr />
+
+            <input type="text" class="form-control my-2" [(ngModel)]="color">
+
+            <p [ngStyle]="{color:changeColor()}">This Is a Attribute Directive</p>
+
+            <hr />
+
+            <label>Enter Aqua if you want to change Background Color</label>
+            <input type="text" class="form-control my-2" [(ngModel)]="background">
+
+            <p [ngClass]="{backgroundColor:background === 'Aqua'}">This Is a Attribute Directive</p>
+
+            <hr />
+
+        </div>
+    </div>
+</div>
+
+    
