@@ -1,0 +1,16 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-xl-12">
+
+            <label for="length" class="my-2">Enter Length : </label>
+            <input type="number" class="form-control" [(ngModel)] = length>
+            <label for="height" class="my-2">Enter Height : </label>
+            <input type="number" class="form-control" [(ngModel)] = height>
+
+            <button class="btn btn-outline-primary my-2" (click)="AreaOfRectangle(length,height)"> 
+                Calculate Area</button>
+            
+            <input type="text" class="form-control" value="Area Of Rectangle : {{area}}">    
+        </div>
+    </div>
+</div>

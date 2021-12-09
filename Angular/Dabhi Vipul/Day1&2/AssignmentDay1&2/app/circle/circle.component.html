@@ -1,0 +1,14 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-xl-12">
+
+            <label for="radius">Enter Radius : </label>
+            <input id="radius" class="form-control my-2" type="text" [(ngModel)] = "r">
+
+            <button class="btn btn-outline-primary" (click)="AreaOfCircle(r)">Calculate Area</button>
+
+            <p class="mt-2">Area Of Circle : {{CircleArea}}</p>
+
+        </div>
+    </div>
+</div>
