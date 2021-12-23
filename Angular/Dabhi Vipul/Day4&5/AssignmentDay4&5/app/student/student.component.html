@@ -8,16 +8,49 @@
                     <label for="firstname" class="form-label">FirstName</label>
                     <input type="text" id="firstname"
                     class="form-control" placeholder="Enter FirstName" formControlName="firstname">
+                    <div *ngIf="firstname!==null">
+                        <div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)"
+                            class="text-danger m-0 p-0 ms-1 mt-1">
+                            <div *ngIf="firstname.errors?.['required']">
+                                FirstName is required.
+                            </div>
+                            <div *ngIf="firstname.errors?.['pattern']">
+                                FirstName can't contain digit or Whitespace.
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group mb-3">
                     <label for="middlename" class="form-label">MiddleName</label>
                     <input type="text" id="middlename"
                     class="form-control" placeholder="Enter MiddleName" formControlName="middlename">
+                    <div *ngIf="middlename!==null">
+                        <div *ngIf="middlename.invalid && (middlename.dirty || middlename.touched)"
+                            class="text-danger m-0 p-0 ms-1 mt-1">
+                            <div *ngIf="middlename.errors?.['required']">
+                                MiddleName is required.
+                            </div>
+                            <div *ngIf="middlename.errors?.['pattern']">
+                                MiddleName can't contain digit or Whitespace.
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group mb-3">
                     <label for="lastname" class="form-label">LastName</label>
                     <input type="text" id="lastname"
                     class="form-control" placeholder="Enter LastName" formControlName="lastname">
+                    <div *ngIf="lastname!==null">
+                        <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)"
+                            class="text-danger m-0 p-0 ms-1 mt-1">
+                            <div *ngIf="lastname.errors?.['required']">
+                                LastName is required.
+                            </div>
+                            <div *ngIf="lastname.errors?.['pattern']">
+                                LastName can't contain digit or Whitespace.
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group mb-3">
                     <label for="dateofbirth" class="form-label">DateOfBirth</label>
@@ -28,30 +61,52 @@
                     <label for="placeofbirth" class="form-label">PlaceOfBirth</label>
                     <input type="text" id="placeofbirth"
                     class="form-control" placeholder="Enter PlaceOfBirth" formControlName="placeofbirth">
+                    <div *ngIf="placeofbirth!==null">
+                        <div *ngIf="placeofbirth.invalid && (placeofbirth.dirty || placeofbirth.touched)"
+                            class="text-danger m-0 p-0 ms-1 mt-1">
+                            <div *ngIf="placeofbirth.errors?.['required']">
+                                PlaceOfBirth is required.
+                            </div>
+                            <div *ngIf="placeofbirth.errors?.['pattern']">
+                                PlaceOfBirth can't contain digit or Whitespace.
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group mb-3">
                     <label for="firstlanguage" class="form-label">First Language</label>
                     <input type="text" id="firstlanguage"
                     class="form-control" placeholder="Enter First Language" formControlName="firstlanguage">
+                    <div *ngIf="firstlanguage!==null">
+                        <div *ngIf="firstlanguage.invalid && (firstlanguage.dirty || firstlanguage.touched)"
+                            class="text-danger m-0 p-0 ms-1 mt-1">
+                            <div *ngIf="firstlanguage.errors?.['required']">
+                                First Language is required.
+                            </div>
+                            <div *ngIf="firstlanguage.errors?.['pattern']">
+                                First Language can't contain digit or Whitespace.
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group mb-3" formGroupName="address">
                     <h2 class="text-center mt-4">Address</h2>
-                
+                  
                     <label for="city" class="form-label">City: </label>
                     <input id="city" type="text" class="form-control" formControlName="city"
-                    placeholder="Enter City">
-                
+                     placeholder="Enter City">
+                  
                     <label for="state" class="form-label">State: </label>
                     <input id="state" type="text" class="form-control" formControlName="state"
-                    placeholder="Enter State">
-                
+                     placeholder="Enter State">
+                  
                     <label for="country" class="form-label">Country: </label>
                     <input id="country" type="text" class="form-control" formControlName="country"
-                    placeholder="Enter Country">
+                     placeholder="Enter Country">
                     
                     <label for="pin" class="form-label">Pin: </label>
                     <input id="pin" type="text" class="form-control" formControlName="pin"
-                    placeholder="Enter Pin">
+                     placeholder="Enter Pin">
                 </div>
                 <div class="form-group mb-3" formGroupName="father">
                     <h2 class="text-center mt-4">Father's Details</h2>
@@ -231,7 +286,7 @@
                                     <th>Phone</th>
                                 </tr>
                                 <tr>
-                                    <td>{{i.father.firstName}}</td>
+                                    <td>{{i.father.firstname}}</td>
                                     <td>{{i.father.email}}</td>
                                     <td>{{i.father.qualification}}</td>
                                     <td>{{i.father.profession}}</td>
@@ -251,7 +306,7 @@
                                     <th>Phone</th>
                                 </tr>
                                 <tr>
-                                    <td>{{i.mother.firstName}}</td>
+                                    <td>{{i.mother.firstname}}</td>
                                     <td>{{i.mother.email}}</td>
                                     <td>{{i.mother.qualification}}</td>
                                     <td>{{i.mother.profession}}</td>

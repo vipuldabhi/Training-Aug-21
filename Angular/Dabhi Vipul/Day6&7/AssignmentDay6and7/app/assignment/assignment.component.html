@@ -1,0 +1,55 @@
+<div class="container my-5">
+    <div>
+        <p class="display-5 text-center mt-2">Assignment Day4&5</p>
+    </div>
+    <div>
+        <h2 class="text-center mt-3">Dynamic Form</h2>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-left bg-white rounded shadow py-3">
+            <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                <div>
+                    <label for="name" class="form-label">Name : </label>
+                    <input type="text" id="name" class="form-control" placeholder="Enter Name" formControlName="name">
+                    <div *ngIf="name!==null">
+                        <div *ngIf="name.touched">
+                            <div *ngIf="name.invalid" class="alert alert-danger">
+                                Please Enter Correct Email.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label for="email" class="form-label">Email : </label>
+                    <input type="text" id="email" class="form-control" placeholder="Enter Email"
+                        formControlName="email">
+                    <div *ngIf="email!==null">
+                        <div *ngIf="email.touched">
+                            <div *ngIf="email.invalid" class="alert alert-danger">
+                                Please Enter Correct Email.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group m-4">
+                    <h3 class="ms-0">Langeages You Know : </h3>
+                    <button type="button" class="btn btn-sm btn-primary" (click)="addLanguage()">Add Language</button>
+                    <button type="button" class="btn btn-sm btn-primary ms-3" (click)="removeLanguage()">Remove
+                        Language</button>
+                </div>
+                <div formArrayName="languages" *ngFor="let value of languages.controls; let i=index">
+                    <div class="form-group" [formGroupName]="i">
+                        <label for="{{'language'+i}}" class="form-label mt-2">{{'Language-'+(i+1)}} : </label>
+                        <input type="text" id="{{'language'+i}}" class="form-control" placeholder="Enter Language"
+                            formControlName="language">
+
+                        <label for="{{'des'+i}}" class="form-label">Description</label>
+                        <input type="text" id="{{'des'+i}}" class="form-control" placeholder="Enter Description"
+                            formControlName="des">
+                    </div>
+                    <hr />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
