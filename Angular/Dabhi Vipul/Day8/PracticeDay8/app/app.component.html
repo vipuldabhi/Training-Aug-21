@@ -1,0 +1,9 @@
+<input type="text" class="m-5" [(ngModel)]="name"> 
+
+<app-child [UserName]="name" (dataFunction)="dataFunction($event)"></app-child>
+
+
+<hr />
+
+
+<h2 class="m-5">{{value}}</h2>

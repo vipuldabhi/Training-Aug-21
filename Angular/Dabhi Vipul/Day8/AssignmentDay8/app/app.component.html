@@ -1,0 +1,105 @@
+<app-student (sendData)="getData($event)"></app-student>
+
+<hr />
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 my-5">
+            <h2 class="mb-5 text-center">Student Component</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>FirstName</th>
+                        <th>LastName</th>
+                        <th>MiddleName</th>
+                        <th>DateOfBirth</th>
+                        <th>PlaceOfBirth</th>
+                        <th>First Language</th>
+                        <th>Address</th>
+                        <th>Father Details</th>
+                        <th>Mother Dfatheretails</th>
+                    </tr>
+                </thead>
+                <tbody  *ngFor="let i of student">
+                    <tr>
+                        <td>{{i.firstname}}</td>
+                        <td>{{i.lastname}}</td>
+                        <td>{{i.middlename}}</td>
+                        <td>{{i.dateofbirth}}</td>
+                        <td>{{i.placeofbirth}}</td>
+                        <td>{{i.firstlanguage}}</td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <th>City</th>
+                                    <th>State</th>
+                                    <th>Country</th>
+                                    <th>Pin</th>
+                                </tr>
+                                <tr>
+                                    <td>{{i.address.city}}</td>
+                                    <td>{{i.address.state}}</td>
+                                    <td>{{i.address.country}}</td>
+                                    <td>{{i.address.pin}}</td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Qualification</th>
+                                    <th>Profession</th>
+                                    <th>Designation</th>
+                                    <th>Phone</th>
+                                </tr>
+                                <tr>
+                                    <td>{{i.father.firstname}}</td>
+                                    <td>{{i.father.email}}</td>
+                                    <td>{{i.father.qualification}}</td>
+                                    <td>{{i.father.profession}}</td>
+                                    <td>{{i.father.designation}}</td>
+                                    <td>{{i.father.phone}}</td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Qualification</th>
+                                    <th>Profession</th>
+                                    <th>Designation</th>
+                                    <th>Phone</th>
+                                </tr>
+                                <tr>
+                                    <td>{{i.mother.firstname}}</td>
+                                    <td>{{i.mother.email}}</td>
+                                    <td>{{i.mother.qualification}}</td>
+                                    <td>{{i.mother.profession}}</td>
+                                    <td>{{i.mother.designation}}</td>
+                                    <td>{{i.mother.phone}}</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<hr />
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 my-5">
+            <h2 class="mb-5 text-center">StudentList Component</h2>
+            <app-student-list [studentData]="stData"></app-student-list>
+        </div>
+    </div>
+</div>
+
