@@ -1,0 +1,84 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12 text-center">
+            <div class="container w-25 mt-3">
+                <form>
+                    <div class="form-group">
+                        <label for="num1">Please Enter First Number</label>
+                        <input type="text" id="num1" class="form-control" placeholder="enter first number">
+                    </div>
+                    <div class="form-group">
+                        <label for="num2">Enter Second Number</label>
+                        <input type="text" id="num2" class="form-control" placeholder="enter second number">
+                    </div>
+                    <div class="form-check">
+                        <label for="operation">Please Select Operation You Want To Perform</label><br />
+                        <label for="addition" class="form-check-lable">Addition</label>
+                        <input type="radio" id="addition" class="form-check-input" value="1" name="operation"> <br />
+                        <label for="Subtraction" class="form-check-lable">Subtraction</label>
+                        <input type="radio" id="subtraction" class="form-check-input" value="2" name="operation"><br />
+                        <label for="Multiplication" class="form-check-lable">Multiplication</label>
+                        <input type="radio" id="multiplication" class="form-check-input" value="3"
+                            name="operation"><br />
+                        <label for="Division" class="form-check-lable">Division</label>
+                        <input type="radio" id="division" class="form-check-input" value="4" name="operation">
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="calculate()">Calculate</button>
+                    <input type="text" id="result"><br />
+                    <button type="button" class="btn btn-success mt-2" onclick="reset()">Reset</button>
+                </form>
+                <script>
+                    function calculate() {
+
+                        //get the values of number which user enter
+
+                        var number1 = parseFloat(document.getElementById('num1').value);
+                        var number2 = parseFloat(document.getElementById('num2').value);
+
+                        //check for which operation user select
+
+                        if (document.getElementById('addition').checked == true) {
+                            var operation = document.getElementById("addition").value;
+                        }
+                        else if (document.getElementById('subtraction').checked == true) {
+                            var operation = document.getElementById("subtraction").value;
+                        }
+                        else if (document.getElementById('multiplication').checked == true) {
+                            var operation = document.getElementById("multiplication").value;
+                        }
+                        else if (document.getElementById('division').checked == true) {
+                            var operation = document.getElementById("division").value;
+                        } else {
+                            alert("Please Select Operation You Want to Perform");
+                        }
+
+                        //check for which operation is perform
+
+                        if (operation == "1") {
+                            document.getElementById("result").value = number1 + number2;
+                        }
+                        else if (operation == "2") {
+                            document.getElementById("result").value = number1 - number2;
+                        }
+                        else if (operation == "3") {
+                            document.getElementById("result").value = number1 * number2;
+                        }
+                        else if (operation == "4") {
+                            document.getElementById("result").value = number1 / number2;
+                        }
+
+                    }
+
+                    //for reset the values
+
+                    function reset() {
+                        document.getElementById("num1").value = "";
+                        document.getElementById("num2").value = "";
+                        document.getElementsByName("operation").value = "";
+                    }
+
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
