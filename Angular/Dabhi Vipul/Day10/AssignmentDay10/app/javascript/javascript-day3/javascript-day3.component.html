@@ -1,0 +1,108 @@
+<div class="container">
+    <div class="row">
+        <div class="row-xl-12">
+            <div class="container">
+                <form name="myform" onsubmit="validation()" method="get" action="formsvalue.html">
+                    <div class="form-group">
+                        <label for="employeeid">EmployeeID</label>
+                        <input type="text" id="employeeid" class="form-control" name="empid" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="employeename">EmployeeName</label>
+                        <input type="text" id="employeename" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Gender">Gender</label>
+                        <input type="radio" id="gender" class="form-check-control" name="gender" value="male" required>
+                        <label for="gender">Male</label>
+                        <input type="radio" id="gender" class="form-check-control" name="gender" value="female"
+                            required>
+                        <label for="gender">Female</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="designation">Designation</label>
+                        <input type="text" id="designation" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="salary">Salary</label>
+                        <input type="number" id="salary" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Locations">Location</label>
+                        <select id="locations" class="form-control" required>
+                            <option>Ahmedabad</option>
+                            <option>Rajkot</option>
+                            <option>Surat</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Adderess</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dateofjoining">Date Of Joining</label>
+                        <input type="date" id="dateofjoining" name="joindate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactnumber">Contact Number</label>
+                        <input type="number" id="contactnumber" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-outline-primary" formtarget="_blank">Submit</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="validationerror">Summary</label>
+                        <input type="text" id="validationerror" class="form-control" value="submit" name="submit">
+                    </div>
+                </form>
+            </div>
+            <script>
+                function validation() {
+                    let x = document.forms["myform"]["empid"].value
+                    let y = /\w{5,}/g;
+                    var result = x.match(y);
+
+                    if (!result) {
+                        document.getElementById("validationerror").value = "!!! Please Enter Atleats 5 character EmployeeID"
+                        return false;
+                    } else {
+                        var empid = document.getElementById("employeeid").value;
+                        var empname = document.getElementById("employeename").value;
+                        var age = document.getElementById("age").value;
+                        var gender = document.getElementById("gender").value;
+                        var designation = document.getElementById("designation").value;
+                        var salary = document.getElementById("salary").value;
+                        var locations = document.getElementById("locations").value;
+                        var email = document.getElementById("email").value;
+                        var dateofjoining = document.getElementById("dateofjoining").value;
+                        var contactnumber = document.getElementById("contactnumber").value;
+
+                        console.log(empid);
+                        // myform.submit();
+                        var newwin = window.open();
+                        newwin.document.write(
+                            "<h2>your data submitted succesfully</h2>"
+                            + "<br><label>Id : </label>" + empid
+                            + "<br><label>Name : </label>" + empname
+                            + "<br><label>Age : </label>" + age
+                            + "<br><label>Gender : </label>" + gender
+                            + "<br><label>Designation : </label>" + designation
+                            + "<br><label>Salary : </label>" + salary
+                            + "<br><label>Location : </label>" + locations
+                            + "<br><label>Email : </label>" + email
+                            + "<br><label>JoiningDate : </label>" + dateofjoining
+                            + "<br><label>ContactNumber : </label>" + contactnumber
+                        )
+                    }
+
+
+                }
+
+            </script>
+        </div>
+    </div>
+</div>

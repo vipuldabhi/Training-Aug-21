@@ -1,0 +1,83 @@
+<div class="container">
+    <div class="row">
+        <div class="row-xl-12 text-center">
+            <div class="container mt-5">
+
+                <button class="btn btn-success" onclick="starttime()">Start Exam</button>
+
+                <ul type="none">
+                    <li>question-1
+                        <ul type="none">
+                            <li><input id="radiobtn" type="radio" name="question1">a</li>
+                            <li><input id="radiobtn" type="radio" name="question1">b</li>
+                            <li><input id="radiobtn" type="radio" name="question1">c</li>
+                            <li><input id="radiobtn" type="radio" name="question1">d</li>
+                        </ul>
+                    </li>
+                    <li>question-2
+                        <ul type="none">
+                            <li><input id="radiobtn" type="radio" name="question2">a</li>
+                            <li><input id="radiobtn" type="radio" name="question2">b</li>
+                            <li><input id="radiobtn" type="radio" name="question2">c</li>
+                            <li><input id="radiobtn" type="radio" name="question2">d</li>
+                        </ul>
+                    </li>
+                </ul>
+                <input type="submit" class="btn btn-outline-success" onclick="submit()">
+            </div>
+            <script>
+                var myVar
+
+                function starttime() {
+
+                    myVar = setTimeout(function () {
+
+                        alert("Exam is Over!!!");
+
+                    }, 10800000)
+
+                }
+
+                function submit() {
+
+                    examsubmit().then(
+
+                        (resolve) => {
+                            alert(resolve);
+                            clearTimeout(myVar);
+                        },
+                        (reject) => {
+                            alert(reject);
+                        }
+
+                    )
+                }
+
+                function examsubmit() {
+
+                    var mypromise = new Promise(function (resolve, reject) {
+
+                        var notover = "If You Want To Submit Exam Then Press Ok!!!";
+
+                        var over = "Exam is over No need to submit";
+
+                        if (myVar) {
+
+                            alert("Exam Time is Not Over Yet!!");
+                            resolve(notover);
+
+                        } else {
+
+                            reject(over);
+
+                        }
+                    })
+                    return mypromise;
+                }
+
+
+
+            </script>
+        </div>
+    </div>
+</div>

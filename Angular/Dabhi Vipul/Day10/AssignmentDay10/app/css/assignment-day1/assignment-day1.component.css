@@ -1,0 +1,23 @@
+body {
+    border: 1px solid black;
+}
+
+main>div {
+    color: blue;
+    text-align: center;
+    line-height: 0%;
+}
+
+h3,
+h4 {
+    text-align: center;
+    line-height: 25px;
+}
+
+h2 {
+    color: blue;
+}
+
+p {
+    text-indent: 50px;
+}

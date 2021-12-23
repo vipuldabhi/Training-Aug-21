@@ -1,0 +1,65 @@
+#header {
+    background-color: red;
+    width: auto;
+    height: 100px;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+
+#nav {
+    display: inline-block;
+}
+
+#home {
+    border: black;
+    width: 100px;
+    float: left;
+    position: relative;
+    left: 400px;
+    top: 40px;
+
+}
+
+#aboutus {
+    border: black;
+    width: 100px;
+    float: left;
+    position: relative;
+    left: 400px;
+    top: 40px;
+
+
+}
+
+#contactus {
+    border: black;
+    width: 100px;
+    float: left;
+    position: relative;
+    left: 400px;
+    top: 40px;
+
+}
+
+#leftbar {
+    background-color: yellow;
+    width: 200px;
+    height: 400px;
+    float: left;
+}
+
+#sidebar {
+    background-color: orange;
+    width: auto;
+    height: 400px;
+}
+
+footer {
+    background-color: pink;
+    width: auto;
+    height: 100px;
+}
