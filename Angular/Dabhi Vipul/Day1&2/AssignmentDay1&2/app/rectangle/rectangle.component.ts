@@ -18,6 +18,7 @@ export class RectangleComponent implements OnInit {
   }
 
 
+
   constructor() { }
 
   ngOnInit(): void {

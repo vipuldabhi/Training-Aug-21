@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CircleComponent implements OnInit {
 
-
   r : number = 0;
 
   CircleArea : number = 0;
@@ -15,7 +14,6 @@ export class CircleComponent implements OnInit {
   AreaOfCircle(r : number){
     this.CircleArea = (3.14 * r * r)
   }
-
 
   constructor() { }
 

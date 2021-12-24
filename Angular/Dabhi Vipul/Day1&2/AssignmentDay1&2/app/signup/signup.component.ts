@@ -11,6 +11,7 @@ export class SignupComponent implements OnInit {
   Address : string = "";
   PanNumber : string = "";
 
+
   constructor() { }
 
   ngOnInit(): void {
