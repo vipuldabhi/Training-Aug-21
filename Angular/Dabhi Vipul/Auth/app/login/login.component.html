@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xl-12">
+            <label for="user">User</label>
+            <input type="text" id="user" class="form-control mb-3" [(ngModel)]="user">
+
+            <label for="password">Password</label>
+            <input type="text" id="password" class="form-control mb-3" [(ngModel)]="password">
+            
+            <ng-container *ngIf="checkForLogin()">
+            <button class="btn btn-primary" (click)="login()">Login</button>
+            </ng-container>
+
+            <ng-container *ngIf="checkForLogOut()">
+            <button class="btn btn-primary ms-3" (click)="logOut()">LogOut</button>
+            </ng-container>
+            
+            <h3 class="mt-5">{{flag}}</h3>
+        </div>
+    </div>
+</div>
