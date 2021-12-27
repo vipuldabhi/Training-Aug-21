@@ -57,26 +57,35 @@ namespace E_Tiffin_Service.Repository
 
         public async Task<IdentityResult> SignUpAdminAsync(SignUpModel signUpModel)
         {
-            var admin = new ApplicationUser()
-            {
-                FirstName = signUpModel.FirstName,
-                LastName = signUpModel.LastName,
-                Email = signUpModel.Email,
-                UserName = signUpModel.Email
-            };
 
-            var result = await _userManager.CreateAsync(admin, EncryptPassword.ConvertToEncrypt(signUpModel.Password));
-
-            if (!await _roleManager.RoleExistsAsync(UserRoles.Admin))
+            if(signUpModel.Email == "admin@gmail.com" && signUpModel.Password == "Admin@123")
             {
-                await _roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
-                await _userManager.AddToRoleAsync(admin, UserRoles.Admin);
+                var admin = new ApplicationUser()
+                {
+                    FirstName = signUpModel.FirstName,
+                    LastName = signUpModel.LastName,
+                    Email = signUpModel.Email,
+                    UserName = signUpModel.Email
+                };
+
+                var result = await _userManager.CreateAsync(admin, EncryptPassword.ConvertToEncrypt(signUpModel.Password));
+
+                if (!await _roleManager.RoleExistsAsync(UserRoles.Admin))
+                {
+                    await _roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
+                    await _userManager.AddToRoleAsync(admin, UserRoles.Admin);
+                }
+                else
+                {
+                    await _userManager.AddToRoleAsync(admin, UserRoles.Admin);
+                }
+                return result;
             }
             else
             {
-                await _userManager.AddToRoleAsync(admin, UserRoles.Admin);
+                return IdentityResult.Failed();
             }
-            return result;
+            
         }
 
         public async Task<IdentityResult> SignUpDeliveryBoyAsync(SignUpModel signUpModel)
