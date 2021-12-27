@@ -26,6 +26,7 @@ namespace E_Tiffin_Service.Models
         //public virtual DbSet<AspNetUserRole> AspNetUserRoles { get; set; }
         //public virtual DbSet<AspNetUserToken> AspNetUserTokens { get; set; }
         public virtual DbSet<CancellationStatus> CancellationStatuses { get; set; }
+        public virtual DbSet<CancelledOrder> CancelledOrders { get; set; }
         public virtual DbSet<ContactInfo> ContactInfos { get; set; }
         public virtual DbSet<DeliveryStatus> DeliveryStatuses { get; set; }
         public virtual DbSet<FridayDinnerMenu> FridayDinnerMenus { get; set; }
@@ -34,6 +35,7 @@ namespace E_Tiffin_Service.Models
         public virtual DbSet<MondayLunchMenu> MondayLunchMenus { get; set; }
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         public virtual DbSet<PaymentStatus> PaymentStatuses { get; set; }
+        public virtual DbSet<PendingPayment> PendingPayments { get; set; }
         public virtual DbSet<SaturdayDinnerMenu> SaturdayDinnerMenus { get; set; }
         public virtual DbSet<SaturdayLunchMenu> SaturdayLunchMenus { get; set; }
         public virtual DbSet<SundayDinnerMenu> SundayDinnerMenus { get; set; }
@@ -168,6 +170,20 @@ namespace E_Tiffin_Service.Models
                     .WithMany(p => p.CancellationStatuses)
                     .HasForeignKey(d => d.OrderId)
                     .HasConstraintName("FK__Cancellat__Order__1F98B2C1");
+            });
+
+            modelBuilder.Entity<CancelledOrder>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("CancelledOrders");
+
+                entity.Property(e => e.Date).HasColumnType("datetime");
+
+                entity.Property(e => e.FullName)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
             });
 
             modelBuilder.Entity<ContactInfo>(entity =>
@@ -328,20 +344,40 @@ namespace E_Tiffin_Service.Models
             modelBuilder.Entity<PaymentStatus>(entity =>
             {
                 entity.HasKey(e => e.PaymentId)
-                    .HasName("PK__PaymentS__9B556A38D6FCDFDF");
+                    .HasName("PK__PaymentS__9B556A3844F7F24D");
 
                 entity.ToTable("PaymentStatus");
 
                 entity.Property(e => e.PaymentId).ValueGeneratedNever();
 
-                entity.Property(e => e.Status)
-                    .IsRequired()
-                    .HasDefaultValueSql("('Pending')");
-
                 entity.HasOne(d => d.Order)
                     .WithMany(p => p.PaymentStatuses)
                     .HasForeignKey(d => d.OrderId)
-                    .HasConstraintName("FK__PaymentSt__Order__236943A5");
+                    .HasConstraintName("FK__PaymentSt__Order__2A164134");
+            });
+
+            modelBuilder.Entity<PendingPayment>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("PendingPayment");
+
+                entity.Property(e => e.Email)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.FullName)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.MobileNo)
+                    .IsRequired()
+                    .HasMaxLength(40)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.StartDate).HasColumnType("datetime");
             });
 
             modelBuilder.Entity<SaturdayDinnerMenu>(entity =>

@@ -9,7 +9,7 @@ namespace E_Tiffin_Service.Models
     {
         public int PaymentId { get; set; }
         public int? OrderId { get; set; }
-        public bool? Status { get; set; }
+        public bool Status { get; set; }
 
         public virtual OrderDetail Order { get; set; }
     }

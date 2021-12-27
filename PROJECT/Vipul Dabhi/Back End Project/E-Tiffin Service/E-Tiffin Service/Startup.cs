@@ -86,8 +86,9 @@ namespace E_Tiffin_Service
             services.AddScoped<ISundayDinnerMenuRepository, SundayDinnerMenuRepository>();
             services.AddScoped<IOrderDetailsRepository, OrderDetailsRepository>();
             services.AddScoped<IPaymentStatusRepository, PaymentStatusRepository>();
-            services.AddScoped<IAccountRepository, AccountRepository>();
-
+            services.AddScoped<IAccountRepository, AccountRepository>(); 
+            services.AddScoped<ICancelledOrderRepository, CancelledOrderRepository>();
+            services.AddScoped<IPendingPaymentRepository, PendingPaymentRepository>();
 
         }
 

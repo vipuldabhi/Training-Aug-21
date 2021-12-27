@@ -23,7 +23,7 @@ namespace E_Tiffin_Service.Models
         public string TiffinPlan { get; set; }
         public int Extra { get; set; }
         public DateTime StartDate { get; set; }
-        public bool IsActive { get; set; }
+        public static bool IsActive { get; set; }
 
         public virtual DeliveryStatus DeliveryStatus { get; set; }
         public virtual ICollection<CancellationStatus> CancellationStatuses { get; set; }

@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace E_Tiffin_Service.Repository
 {
-    public interface IOrderDetailsRepository : IGenericRepository<OrderDetail>
+    public interface ICancelledOrderRepository : IGenericRepository<CancelledOrder>
     {
-
     }
 }
