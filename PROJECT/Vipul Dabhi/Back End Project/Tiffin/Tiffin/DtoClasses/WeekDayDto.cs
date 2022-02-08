@@ -8,7 +8,7 @@ namespace Tiffin.DtoClasses
     public class WeekDayDto
     {
         public int DayId { get; set; }
-        public string WeekDayName { get; set; }
+        public string WeekDayName { get; set; }     
 
     }
 }

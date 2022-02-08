@@ -14,7 +14,7 @@ namespace Tiffin.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "admin")]
+  
     public class WeekDaysController : ControllerBase
     {
         private readonly IWeekDayRepository _weekDayRepository;
@@ -35,6 +35,7 @@ namespace Tiffin.Controllers
         /// Get all WeekDays Details Availabe in Database 
         /// </remarks> 
 
+        //GET : api/weekdays
         [HttpGet]
         public IActionResult GetAllWeekDaysData()
         {
@@ -73,7 +74,9 @@ namespace Tiffin.Controllers
         /// Get WeekDays Details by Id Provided by User 
         /// </remarks> 
 
+        //GET : api/weekdays/id
         [HttpGet("{Id}")]
+        [Authorize(Roles = "admin")]
         public IActionResult GetWeekDayById(int Id)
         {
             //throw an Error if data is empty
@@ -106,7 +109,9 @@ namespace Tiffin.Controllers
         /// Create new WeekDay into the Database 
         /// </remarks> 
 
+        //POST : api/weekdays
         [HttpPost]
+        [Authorize(Roles = "admin")]
         public IActionResult InsertWeekDay(WeekDay weekDay)
         {
             if (weekDay.IsDeleted == false)
@@ -139,7 +144,9 @@ namespace Tiffin.Controllers
         /// Update WeekDay By Given Id into Data
         /// </remarks>  
 
+        //PUT : api/weekdays
         [HttpPut]
+        [Authorize(Roles = "admin")]
         public IActionResult UpdateWeekDay(WeekDay weekDay)
         {
             if (weekDay.IsDeleted == false)
@@ -169,7 +176,9 @@ namespace Tiffin.Controllers
         /// Delete WeekDay By Given Id
         /// </remarks>  
 
+        //DELETE : api/weekdays
         [HttpDelete("{id}")]
+        [Authorize(Roles = "admin")]
         public IActionResult DeleteWeekDay(int Id)
         {
             var result = _weekDayRepository.Delete(Id);

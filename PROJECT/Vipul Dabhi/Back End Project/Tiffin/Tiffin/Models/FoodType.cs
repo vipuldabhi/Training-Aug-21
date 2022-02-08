@@ -17,10 +17,9 @@ namespace Tiffin.Models
         public int TypeId { get; set; }
 
         [Required]
-        [StringLength(20, MinimumLength = 3, ErrorMessage = "Length Should Be 3 to 9 Character Long")]
+        [StringLength(9, MinimumLength = 3, ErrorMessage = "Length Should Be 3 to 9 Character Long")]
         [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Digits are Not Allowed in IntervalName!!!")]
         public string TypeName { get; set; }
-
         public bool? IsDeleted { get; set; }
 
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }

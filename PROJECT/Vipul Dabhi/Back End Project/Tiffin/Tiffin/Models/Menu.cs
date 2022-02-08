@@ -22,8 +22,12 @@ namespace Tiffin.Models
 
         public bool? IsDeleted { get; set; }
 
+        [Required]
+        public int RestaurantsId { get; set; }
+
         public virtual WeekDay Day { get; set; }
         public virtual Food Food { get; set; }
         public virtual Interval Interval { get; set; }
+        public virtual Restaurant Restaurants { get; set; }
     }
 }

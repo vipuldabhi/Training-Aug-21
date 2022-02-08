@@ -14,7 +14,6 @@ namespace Tiffin.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "admin")]
     public class FoodTypeController : ControllerBase
     {
         private readonly IFoodTypeRepository _foodTypeRepository;
@@ -35,6 +34,7 @@ namespace Tiffin.Controllers
         /// Get all FoodType Details Availabe in Database 
         /// </remarks> 
 
+        //GET : api/foodtype
         [HttpGet]
         public IActionResult GetAllFoodTypeData()
         {
@@ -73,7 +73,9 @@ namespace Tiffin.Controllers
         /// Get FoodType Details by Id Provided by User 
         /// </remarks> 
 
+        //GET : api/foodtype/id
         [HttpGet("{Id}")]
+
         public IActionResult GetFoodTypeById(int Id)
         {
             //throw an Error if data is empty
@@ -106,7 +108,10 @@ namespace Tiffin.Controllers
         /// Create new FoodType into the Database 
         /// </remarks> 
 
+        //POST : api/foodtype
         [HttpPost]
+        [Authorize(Roles = "admin")]
+
         public IActionResult InsertFoodType(FoodType foodType)
         {
             ///try to Generate new Field If any Error occurs Return False
@@ -139,7 +144,10 @@ namespace Tiffin.Controllers
         /// Update FoodType By Given Id into Data
         /// </remarks>  
 
+        //PUT : api/foodtype
         [HttpPut]
+        [Authorize(Roles = "admin")]
+
         public IActionResult UpdateFoodType(FoodType foodType)
         {
             if (foodType.IsDeleted == false)
@@ -169,7 +177,10 @@ namespace Tiffin.Controllers
         /// Delete FoodType By Given Id
         /// </remarks>  
 
+        //DELETE : api/foodtype/id
         [HttpDelete("{id}")]
+        [Authorize(Roles = "admin")]
+
         public IActionResult DeleteFoodType(int Id)
         {
             var result = _foodTypeRepository.Delete(Id);
@@ -179,7 +190,7 @@ namespace Tiffin.Controllers
             }
             else
             {
-                return NotFound();
+                return BadRequest();
             }
         }
     }

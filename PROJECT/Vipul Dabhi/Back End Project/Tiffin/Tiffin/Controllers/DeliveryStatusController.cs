@@ -18,11 +18,13 @@ namespace Tiffin.Controllers
     public class DeliveryStatusController : ControllerBase
     {
         private readonly IDeliveryStatusRepository _deliveryStatusRepository;
+        private readonly IIntervalRepository _intervalRepository;
         private readonly IMapper _mapper;
 
-        public DeliveryStatusController(IDeliveryStatusRepository deliveryStatusRepository, IMapper mapper)
+        public DeliveryStatusController(IDeliveryStatusRepository deliveryStatusRepository,IIntervalRepository intervalRepository, IMapper mapper)
         {
             _deliveryStatusRepository = deliveryStatusRepository;
+            _intervalRepository = intervalRepository;
             _mapper = mapper;
         }
 
@@ -35,20 +37,26 @@ namespace Tiffin.Controllers
         /// Get all DeliveryStatus Details Availabe in Database 
         /// </remarks> 
 
+        //GET : api/deliverystatus
         [HttpGet]
         public IActionResult GetAllData()
         {
-            var result = _deliveryStatusRepository.GetAll();
+            var data = _deliveryStatusRepository.GetAll();
+            var result = data.Where(a => a.IsDeleted == false);
             ///throw an Error if data is empty
             if (result.Any())
             {
-                    var DataList = new List<DeliveryStatusDto>();
-                    foreach (var i in result)
-                    {
-                        DataList.Add(_mapper.Map<DeliveryStatusDto>(i));
-                    }
+                var DataList = new List<DeliveryStatusDto>();
+                foreach (var i in result)
+                {
+                    var x = _mapper.Map<DeliveryStatusDto>(i);
+                    var interval = _intervalRepository.GetAll();
+                    var a = interval.FirstOrDefault(a => a.IntervalId == i.IntervalId);
+                    x.IntervalName = a.IntervalName;
+                    DataList.Add(x);
+                }
 
-                    return Ok(DataList);
+                return Ok(DataList);
             }
             else
             {
@@ -67,12 +75,13 @@ namespace Tiffin.Controllers
         /// Get all DeliveryStatus Details Of Perticular Order
         /// </remarks> 
 
+        //GET : api/deliverystatus/order/id
         [HttpGet("order/{id}")]
         public IActionResult GetDeliveryStatusByOrderId(int id)
         {
             var result = _deliveryStatusRepository.GetAll();
             ///throw an Error if data is empty
-            if (result.Any())
+            if (result.Any())    
             {
                 var DataList = new List<DeliveryStatusDto>();
                 var data = result.Where(a => a.OrderId == id);
@@ -99,6 +108,7 @@ namespace Tiffin.Controllers
         /// Get DeliveryStatus Detail by Id Provided by User 
         /// </remarks> 
 
+        //GET : api/deliverystatus/id
         [HttpGet("{Id}")]
         public IActionResult GetAreaById(int Id)
         {
@@ -109,7 +119,7 @@ namespace Tiffin.Controllers
                 var data = _deliveryStatusRepository.GetById(Id);
                 if (data != null)
                 {
-                    return Ok(_mapper.Map<AreaDto>(data));
+                    return Ok(data);
                 }
                 else
                 {
@@ -132,6 +142,7 @@ namespace Tiffin.Controllers
         /// Create new DeliveryStatus Data into the Database 
         /// </remarks> 
 
+        //POST : api/deliverystatus
         [HttpPost]
         public IActionResult InsertData(DeliveryStatus deliveryStatus)
         {
@@ -158,6 +169,7 @@ namespace Tiffin.Controllers
         /// Update DeliveryStatus By Given Id into Data
         /// </remarks>  
 
+        //PUT : api/deliverystatus
         [HttpPut]
         public IActionResult UpdateData(DeliveryStatus deliveryStatus)
         {
@@ -182,6 +194,7 @@ namespace Tiffin.Controllers
         /// Delete DeliveryStatus By Given Id
         /// </remarks>  
 
+        //DELETE : api/deliverystatus
         [HttpDelete("{id}")]
         public IActionResult DeleteData(int Id)
         {

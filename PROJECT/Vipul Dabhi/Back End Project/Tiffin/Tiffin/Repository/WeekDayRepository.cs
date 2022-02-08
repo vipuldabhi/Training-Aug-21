@@ -20,9 +20,20 @@ namespace Tiffin.Repository
             var weekDay = _tiffinContext.WeekDays.Find(id);
             if (weekDay != null && weekDay.IsDeleted == false)
             {
-                weekDay.IsDeleted = true;
-                _tiffinContext.SaveChanges();
-                return true;
+
+                var data = _tiffinContext.Menus.FirstOrDefault(a => a.DayId == id);
+
+                if(data == null)
+                {
+                    weekDay.IsDeleted = true;
+                    _tiffinContext.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
             }
             else
             {

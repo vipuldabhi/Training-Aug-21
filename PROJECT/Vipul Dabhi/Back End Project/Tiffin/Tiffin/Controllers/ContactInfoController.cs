@@ -35,6 +35,7 @@ namespace Tiffin.Controllers
         /// Get all ContactInfo Details Availabe in Database 
         /// </remarks> 
 
+        //GET : api/contactinfo
         [HttpGet]
         public IActionResult GetAllData()
         {
@@ -66,6 +67,7 @@ namespace Tiffin.Controllers
         /// Get UnSolved ContactInfo Details Availabe in Database 
         /// </remarks> 
 
+        //GET : api/contactinfo/unsolved
         [HttpGet("unsolved")]
         public IActionResult GetUnSolvedData()
         {
@@ -107,6 +109,7 @@ namespace Tiffin.Controllers
         /// Get Solved ContactInfo Details Availabe in Database 
         /// </remarks> 
 
+        //GET : api/contactinfo/solved
         [HttpGet("solved")]
         public IActionResult GetSolvedData()
         {
@@ -138,6 +141,33 @@ namespace Tiffin.Controllers
         }
 
 
+        //Get Sorted Data
+
+        /// <summary>  
+        /// Get  Sorted Data
+        /// </summary>    
+        /// <returns></returns>  
+        /// <remarks>  
+        /// return sorted based on Name
+        /// </remarks> 
+
+        //GET : api/contactinfo/sorted/sortid
+        [HttpGet("sorted/{sortid}")]
+        [Authorize(Roles = "admin,deliveryboy")]
+        public IActionResult GetAscSortedData(int sortid)
+        {
+            var sortedData = _contactInfoRepository.GetSortedData(sortid);
+            if (sortedData != null)
+            {
+                return Ok(sortedData);
+            }
+            else
+            {
+                return NotFound();
+            }
+
+        }
+
 
         /// <summary>  
         /// Get ContactInfo Data by Given Id  
@@ -147,6 +177,7 @@ namespace Tiffin.Controllers
         /// Get ContactInfo Data by Id Provided by User 
         /// </remarks> 
 
+        //GET : api/contactinfo/id
         [HttpGet("{Id}")]
         public IActionResult GetDataById(int Id)
         {
@@ -180,6 +211,7 @@ namespace Tiffin.Controllers
         /// Create new ContactInfo Data into the Database 
         /// </remarks> 
 
+        //POST : api/contactinfo
         [HttpPost]
         public IActionResult InsertData(ContactInfo contactInfo)
         {
@@ -206,6 +238,7 @@ namespace Tiffin.Controllers
         /// Update ContactInfo Data By Given Id into JSON
         /// </remarks>  
 
+        //PUT : api/contactinfo
         [HttpPut]
         public IActionResult UpdateData(ContactInfo contactInfo)
         {
@@ -229,6 +262,7 @@ namespace Tiffin.Controllers
         /// Delete ContactInfo Data By Given Id
         /// </remarks>  
 
+        //DELETE : api/contactinfo
         [HttpDelete("{id}")]
         public IActionResult DeleteData(int Id)
         {

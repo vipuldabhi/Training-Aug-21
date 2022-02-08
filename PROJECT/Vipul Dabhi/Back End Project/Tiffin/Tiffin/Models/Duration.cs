@@ -10,6 +10,7 @@ namespace Tiffin.Models
     {
         public Duration()
         {
+            DeliveryCharges = new HashSet<DeliveryCharge>();
             OrderDetails = new HashSet<OrderDetail>();
         }
 
@@ -20,6 +21,8 @@ namespace Tiffin.Models
         public string DurationTime { get; set; }
 
         public bool? IsDeleted { get; set; }
+
+        public virtual ICollection<DeliveryCharge> DeliveryCharges { get; set; }
 
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }

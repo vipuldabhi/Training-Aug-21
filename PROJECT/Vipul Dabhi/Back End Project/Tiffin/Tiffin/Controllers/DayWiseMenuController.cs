@@ -33,6 +33,7 @@ namespace Tiffin.Controllers
         /// Get all Menu Details Availabe in Database 
         /// </remarks> 
 
+        //GET : api/daywisemenu
         [HttpGet]
         [Authorize(Roles = "admin")]
         public IActionResult GetAllData()
@@ -57,26 +58,66 @@ namespace Tiffin.Controllers
 
 
         /// <summary>  
-        /// Get Day Wise Menu By Day Id
+        /// Get Day Wise Lunch Menu By Day Id and Restaurant Name
         /// </summary>    
         /// <returns></returns>  
         /// <remarks>  
-        /// Get Day Wise Menu Details By Proveded Day Id
+        /// Get Day Wise Lunch Menu Details By Proveded Day Id and Restaurant Name
         /// </remarks> 
 
-        [HttpGet("daywise/{id}")]
-        [Authorize(Roles = "user,admin,deliveryboy")]
-        public IActionResult GetMenuByDayId(int id)
+        //GET : api/daywisemenu/lunch/day/dayid/restaurant/resname
+        [HttpGet("lunch/day/{dayid}/restaurant/{resname}")]
+        public IActionResult GetLunchMenuById(int dayid,string resname)
         {
             var result = _dayWiseMenuRepository.GetAll();
             ///throw an Error if data is empty
             if (result.Any())
             {
-                var data = result.Where(a => a.DayId == id);
+                var data = result.Where(a => a.DayId == dayid && a.IntervalId == 1 && a.RestaurantName == resname);
                 if (data.Any())
                 {
                     var MenuList = new List<DayWiseMenuDto>();
                     foreach (var i in data)   
+                    {
+                        MenuList.Add(_mapper.Map<DayWiseMenuDto>(i));
+                    }
+
+                    return Ok(MenuList);
+                }
+                else
+                {
+                    return NotFound("Requried Data Is Not Available!!!");
+                }
+            }
+            else
+            {
+                return NotFound("Data Not Available In Database!!!");
+            }
+        }
+
+
+
+        /// <summary>  
+        /// Get Day Wise Dinner Menu By Day Id and Restaurant Name
+        /// </summary>    
+        /// <returns></returns>  
+        /// <remarks>  
+        /// Get Day Wise Dinner Menu Details By Proveded Day Id and Restaurant Name
+        /// </remarks> 
+
+        //GET : api/daywisemenu/dinner/day/dayid/restaurant/resname
+        [HttpGet("dinner/day/{dayid}/restaurant/{resname}")]
+        public IActionResult GetDinnerMenuByDayId(int dayid,string resname)
+        {
+            var result = _dayWiseMenuRepository.GetAll();
+            ///throw an Error if data is empty
+            if (result.Any())
+            {
+                var data = result.Where(a => a.DayId == dayid && a.IntervalId == 2 && a.RestaurantName == resname);
+                if (data.Any())
+                {
+                    var MenuList = new List<DayWiseMenuDto>();
+                    foreach (var i in data)
                     {
                         MenuList.Add(_mapper.Map<DayWiseMenuDto>(i));
                     }

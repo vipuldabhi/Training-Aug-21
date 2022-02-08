@@ -17,7 +17,7 @@ namespace Tiffin.Models
         public int DayId { get; set; }
 
         [Required]
-        [StringLength(9,MinimumLength =6,ErrorMessage = "Length Should Be 6 to 9 Character Long")]
+        [StringLength(9, MinimumLength = 6, ErrorMessage = "Length Should Be 6 to 9 Character Long")]
         [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Digits are Not Allowed in WeekDayName!!!")]
         public string WeekDayName { get; set; }
         public bool? IsDeleted { get; set; }

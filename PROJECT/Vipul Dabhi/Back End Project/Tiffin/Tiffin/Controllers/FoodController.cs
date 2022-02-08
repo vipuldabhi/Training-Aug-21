@@ -35,6 +35,7 @@ namespace Tiffin.Controllers
         /// Get all Food Details Availabe in Database 
         /// </remarks> 
 
+        //GET : api/food
         [HttpGet]
         public IActionResult GetAllFoodsData()
         {
@@ -73,6 +74,7 @@ namespace Tiffin.Controllers
         /// Get Food Details by Id Provided by User 
         /// </remarks> 
 
+        //GET : api/food/id
         [HttpGet("{Id}")]
         public IActionResult GetFoodById(int Id)
         {
@@ -83,7 +85,7 @@ namespace Tiffin.Controllers
                 var data = _foodRepository.GetById(Id);
                 if (data != null && data.IsDeleted == false)
                 {
-                    return Ok(_mapper.Map<AreaDto>(data));
+                    return Ok(_mapper.Map<FoodDto>(data));
                 }
                 else
                 {
@@ -106,6 +108,7 @@ namespace Tiffin.Controllers
         /// Create new Food into the Database 
         /// </remarks> 
 
+        //POST : api/food
         [HttpPost]
         public IActionResult InsertData(Food food)
         {
@@ -139,6 +142,7 @@ namespace Tiffin.Controllers
         /// Update Food By Given Id into Data
         /// </remarks>  
 
+        //PPUT : api/food
         [HttpPut]
         public IActionResult UpdateData(Food food)
         {
@@ -169,6 +173,7 @@ namespace Tiffin.Controllers
         /// Delete Food By Given Id
         /// </remarks>  
 
+        //DELETE : api/food/id
         [HttpDelete("{id}")]
         public IActionResult DeleteData(int Id)
         {
@@ -179,7 +184,7 @@ namespace Tiffin.Controllers
             }
             else
             {
-                return NotFound();
+                return BadRequest();
             }
         }
     }

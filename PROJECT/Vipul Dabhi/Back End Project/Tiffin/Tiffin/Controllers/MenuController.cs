@@ -18,11 +18,15 @@ namespace Tiffin.Controllers
     public class MenuController : ControllerBase
     {
         private readonly IMenuRepository _menuRepository;
+        private readonly IFoodRepository _foodRepository;
+        private readonly IRestaurantRepository _restaurantRepository;
         private readonly IMapper _mapper;
 
-        public MenuController(IMenuRepository menuRepository, IMapper mapper)
+        public MenuController(IMenuRepository menuRepository,IFoodRepository foodRepository,IRestaurantRepository restaurantRepository, IMapper mapper)
         {
             _menuRepository = menuRepository;
+            _foodRepository = foodRepository;
+            _restaurantRepository = restaurantRepository;
             _mapper = mapper;
         }
 
@@ -35,6 +39,7 @@ namespace Tiffin.Controllers
         /// Get all Menu Details Availabe in Database 
         /// </remarks> 
 
+        //GET : api/menu
         [HttpGet]
         public IActionResult GetAllMenuData()
         {
@@ -48,7 +53,12 @@ namespace Tiffin.Controllers
                     var MenuList = new List<MenuDto>();
                     foreach (var i in data)
                     {
-                        MenuList.Add(_mapper.Map<MenuDto>(i));
+                        var a = _foodRepository.GetById(i.FoodId);
+                        var b = _restaurantRepository.GetById(i.RestaurantsId);
+                        var x = _mapper.Map<MenuDto>(i);
+                        x.FoodName = a.FoodName;
+                        x.RestaurantName = b.RestaurantName;
+                        MenuList.Add(x);
                     }
 
                     return Ok(MenuList);
@@ -73,6 +83,7 @@ namespace Tiffin.Controllers
         /// Get Menu Details by Id Provided by User 
         /// </remarks> 
 
+        //GET : api/menu/id
         [HttpGet("{Id}")]
         public IActionResult GetMenuById(int Id)
         {
@@ -106,6 +117,7 @@ namespace Tiffin.Controllers
         /// Create new Menu into the Database 
         /// </remarks> 
 
+        //POST : api/menu
         [HttpPost]
         public IActionResult InsertMenu(Menu menu)
         {
@@ -139,6 +151,7 @@ namespace Tiffin.Controllers
         /// Update Menu By Given Id into Data
         /// </remarks>  
 
+        //PUT : api/menu
         [HttpPut]
         public IActionResult UpdateMenu(Menu menu)
         {
@@ -169,6 +182,7 @@ namespace Tiffin.Controllers
         /// Delete MenuType By Given Id
         /// </remarks>  
 
+        //DELETE : api/menu/id
         [HttpDelete("{id}")]
         public IActionResult DeleteMenu(int Id)
         {

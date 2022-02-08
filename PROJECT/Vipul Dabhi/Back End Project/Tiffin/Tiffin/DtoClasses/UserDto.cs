@@ -15,6 +15,7 @@ namespace Tiffin.DtoClasses
         public string MobileNo { get; set; }
         public int AreaId { get; set; }
         public string Address { get; set; }
+        public string AreaName { get; set; }
 
 
     }

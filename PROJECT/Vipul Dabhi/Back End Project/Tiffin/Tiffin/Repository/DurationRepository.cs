@@ -20,9 +20,19 @@ namespace Tiffin.Repository
             var duration = _tiffinContext.Durations.Find(id);
             if (duration != null && duration.IsDeleted == false)
             {
-                duration.IsDeleted = true;
-                _tiffinContext.SaveChanges();
-                return true;
+                var data = _tiffinContext.OrderDetails.FirstOrDefault(a => a.DurationId == id);
+
+                if(data == null)
+                {
+                    duration.IsDeleted = true;
+                    _tiffinContext.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                
             }
             else
             {

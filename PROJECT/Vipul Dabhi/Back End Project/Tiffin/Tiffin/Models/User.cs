@@ -17,17 +17,17 @@ namespace Tiffin.Models
         public int UserId { get; set; }
 
         [Required]
-        [StringLength(10, MinimumLength = 3, ErrorMessage = "Length Should Be 3 to 10 Character Long")]
+        [StringLength(20, MinimumLength = 3, ErrorMessage = "Length Should Be 3 to 10 Character Long")]
         [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Digits are Not Allowed in FirstName!!!")]
         public string FirstName { get; set; }
 
         [Required]
-        [StringLength(10, MinimumLength = 3, ErrorMessage = "Length Should Be 3 to 10 Character Long")]
+        [StringLength(20, MinimumLength = 3, ErrorMessage = "Length Should Be 3 to 10 Character Long")]
         [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Digits are Not Allowed in MiddleName!!!")]
         public string MiddleName { get; set; }
 
         [Required]
-        [StringLength(10, MinimumLength = 3, ErrorMessage = "Length Should Be 3 to 10 Character Long")]
+        [StringLength(20, MinimumLength = 3, ErrorMessage = "Length Should Be 3 to 10 Character Long")]
         [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Digits are Not Allowed in LastName!!!")]
         public string LastName { get; set; }
 
@@ -51,5 +51,7 @@ namespace Tiffin.Models
 
         public virtual Area Area { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+        public virtual ICollection<Rating> Ratings { get; set; }
+
     }
 }

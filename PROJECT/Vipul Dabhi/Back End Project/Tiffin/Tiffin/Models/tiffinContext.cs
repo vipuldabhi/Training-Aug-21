@@ -20,18 +20,35 @@ namespace Tiffin.Models
         }
 
         public virtual DbSet<Area> Areas { get; set; }
+        //public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
+        //public virtual DbSet<AspNetRoleClaim> AspNetRoleClaims { get; set; }
+        //public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
+        //public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
+        //public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
+        //public virtual DbSet<AspNetUserRole> AspNetUserRoles { get; set; }
+        //public virtual DbSet<AspNetUserToken> AspNetUserTokens { get; set; }
+        public virtual DbSet<AvgRating> AvgRatings { get; set; }
         public virtual DbSet<CancellationStatus> CancellationStatuses { get; set; }
         public virtual DbSet<ContactInfo> ContactInfos { get; set; }
         public virtual DbSet<DayWiseMenu> DayWiseMenus { get; set; }
+        public virtual DbSet<DeliveryBoy> DeliveryBoys { get; set; }
+        public virtual DbSet<DeliveryCharge> DeliveryCharges { get; set; }
         public virtual DbSet<DeliveryStatus> DeliveryStatuses { get; set; }
         public virtual DbSet<Duration> Durations { get; set; }
         public virtual DbSet<Food> Foods { get; set; }
         public virtual DbSet<FoodType> FoodTypes { get; set; }
+        public virtual DbSet<Image> Images { get; set; }
         public virtual DbSet<Interval> Intervals { get; set; }
+        public virtual DbSet<MealCharge> MealCharges { get; set; }
         public virtual DbSet<Menu> Menus { get; set; }
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
+        public virtual DbSet<Rating> Ratings { get; set; }
+        public virtual DbSet<Restaurant> Restaurants { get; set; }
+        public virtual DbSet<TotalRevenue> TotalRevenues { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<WeekDay> WeekDays { get; set; }
+        public virtual DbSet<RevenueFromOrder> RevenueFromOrder { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -58,6 +75,107 @@ namespace Tiffin.Models
                 entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
             });
 
+            modelBuilder.Entity<AspNetRole>(entity =>
+            {
+                entity.HasIndex(e => e.NormalizedName, "RoleNameIndex")
+                    .IsUnique()
+                    .HasFilter("([NormalizedName] IS NOT NULL)");
+
+                entity.Property(e => e.Name).HasMaxLength(256);
+
+                entity.Property(e => e.NormalizedName).HasMaxLength(256);
+            });
+
+            modelBuilder.Entity<AspNetRoleClaim>(entity =>
+            {
+                entity.HasIndex(e => e.RoleId, "IX_AspNetRoleClaims_RoleId");
+
+                entity.Property(e => e.RoleId).IsRequired();
+
+                entity.HasOne(d => d.Role)
+                    .WithMany(p => p.AspNetRoleClaims)
+                    .HasForeignKey(d => d.RoleId);
+            });
+
+            modelBuilder.Entity<AspNetUser>(entity =>
+            {
+                entity.HasIndex(e => e.NormalizedEmail, "EmailIndex");
+
+                entity.HasIndex(e => e.NormalizedUserName, "UserNameIndex")
+                    .IsUnique()
+                    .HasFilter("([NormalizedUserName] IS NOT NULL)");
+
+                entity.Property(e => e.Email).HasMaxLength(256);
+
+                entity.Property(e => e.NormalizedEmail).HasMaxLength(256);
+
+                entity.Property(e => e.NormalizedUserName).HasMaxLength(256);
+
+                entity.Property(e => e.UserName).HasMaxLength(256);
+            });
+
+            modelBuilder.Entity<AspNetUserClaim>(entity =>
+            {
+                entity.HasIndex(e => e.UserId, "IX_AspNetUserClaims_UserId");
+
+                entity.Property(e => e.UserId).IsRequired();
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.AspNetUserClaims)
+                    .HasForeignKey(d => d.UserId);
+            });
+
+            modelBuilder.Entity<AspNetUserLogin>(entity =>
+            {
+                entity.HasKey(e => new { e.LoginProvider, e.ProviderKey });
+
+                entity.HasIndex(e => e.UserId, "IX_AspNetUserLogins_UserId");
+
+                entity.Property(e => e.UserId).IsRequired();
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.AspNetUserLogins)
+                    .HasForeignKey(d => d.UserId);
+            });
+
+            modelBuilder.Entity<AspNetUserRole>(entity =>
+            {
+                entity.HasKey(e => new { e.UserId, e.RoleId });
+
+                entity.HasIndex(e => e.RoleId, "IX_AspNetUserRoles_RoleId");
+
+                entity.HasOne(d => d.Role)
+                    .WithMany(p => p.AspNetUserRoles)
+                    .HasForeignKey(d => d.RoleId);
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.AspNetUserRoles)
+                    .HasForeignKey(d => d.UserId);
+            });
+
+            modelBuilder.Entity<AspNetUserToken>(entity =>
+            {
+                entity.HasKey(e => new { e.UserId, e.LoginProvider, e.Name });
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.AspNetUserTokens)
+                    .HasForeignKey(d => d.UserId);
+            });
+
+            modelBuilder.Entity<AvgRating>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("AvgRatings");
+
+                entity.Property(e => e.AvgRating1).HasColumnName("AvgRating");
+            });
+
+            modelBuilder.Entity<RevenueFromOrder>(entity =>
+            {
+                entity.HasNoKey();
+            });
+
             modelBuilder.Entity<CancellationStatus>(entity =>
             {
                 entity.HasKey(e => e.CancellationId)
@@ -65,7 +183,15 @@ namespace Tiffin.Models
 
                 entity.ToTable("CancellationStatus");
 
+                entity.HasIndex(e => e.IntervalId, "IX_CancellationStatus_IntervalId");
+
+                entity.HasIndex(e => e.OrderId, "IX_CancellationStatus_OrderId");
+
                 entity.Property(e => e.CancellationDate).HasColumnType("date");
+
+                entity.Property(e => e.IsDeleted)
+                    .IsRequired()
+                    .HasDefaultValueSql("(CONVERT([bit],(0)))");
 
                 entity.Property(e => e.Status).HasDefaultValueSql("((0))");
 
@@ -106,7 +232,9 @@ namespace Tiffin.Models
 
                 entity.Property(e => e.IsSolved).HasDefaultValueSql("((0))");
 
-                entity.Property(e => e.Subject).IsRequired();
+                entity.Property(e => e.Subject)
+                    .IsRequired()
+                    .HasMaxLength(100);
             });
 
             modelBuilder.Entity<DayWiseMenu>(entity =>
@@ -125,10 +253,63 @@ namespace Tiffin.Models
                     .HasMaxLength(30)
                     .IsUnicode(false);
 
+                entity.Property(e => e.RestaurantName)
+                    .IsRequired()
+                    .HasMaxLength(20);
+
                 entity.Property(e => e.WeekDayName)
                     .IsRequired()
                     .HasMaxLength(30)
                     .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<DeliveryBoy>(entity =>
+            {
+                entity.Property(e => e.Address).IsRequired();
+
+                entity.Property(e => e.Email)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.FirstName)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
+
+                entity.Property(e => e.LastName)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.MiddleName)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.MobileNo)
+                    .IsRequired()
+                    .HasMaxLength(40)
+                    .IsUnicode(false);
+
+                entity.HasOne(d => d.AssignedArea)
+                    .WithMany(p => p.DeliveryBoys)
+                    .HasForeignKey(d => d.AssignedAreaId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__DeliveryB__Assig__0880433F");
+            });
+
+            modelBuilder.Entity<DeliveryCharge>(entity =>
+            {
+                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
+
+                entity.HasOne(d => d.Duration)
+                    .WithMany(p => p.DeliveryCharges)
+                    .HasForeignKey(d => d.DurationId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__DeliveryC__Durat__0C50D423");
             });
 
             modelBuilder.Entity<DeliveryStatus>(entity =>
@@ -137,6 +318,16 @@ namespace Tiffin.Models
                     .HasName("PK__Delivery__626D8FCEC18C1AB8");
 
                 entity.ToTable("DeliveryStatus");
+
+                entity.HasIndex(e => e.IntervalId, "IX_DeliveryStatus_IntervalId");
+
+                entity.HasIndex(e => e.OrderId, "IX_DeliveryStatus_OrderId");
+
+                entity.Property(e => e.DeliveryDate).HasColumnType("date");
+
+                entity.Property(e => e.IsDeleted)
+                    .IsRequired()
+                    .HasDefaultValueSql("(CONVERT([bit],(0)))");
 
                 entity.Property(e => e.Status).HasDefaultValueSql("((0))");
 
@@ -192,6 +383,13 @@ namespace Tiffin.Models
                     .IsUnicode(false);
             });
 
+            modelBuilder.Entity<Image>(entity =>
+            {
+                entity.Property(e => e.ImageName).IsRequired();
+
+                entity.Property(e => e.ImageUrl).IsRequired();
+            });
+
             modelBuilder.Entity<Interval>(entity =>
             {
                 entity.ToTable("Interval");
@@ -200,11 +398,40 @@ namespace Tiffin.Models
                     .IsRequired()
                     .HasMaxLength(30)
                     .IsUnicode(false);
+
+                entity.Property(e => e.IsDeleted)
+                    .IsRequired()
+                    .HasDefaultValueSql("(CONVERT([bit],(0)))");
+            });
+
+            modelBuilder.Entity<MealCharge>(entity =>
+            {
+                entity.HasKey(e => e.ChargeId);
+
+                entity.HasIndex(e => e.IntervalId, "IX_MealCharges_IntervalId");
+
+                entity.HasIndex(e => e.RestaurantsId, "IX_MealCharges_RestaurantsId");
+
+                entity.HasOne(d => d.Interval)
+                    .WithMany(p => p.MealCharges)
+                    .HasForeignKey(d => d.IntervalId);
+
+                entity.HasOne(d => d.Restaurants)
+                    .WithMany(p => p.MealCharges)
+                    .HasForeignKey(d => d.RestaurantsId);
             });
 
             modelBuilder.Entity<Menu>(entity =>
             {
                 entity.ToTable("Menu");
+
+                entity.HasIndex(e => e.DayId, "IX_Menu_DayId");
+
+                entity.HasIndex(e => e.FoodId, "IX_Menu_FoodId");
+
+                entity.HasIndex(e => e.IntervalId, "IX_Menu_IntervalId");
+
+                entity.HasIndex(e => e.RestaurantsId, "IX_Menu_RestaurantsId");
 
                 entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
 
@@ -225,6 +452,10 @@ namespace Tiffin.Models
                     .HasForeignKey(d => d.IntervalId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Menu__IntervalId__71D1E811");
+
+                entity.HasOne(d => d.Restaurants)
+                    .WithMany(p => p.Menus)
+                    .HasForeignKey(d => d.RestaurantsId);
             });
 
             modelBuilder.Entity<OrderDetail>(entity =>
@@ -232,13 +463,25 @@ namespace Tiffin.Models
                 entity.HasKey(e => e.OrderId)
                     .HasName("PK__OrderDet__C3905BCFDA5B6996");
 
-                entity.Property(e => e.Address).IsRequired();
+                entity.HasIndex(e => e.AreaId, "IX_OrderDetails_AreaId");
 
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
+                entity.HasIndex(e => e.DurationId, "IX_OrderDetails_DurationId");
+
+                entity.HasIndex(e => e.IntervalId, "IX_OrderDetails_IntervalId");
+
+                entity.HasIndex(e => e.RestaurantsId, "IX_OrderDetails_RestaurantsId");
+
+                entity.HasIndex(e => e.TypeId, "IX_OrderDetails_TypeId");
+
+                entity.HasIndex(e => e.UserId, "IX_OrderDetails_UserId");
+
+                entity.Property(e => e.Address).IsRequired();
 
                 entity.Property(e => e.OrderDate).HasColumnType("date");
 
                 entity.Property(e => e.OrderPlaceDate).HasColumnType("date");
+
+                entity.Property(e => e.PaymentId).IsRequired();
 
                 entity.HasOne(d => d.Area)
                     .WithMany(p => p.OrderDetails)
@@ -258,6 +501,10 @@ namespace Tiffin.Models
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__OrderDeta__Inter__7A672E12");
 
+                entity.HasOne(d => d.Restaurants)
+                    .WithMany(p => p.OrderDetails)
+                    .HasForeignKey(d => d.RestaurantsId);
+
                 entity.HasOne(d => d.Type)
                     .WithMany(p => p.OrderDetails)
                     .HasForeignKey(d => d.TypeId)
@@ -271,9 +518,54 @@ namespace Tiffin.Models
                     .HasConstraintName("FK__OrderDeta__UserI__797309D9");
             });
 
+            modelBuilder.Entity<Rating>(entity =>
+            {
+                entity.HasKey(e => e.RatindId)
+                    .HasName("PK__Ratings__E0C0C782D9BE4E36");
+
+                entity.Property(e => e.Rating1).HasColumnName("Rating");
+
+                entity.HasOne(d => d.Restaurant)
+                    .WithMany(p => p.Ratings)
+                    .HasForeignKey(d => d.RestaurantId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__Ratings__Restaur__681373AD");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.Ratings)
+                    .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__Ratings__UserId__690797E6");
+            });
+
+            modelBuilder.Entity<Restaurant>(entity =>
+            {
+                entity.Property(e => e.RestaurantName)
+                    .IsRequired()
+                    .HasMaxLength(20);
+
+                entity.HasOne(d => d.Area)
+                    .WithMany(p => p.Restaurants)
+                    .HasForeignKey(d => d.AreaId)
+                    .HasConstraintName("FK__Restauran__AreaI__74794A92");
+            });
+
+            modelBuilder.Entity<TotalRevenue>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("TotalRevenue");
+
+                entity.Property(e => e.TotalRevenue1).HasColumnName("TotalRevenue");
+            });
+
             modelBuilder.Entity<User>(entity =>
             {
-                entity.Property(e => e.Address).IsRequired();
+                entity.HasIndex(e => e.AreaId, "IX_Users_AreaId");
+
+                entity.Property(e => e.Address)
+                    .IsRequired()
+                    .HasMaxLength(100);
 
                 entity.Property(e => e.Email)
                     .IsRequired()

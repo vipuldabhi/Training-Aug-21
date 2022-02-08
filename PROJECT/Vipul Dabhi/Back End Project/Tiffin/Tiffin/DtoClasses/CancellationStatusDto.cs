@@ -11,6 +11,7 @@ namespace Tiffin.DtoClasses
         public int OrderId { get; set; }
         public DateTime CancellationDate { get; set; }
         public int IntervalId { get; set; }
+        public string  IntervalName { get; set; }
 
     }
 }

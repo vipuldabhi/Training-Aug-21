@@ -10,10 +10,10 @@ namespace Tiffin.Repository
     public interface IAccountRepository
     {
         Task<IdentityResult> SignUpAsync(SignUpModel signUpModel);
-        Task<string> LoginAsync(SignInModel signInModel);
+        Task<TokenModel> LoginAsync(SignInModel signInModel);
         Task<IdentityResult> SignUpAdminAsync(SignUpModel signUpModel);
-        Task<string> LoginAdminAsync(SignInModel signInModel);
+        Task<TokenModel> LoginAdminAsync(SignInModel signInModel);
         Task<IdentityResult> SignUpDeliveryBoyAsync(SignUpModel signUpModel);
-        Task<string> LoginDeliveryBoyAsync(SignInModel signInModel);
+        Task<TokenModel> LoginDeliveryBoyAsync(SignInModel signInModel);
     }
 }

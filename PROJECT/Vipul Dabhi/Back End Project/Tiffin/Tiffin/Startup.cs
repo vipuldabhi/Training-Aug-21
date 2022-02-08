@@ -73,8 +73,6 @@ namespace Tiffin
 
 
 
-
-
             services.AddScoped<IAreaRepository, AreaRepository>();
             services.AddScoped<ICancellationStatusRepository, CancellationStatusRepository>();
             services.AddScoped<IContactInfoRepository, ContactInfoRepository>();
@@ -88,9 +86,14 @@ namespace Tiffin
             services.AddScoped<IOrderDetailRepository, OrderDetailRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IWeekDayRepository, WeekDayRepository>();
+            services.AddScoped<IRestaurantRepository, RestaurantRepository>(); 
+            services.AddScoped<IMealChargesRepository, MealChargesRepository>();
             services.AddScoped<IAccountRepository, AccountRepository>();
-
-
+            services.AddScoped<IRatingRepository, RatingRepository>();
+            services.AddScoped<IAvgRatingRepository, AvgRatingRepository>();
+            services.AddScoped<ITotalRevenueRepository, TotalRevenueRepository>();
+            services.AddScoped<IDeliveryBoyRepository, DeliveryBoyRepository>();
+            services.AddScoped<IDeliveryChargesRepository, DeliveryChargesRepository>();
 
 
         }

@@ -10,7 +10,7 @@ namespace Tiffin.Helpers
 {
     public class ApplicationMapper : Profile
     {
-        public ApplicationMapper()
+        public ApplicationMapper()     
         {
             CreateMap<Area, AreaDto>().ReverseMap();
             CreateMap<WeekDay, WeekDayDto>().ReverseMap();
@@ -24,6 +24,14 @@ namespace Tiffin.Helpers
             CreateMap<DeliveryStatus, DeliveryStatusDto>().ReverseMap();
             CreateMap<CancellationStatus, CancellationStatusDto>().ReverseMap();
             CreateMap<DayWiseMenu, DayWiseMenuDto>().ReverseMap();
+            CreateMap<Restaurant, RestaurantsDto>().ReverseMap();
+            CreateMap<MealCharge, MealChargesDto>().ReverseMap();
+            CreateMap<Interval, IntervalDto>().ReverseMap();
+            CreateMap<Rating, RatingDto>().ReverseMap();
+            CreateMap<AvgRating, AvgRatingDto>().ReverseMap();
+            CreateMap<DeliveryBoy, DeliveryBoyDto>().ReverseMap();
+            CreateMap<DeliveryCharge, DeliveryChargesDto>().ReverseMap();
+
 
         }
     }

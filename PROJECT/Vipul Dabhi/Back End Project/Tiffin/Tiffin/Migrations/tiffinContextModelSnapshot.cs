@@ -257,6 +257,9 @@ namespace Tiffin.Migrations
                     b.Property<int>("IntervalId")
                         .HasColumnType("int");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
 
@@ -339,6 +342,12 @@ namespace Tiffin.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(30)");
 
+                    b.Property<int>("RestaurantId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("RestaurantName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("WeekDayName")
                         .IsRequired()
                         .HasMaxLength(30)
@@ -357,6 +366,9 @@ namespace Tiffin.Migrations
 
                     b.Property<int>("IntervalId")
                         .HasColumnType("int");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
@@ -459,9 +471,40 @@ namespace Tiffin.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(30)");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.HasKey("IntervalId");
 
                     b.ToTable("Interval");
+                });
+
+            modelBuilder.Entity("Tiffin.Models.MealCharges", b =>
+                {
+                    b.Property<int>("ChargeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int>("Charge")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("IntervalId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("RestaurantsId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ChargeId");
+
+                    b.HasIndex("IntervalId");
+
+                    b.HasIndex("RestaurantsId");
+
+                    b.ToTable("MealCharges");
                 });
 
             modelBuilder.Entity("Tiffin.Models.Menu", b =>
@@ -485,6 +528,9 @@ namespace Tiffin.Migrations
                         .HasColumnType("bit")
                         .HasDefaultValueSql("((0))");
 
+                    b.Property<int?>("RestaurantsId")
+                        .HasColumnType("int");
+
                     b.HasKey("MenuId");
 
                     b.HasIndex("DayId");
@@ -492,6 +538,8 @@ namespace Tiffin.Migrations
                     b.HasIndex("FoodId");
 
                     b.HasIndex("IntervalId");
+
+                    b.HasIndex("RestaurantsId");
 
                     b.ToTable("Menu");
                 });
@@ -517,6 +565,7 @@ namespace Tiffin.Migrations
                         .HasColumnType("int");
 
                     b.Property<bool?>("IsDeleted")
+                        .IsRequired()
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
                         .HasDefaultValueSql("((0))");
@@ -530,6 +579,12 @@ namespace Tiffin.Migrations
                     b.Property<string>("PaymentId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("RestaurantsId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TotalCharge")
+                        .HasColumnType("int");
 
                     b.Property<int>("TypeId")
                         .HasColumnType("int");
@@ -546,11 +601,33 @@ namespace Tiffin.Migrations
 
                     b.HasIndex("IntervalId");
 
+                    b.HasIndex("RestaurantsId");
+
                     b.HasIndex("TypeId");
 
                     b.HasIndex("UserId");
 
                     b.ToTable("OrderDetails");
+                });
+
+            modelBuilder.Entity("Tiffin.Models.Restaurants", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<bool?>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("RestaurantName")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Restaurants");
                 });
 
             modelBuilder.Entity("Tiffin.Models.User", b =>
@@ -723,6 +800,21 @@ namespace Tiffin.Migrations
                     b.Navigation("Order");
                 });
 
+            modelBuilder.Entity("Tiffin.Models.MealCharges", b =>
+                {
+                    b.HasOne("Tiffin.Models.Interval", "Interval")
+                        .WithMany("MealCharges")
+                        .HasForeignKey("IntervalId");
+
+                    b.HasOne("Tiffin.Models.Restaurants", "Restaurants")
+                        .WithMany("MealCharges")
+                        .HasForeignKey("RestaurantsId");
+
+                    b.Navigation("Interval");
+
+                    b.Navigation("Restaurants");
+                });
+
             modelBuilder.Entity("Tiffin.Models.Menu", b =>
                 {
                     b.HasOne("Tiffin.Models.WeekDay", "Day")
@@ -743,11 +835,17 @@ namespace Tiffin.Migrations
                         .HasConstraintName("FK__Menu__IntervalId__71D1E811")
                         .IsRequired();
 
+                    b.HasOne("Tiffin.Models.Restaurants", "Restaurants")
+                        .WithMany("Menu")
+                        .HasForeignKey("RestaurantsId");
+
                     b.Navigation("Day");
 
                     b.Navigation("Food");
 
                     b.Navigation("Interval");
+
+                    b.Navigation("Restaurants");
                 });
 
             modelBuilder.Entity("Tiffin.Models.OrderDetail", b =>
@@ -770,6 +868,10 @@ namespace Tiffin.Migrations
                         .HasConstraintName("FK__OrderDeta__Inter__7A672E12")
                         .IsRequired();
 
+                    b.HasOne("Tiffin.Models.Restaurants", "Restaurants")
+                        .WithMany("OrderDetail")
+                        .HasForeignKey("RestaurantsId");
+
                     b.HasOne("Tiffin.Models.FoodType", "Type")
                         .WithMany("OrderDetails")
                         .HasForeignKey("TypeId")
@@ -787,6 +889,8 @@ namespace Tiffin.Migrations
                     b.Navigation("Duration");
 
                     b.Navigation("Interval");
+
+                    b.Navigation("Restaurants");
 
                     b.Navigation("Type");
 
@@ -832,6 +936,8 @@ namespace Tiffin.Migrations
 
                     b.Navigation("DeliveryStatuses");
 
+                    b.Navigation("MealCharges");
+
                     b.Navigation("Menus");
 
                     b.Navigation("OrderDetails");
@@ -842,6 +948,15 @@ namespace Tiffin.Migrations
                     b.Navigation("CancellationStatuses");
 
                     b.Navigation("DeliveryStatuses");
+                });
+
+            modelBuilder.Entity("Tiffin.Models.Restaurants", b =>
+                {
+                    b.Navigation("MealCharges");
+
+                    b.Navigation("Menu");
+
+                    b.Navigation("OrderDetail");
                 });
 
             modelBuilder.Entity("Tiffin.Models.User", b =>

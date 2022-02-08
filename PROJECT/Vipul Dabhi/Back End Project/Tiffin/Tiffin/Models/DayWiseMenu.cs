@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 #nullable disable
-
+    
 namespace Tiffin.Models
 {
     public partial class DayWiseMenu
@@ -14,5 +13,8 @@ namespace Tiffin.Models
         public string FoodName { get; set; }
         public int IntervalId { get; set; }
         public string IntervalName { get; set; }
+        public int Id { get; set; }  
+        public string RestaurantName { get; set; }
     }
 }
+       

@@ -25,7 +25,8 @@ namespace Tiffin.Controllers
         /// <remarks>  
         /// SignUp Method for Admin it Takes Credentials of JSON type from Body 
         /// </remarks> 
-        /// 
+
+        //POST : api/account/signup/admin
         [HttpPost("signup/admin")]
         public async Task<IActionResult> SignUpAdmin([FromBody] SignUpModel signUpModel)
         {
@@ -50,7 +51,8 @@ namespace Tiffin.Controllers
         /// <remarks>  
         /// SignUp Method for DeliveryBoy it Takes Credentials of JSON type from Body 
         /// </remarks> 
-        /// 
+
+        //POST : api/account/signup/deliveryboy
         [HttpPost("signup/deliveryboy")]
         public async Task<IActionResult> SignUpDeliveryBoy([FromBody] SignUpModel signUpModel)
         {
@@ -75,7 +77,8 @@ namespace Tiffin.Controllers
         /// <remarks>  
         /// SignUp Method for all Users it Takes Credentials of JSON type from Body 
         /// </remarks> 
-        /// 
+
+        //POST : api/account/signup/user
         [HttpPost("signup/user")]
         public async Task<IActionResult> SignUp([FromBody] SignUpModel signUpModel)
         {
@@ -86,7 +89,7 @@ namespace Tiffin.Controllers
                 return Ok(result.Succeeded);
             }
 
-            return Unauthorized();
+            return BadRequest();
         }
 
 
@@ -100,18 +103,21 @@ namespace Tiffin.Controllers
         /// <remarks>  
         /// Login Method for all Users it Takes Credentials of JSON type from Body 
         /// </remarks> 
-        /// 
+
+        //POST : api/account/login/user
         [HttpPost("login/user")]
-        public async Task<IActionResult> Login([FromBody] SignInModel signInModel)
+        public async Task<IActionResult> Login(SignInModel signInModel)
         {
             var result = await _accountRepository.LoginAsync(signInModel);
 
-            if (string.IsNullOrEmpty(result))
+            if (result==null)
             {
                 return Unauthorized();
+                
             }
 
             return Ok(result);
+
         }
 
 
@@ -124,13 +130,14 @@ namespace Tiffin.Controllers
         /// <remarks>  
         /// Login Method for Admin it Takes Credentials of JSON type from Body 
         /// </remarks> 
-        /// 
+
+        //POST : api/account/login/admin
         [HttpPost("login/admin")]
         public async Task<IActionResult> LoginAsAdmin([FromBody] SignInModel signInModel)
         {
             var result = await _accountRepository.LoginAdminAsync(signInModel);
 
-            if (string.IsNullOrEmpty(result))
+            if (result == null)
             {
                 return Unauthorized();
             }
@@ -149,15 +156,16 @@ namespace Tiffin.Controllers
         /// <remarks>  
         /// Login Method for DeliveryBoy it Takes Credentials of JSON type from Body 
         /// </remarks> 
-        /// 
+
+        //POST : api/account/login/deliveryboy
         [HttpPost("login/deliveryboy")]
         public async Task<IActionResult> LoginDeliveryBoy([FromBody] SignInModel signInModel)
         {
             var result = await _accountRepository.LoginDeliveryBoyAsync(signInModel);
 
-            if (string.IsNullOrEmpty(result))
+            if (result == null)
             {
-                return Unauthorized();
+                return Unauthorized("error");
             }
 
             return Ok(result);

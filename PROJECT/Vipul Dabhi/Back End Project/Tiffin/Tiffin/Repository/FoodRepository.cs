@@ -20,9 +20,19 @@ namespace Tiffin.Repository
             var food = _tiffinContext.Foods.Find(id);
             if (food != null && food.IsDeleted == false)
             {
-                food.IsDeleted = true;
-                _tiffinContext.SaveChanges();
-                return true;
+                var data = _tiffinContext.Menus.FirstOrDefault(a => a.FoodId == id);
+
+                if (data == null)
+                {
+                    food.IsDeleted = true;
+                    _tiffinContext.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
             }
             else
             {

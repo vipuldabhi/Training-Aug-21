@@ -30,11 +30,9 @@ namespace Tiffin.Models
         public int DurationId { get; set; }
 
         [Required]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime OrderPlaceDate { get; set; }
 
         [Required]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime OrderDate { get; set; }
 
         [Required]
@@ -46,11 +44,19 @@ namespace Tiffin.Models
         [Required]
         public string PaymentId { get; set; }
 
-        public bool? IsDeleted { get; set; }
+        [Required]
+        public bool IsDeleted { get; set; }
+
+        [Required]
+        public int TotalCharge { get; set; }
+
+        [Required]
+        public int? RestaurantsId { get; set; }
 
         public virtual Area Area { get; set; }
         public virtual Duration Duration { get; set; }
         public virtual Interval Interval { get; set; }
+        public virtual Restaurant Restaurants { get; set; }
         public virtual FoodType Type { get; set; }
         public virtual User User { get; set; }
         public virtual ICollection<CancellationStatus> CancellationStatuses { get; set; }

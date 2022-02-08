@@ -11,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Tiffin.Entities;
 using Tiffin.Helpers;
+using Microsoft.AspNetCore.Http;
+using Tiffin.Models;
 
 namespace Tiffin.Repository
 {
@@ -20,16 +22,19 @@ namespace Tiffin.Repository
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IConfiguration _configuration;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly tiffinContext _context;
 
         public AccountRepository(UserManager<ApplicationUser> userManager,
                                 SignInManager<ApplicationUser> signInManager,
                                 IConfiguration configuration,
-                                RoleManager<IdentityRole> roleManager)
+                                RoleManager<IdentityRole> roleManager,
+                                tiffinContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _configuration = configuration;
             _roleManager = roleManager;
+            _context = context;
         }
 
 
@@ -141,13 +146,16 @@ namespace Tiffin.Repository
         /// </summary>
         /// <param name="signInModel"></param>
         /// <returns></returns>
-        public async Task<string> LoginAsync(SignInModel signInModel)
+        public async Task<TokenModel> LoginAsync(SignInModel signInModel)
         {
             var result = await _signInManager.PasswordSignInAsync(signInModel.Email, ManagePassword.ConvertToEncrypt(signInModel.Password), false, false);
 
             if (!result.Succeeded)
             {
-                return null;
+                TokenModel tokenerrorModel = new TokenModel();
+                tokenerrorModel.Status = false;
+                //tokenerrorModel.Token = "";
+                return tokenerrorModel;
             }
 
             var authClaims = new List<Claim>
@@ -169,8 +177,24 @@ namespace Tiffin.Repository
                 signingCredentials: new SigningCredentials(authSigninKey, SecurityAlgorithms.HmacSha256Signature)
                 );
 
-            return new JwtSecurityTokenHandler().WriteToken(token);
+            var mytoken = new JwtSecurityTokenHandler().WriteToken(token);
 
+            var User = _context.Users.FirstOrDefault(a => a.Email == signInModel.Email);
+            if(User == null)
+            {
+                TokenModel tokenerrorModel = new TokenModel();
+                tokenerrorModel.Status = false;
+                return tokenerrorModel;
+            }
+            else
+            {
+                TokenModel tokenModel = new TokenModel();
+                tokenModel.Status = true;
+                tokenModel.Token = mytoken;
+                tokenModel.Id = User.UserId;
+
+                return tokenModel;
+            }
         }
 
 
@@ -180,38 +204,55 @@ namespace Tiffin.Repository
         /// </summary>
         /// <param name="signInModel"></param>
         /// <returns></returns>
-        public async Task<string> LoginAdminAsync(SignInModel signInModel)
+        public async Task<TokenModel> LoginAdminAsync(SignInModel signInModel)
         {
-            var result = await _signInManager.PasswordSignInAsync(signInModel.Email, ManagePassword.ConvertToEncrypt(signInModel.Password), false, false);
-
-            if (!result.Succeeded)
+            if (signInModel.Email == "admin@gmail.com" && signInModel.Password == "Admin@123")
             {
-                return null;
-            }
+                var result = await _signInManager.PasswordSignInAsync(signInModel.Email, ManagePassword.ConvertToEncrypt(signInModel.Password), false, false);
 
-            var authClaims = new List<Claim>
+                if (!result.Succeeded)
+                {
+                    TokenModel tokenerrorModel = new TokenModel();
+                    tokenerrorModel.Status = false;
+                    return tokenerrorModel;
+                }
+
+                var authClaims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name,signInModel.Email),
                 new Claim(ClaimTypes.Role,"admin"),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
 
-            var authSigninKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_configuration["JWT:Secret"]));
+                var authSigninKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_configuration["JWT:Secret"]));
 
-            ///generate a token for admin login
+                ///generate a token for admin login
 
-            var token = new JwtSecurityToken(
-                issuer: _configuration["JWT:ValidIssuer"],
-                audience: _configuration["JWT:ValidAudience"],
-                expires: DateTime.Now.AddDays(1),
-                claims: authClaims,
-                signingCredentials: new SigningCredentials(authSigninKey, SecurityAlgorithms.HmacSha256Signature)
-                );
+                var token = new JwtSecurityToken(
+                    issuer: _configuration["JWT:ValidIssuer"],
+                    audience: _configuration["JWT:ValidAudience"],
+                    expires: DateTime.Now.AddDays(1),
+                    claims: authClaims,
+                    signingCredentials: new SigningCredentials(authSigninKey, SecurityAlgorithms.HmacSha256Signature)
+                    );
 
-            return new JwtSecurityTokenHandler().WriteToken(token);
+                var mytoken = new JwtSecurityTokenHandler().WriteToken(token);
+                TokenModel tokenModel = new TokenModel();
+                tokenModel.Status = true;
+                tokenModel.Token = mytoken;
+
+                return tokenModel;
+
+            }
+            else
+            {
+                TokenModel tokenerrorModel = new TokenModel();
+                tokenerrorModel.Status = false;
+                return tokenerrorModel;
+            }
 
         }
-
+               
 
 
         /// <summary>
@@ -219,15 +260,17 @@ namespace Tiffin.Repository
         /// </summary>
         /// <param name="signInModel"></param>
         /// <returns></returns>
-        public async Task<string> LoginDeliveryBoyAsync(SignInModel signInModel)
-        {
+        public async Task<TokenModel> LoginDeliveryBoyAsync(SignInModel signInModel)
+        {          
             var result = await _signInManager.PasswordSignInAsync(signInModel.Email, ManagePassword.ConvertToEncrypt(signInModel.Password), false, false);
 
             if (!result.Succeeded)
             {
-                return null;
+                TokenModel tokenerrorModel = new TokenModel();
+                tokenerrorModel.Status = false;
+                return tokenerrorModel;    
             }
-
+                                                                                            
             var authClaims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name,signInModel.Email),
@@ -247,11 +290,25 @@ namespace Tiffin.Repository
                 signingCredentials: new SigningCredentials(authSigninKey, SecurityAlgorithms.HmacSha256Signature)
                 );
 
-            return new JwtSecurityTokenHandler().WriteToken(token);
+            var mytoken = new JwtSecurityTokenHandler().WriteToken(token);
+            var deliveryboy = _context.DeliveryBoys.FirstOrDefault(a => a.Email == signInModel.Email);
+            if(deliveryboy == null)
+            {
+                TokenModel tokenerrorModel = new TokenModel();
+                tokenerrorModel.Status = false;
+                return tokenerrorModel;
+            }
+            else
+            {
+                TokenModel tokenModel = new TokenModel();
+                tokenModel.Status = true;
+                tokenModel.Token = mytoken;
+                tokenModel.Id = deliveryboy.Id;
+
+                return tokenModel;
+            }
 
         }
-
-
 
     }
 }

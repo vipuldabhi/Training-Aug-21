@@ -17,7 +17,7 @@ namespace Tiffin.Models
         public int FoodId { get; set; }
 
         [Required]
-        [StringLength(20, MinimumLength = 3, ErrorMessage = "Length Should Be 3 to 9 Character Long")]
+        [StringLength(9, MinimumLength = 3, ErrorMessage = "Length Should Be 3 to 9 Character Long")]
         [RegularExpression(@"^[a-zA-Z ]+$", ErrorMessage = "Digits are Not Allowed in IntervalName!!!")]
         public string FoodName { get; set; }
 

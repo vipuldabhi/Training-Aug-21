@@ -15,7 +15,6 @@ namespace Tiffin.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "admin")]
     public class DurationController : ControllerBase
     {
         private readonly IDurationRepository _durationRepository;
@@ -36,6 +35,7 @@ namespace Tiffin.Controllers
         /// Get all Order Duration Details Availabe in Database 
         /// </remarks> 
 
+        //GET : api/duration
         [HttpGet]
         public IActionResult GetAllDurations()
         {
@@ -74,8 +74,10 @@ namespace Tiffin.Controllers
         /// Get Duration Details by Id Provided by User 
         /// </remarks> 
 
+        //GET : api/duration/id
         [HttpGet("{Id}")]
-        public IActionResult GetAreaById(int Id)
+
+        public IActionResult GetDurationById(int Id)
         {
             //throw an Error if data is empty
             if (_durationRepository.GetAll().Any())
@@ -84,7 +86,7 @@ namespace Tiffin.Controllers
                 var data = _durationRepository.GetById(Id);
                 if (data != null && data.IsDeleted == false)
                 {
-                    return Ok(_mapper.Map<AreaDto>(data));
+                    return Ok(data);
                 }
                 else
                 {
@@ -107,7 +109,10 @@ namespace Tiffin.Controllers
         /// Create new Duration into the Database 
         /// </remarks> 
 
+        //POST : api/duration
         [HttpPost]
+        [Authorize(Roles = "admin")]
+
         public IActionResult InsertData(Duration duration)
         {
             ///try to Generate new Field If any Error occurs Return False
@@ -140,7 +145,10 @@ namespace Tiffin.Controllers
         /// Update Duration By Given Id into Data
         /// </remarks>  
 
+        //PUT : api/duration
         [HttpPut]
+        [Authorize(Roles = "admin")]
+
         public IActionResult UpdateData(Duration duration)
         {
             if (duration.IsDeleted == false)
@@ -170,7 +178,10 @@ namespace Tiffin.Controllers
         /// Delete Duration By Given Id
         /// </remarks>  
 
+        //DELETE : api/duration
         [HttpDelete("{id}")]
+        [Authorize(Roles = "admin")]
+
         public IActionResult DeleteData(int Id)
         {
             var result = _durationRepository.Delete(Id);
@@ -180,7 +191,7 @@ namespace Tiffin.Controllers
             }
             else
             {
-                return NotFound();
+                return BadRequest();
             }
         }
     }

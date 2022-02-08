@@ -10,12 +10,11 @@ using Tiffin.DtoClasses;
 using Tiffin.Entities;
 using Tiffin.Models;
 using Tiffin.Repository;
-
+            
 namespace Tiffin.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = UserRoles.Admin)]
     public class AreaController : ControllerBase
     {
         private readonly IAreaRepository _areaRepository;
@@ -36,6 +35,7 @@ namespace Tiffin.Controllers
         /// Get all Areas Details Availabe in Database 
         /// </remarks> 
 
+        //GET : api/area
         [HttpGet]
         public IActionResult GetAllAreas()
         {
@@ -66,6 +66,36 @@ namespace Tiffin.Controllers
         }
 
 
+        
+        //Get Sorted Data
+
+
+        /// <summary>  
+        /// Get Sorted Areas  
+        /// </summary>    
+        /// <returns></returns>  
+        /// <remarks>  
+        /// return sorted data as per area name 
+        /// </remarks> 
+
+        //GET : api/area/sorted/sortid        ///1 for ascending and 0 for descending
+        [HttpGet("sorted/{sortid}")]
+        public IActionResult GetSortedArea(int sortid)
+        {
+            var sortedData = _areaRepository.GetSortedData(sortid);
+            if(sortedData != null)
+            {
+                return Ok(sortedData);
+            }
+            else
+            {
+                return NotFound("Data is not Available in Database!!!!");
+            }
+
+        }
+
+
+
         /// <summary>  
         /// Get Area by Given Id  
         /// </summary>    
@@ -73,8 +103,10 @@ namespace Tiffin.Controllers
         /// <remarks>  
         /// Get Area Details by Id Provided by User 
         /// </remarks> 
-         
+
+        //GET : api/area/id
         [HttpGet("{Id}")]
+
         public IActionResult GetAreaById(int Id)
         {
             //throw an Error if data is empty
@@ -84,7 +116,7 @@ namespace Tiffin.Controllers
                 var data = _areaRepository.GetById(Id);
                 if (data != null && data.IsDeleted == false)
                 {
-                    return Ok(_mapper.Map<AreaDto>(data));
+                    return Ok(data);
                 }
                 else
                 {
@@ -107,7 +139,10 @@ namespace Tiffin.Controllers
         /// Create new Area into the Database 
         /// </remarks> 
 
+        //POST : api/area
         [HttpPost]
+        [Authorize(Roles = UserRoles.Admin)]
+
         public IActionResult InsertData(Area area)
         {
             ///try to Generate new Field If any Error occurs Return False
@@ -140,8 +175,11 @@ namespace Tiffin.Controllers
         /// Update Area By Given Id 
         /// </remarks>  
 
+        //PUT : api/area
         [HttpPut]
-        public IActionResult UpdateData(Area area)
+        [Authorize(Roles = UserRoles.Admin)]
+
+        public IActionResult UpdateData([FromBody]Area area)
         {
             if(area.IsDeleted == false)
             {
@@ -170,7 +208,10 @@ namespace Tiffin.Controllers
         /// Delete Area By Given Id
         /// </remarks>  
 
+        //DELETE : api/area/id
         [HttpDelete("{id}")]
+        [Authorize(Roles = UserRoles.Admin)]
+
         public IActionResult DeleteData(int Id)
         {
             var result = _areaRepository.Delete(Id);
@@ -180,7 +221,7 @@ namespace Tiffin.Controllers
             }
             else
             {
-                return NotFound();
+                return BadRequest();
             }
         }
 
